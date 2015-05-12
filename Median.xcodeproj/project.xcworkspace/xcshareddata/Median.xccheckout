@@ -7,7 +7,7 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>ECE1F9B6-2F53-4F05-A8F0-4B49CC122F38</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>Median</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>81E8A9BD2828251DA14605D5DED3D1CCBCD37B93</key>
@@ -18,7 +18,7 @@
 		<string>https://github.com/amaceing/Grader.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Median.xcodeproj/project.xcworkspace</string>
+	<string>Median.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>81E8A9BD2828251DA14605D5DED3D1CCBCD37B93</key>

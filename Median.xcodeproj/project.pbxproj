@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A25A0A391B02A6B200335302 /* ClassDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25A0A371B02A6B200335302 /* ClassDetailsVC.swift */; };
+		A25A0A3A1B02A6B200335302 /* ClassDetailsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A25A0A381B02A6B200335302 /* ClassDetailsVC.xib */; };
 		A29951661B0175C200CF6D84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29951651B0175C200CF6D84 /* AppDelegate.swift */; };
 		A299516D1B0175C200CF6D84 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A299516C1B0175C200CF6D84 /* Images.xcassets */; };
 		A29951701B0175C200CF6D84 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A299516E1B0175C200CF6D84 /* LaunchScreen.xib */; };
@@ -32,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A25A0A371B02A6B200335302 /* ClassDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassDetailsVC.swift; sourceTree = "<group>"; };
+		A25A0A381B02A6B200335302 /* ClassDetailsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClassDetailsVC.xib; sourceTree = "<group>"; };
 		A29951601B0175C200CF6D84 /* Median.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Median.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A29951641B0175C200CF6D84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A29951651B0175C200CF6D84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +145,7 @@
 			children = (
 				A299518C1B01768D00CF6D84 /* SemesterVC.xib */,
 				A29951911B0176D700CF6D84 /* SchoolClassCell.xib */,
+				A25A0A381B02A6B200335302 /* ClassDetailsVC.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -150,6 +155,7 @@
 			children = (
 				A29951901B0176D700CF6D84 /* SchoolClassCell.swift */,
 				A299519E1B017C6000CF6D84 /* SemesterVC.swift */,
+				A25A0A371B02A6B200335302 /* ClassDetailsVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -238,6 +244,7 @@
 				A299518D1B01768D00CF6D84 /* SemesterVC.xib in Resources */,
 				A29951951B0176D700CF6D84 /* SchoolClassCell.xib in Resources */,
 				A299516D1B0175C200CF6D84 /* Images.xcassets in Resources */,
+				A25A0A3A1B02A6B200335302 /* ClassDetailsVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +266,7 @@
 				A299519F1B017C6000CF6D84 /* SemesterVC.swift in Sources */,
 				A29951981B0176FE00CF6D84 /* AssignmentCateogry.swift in Sources */,
 				A29951941B0176D700CF6D84 /* SchoolClassCell.swift in Sources */,
+				A25A0A391B02A6B200335302 /* ClassDetailsVC.swift in Sources */,
 				A29951921B0176D700CF6D84 /* Assignment.swift in Sources */,
 				A299519D1B017C2E00CF6D84 /* SchoolClass.swift in Sources */,
 				A29951661B0175C200CF6D84 /* AppDelegate.swift in Sources */,
@@ -449,6 +457,7 @@
 				A29951811B0175C200CF6D84 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A29951821B0175C200CF6D84 /* Build configuration list for PBXNativeTarget "MedianTests" */ = {
 			isa = XCConfigurationList;
@@ -457,6 +466,7 @@
 				A29951841B0175C200CF6D84 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
