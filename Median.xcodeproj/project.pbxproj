@@ -11,14 +11,14 @@
 		A299516D1B0175C200CF6D84 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A299516C1B0175C200CF6D84 /* Images.xcassets */; };
 		A29951701B0175C200CF6D84 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A299516E1B0175C200CF6D84 /* LaunchScreen.xib */; };
 		A299517C1B0175C200CF6D84 /* MedianTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A299517B1B0175C200CF6D84 /* MedianTests.swift */; };
-		A299518B1B01768400CF6D84 /* SemesterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A299518A1B01768400CF6D84 /* SemesterVC.swift */; };
 		A299518D1B01768D00CF6D84 /* SemesterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A299518C1B01768D00CF6D84 /* SemesterVC.xib */; };
 		A29951921B0176D700CF6D84 /* Assignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A299518E1B0176D700CF6D84 /* Assignment.swift */; };
-		A29951931B0176D700CF6D84 /* ClassStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A299518F1B0176D700CF6D84 /* ClassStore.swift */; };
 		A29951941B0176D700CF6D84 /* SchoolClassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29951901B0176D700CF6D84 /* SchoolClassCell.swift */; };
 		A29951951B0176D700CF6D84 /* SchoolClassCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A29951911B0176D700CF6D84 /* SchoolClassCell.xib */; };
 		A29951981B0176FE00CF6D84 /* AssignmentCateogry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29951961B0176FE00CF6D84 /* AssignmentCateogry.swift */; };
-		A29951991B0176FE00CF6D84 /* SchoolClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29951971B0176FE00CF6D84 /* SchoolClass.swift */; };
+		A299519B1B017C0B00CF6D84 /* ClassStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A299519A1B017C0B00CF6D84 /* ClassStore.swift */; };
+		A299519D1B017C2E00CF6D84 /* SchoolClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A299519C1B017C2E00CF6D84 /* SchoolClass.swift */; };
+		A299519F1B017C6000CF6D84 /* SemesterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A299519E1B017C6000CF6D84 /* SemesterVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,14 +40,14 @@
 		A29951751B0175C200CF6D84 /* MedianTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MedianTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A299517A1B0175C200CF6D84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A299517B1B0175C200CF6D84 /* MedianTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedianTests.swift; sourceTree = "<group>"; };
-		A299518A1B01768400CF6D84 /* SemesterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SemesterVC.swift; path = ../Decile/SemesterVC.swift; sourceTree = "<group>"; };
 		A299518C1B01768D00CF6D84 /* SemesterVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SemesterVC.xib; path = ../Decile/SemesterVC.xib; sourceTree = "<group>"; };
 		A299518E1B0176D700CF6D84 /* Assignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Assignment.swift; path = ../../../Desktop/Grader/Assignment.swift; sourceTree = "<group>"; };
-		A299518F1B0176D700CF6D84 /* ClassStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClassStore.swift; path = ../../../Desktop/Grader/ClassStore.swift; sourceTree = "<group>"; };
 		A29951901B0176D700CF6D84 /* SchoolClassCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SchoolClassCell.swift; path = ../../../Desktop/Grader/SchoolClassCell.swift; sourceTree = "<group>"; };
 		A29951911B0176D700CF6D84 /* SchoolClassCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SchoolClassCell.xib; path = ../../../Desktop/Grader/SchoolClassCell.xib; sourceTree = "<group>"; };
 		A29951961B0176FE00CF6D84 /* AssignmentCateogry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AssignmentCateogry.swift; path = ../../../Desktop/Grader/Grader/AssignmentCateogry.swift; sourceTree = "<group>"; };
-		A29951971B0176FE00CF6D84 /* SchoolClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SchoolClass.swift; path = ../../../Desktop/Grader/Grader/SchoolClass.swift; sourceTree = "<group>"; };
+		A299519A1B017C0B00CF6D84 /* ClassStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassStore.swift; sourceTree = "<group>"; };
+		A299519C1B017C2E00CF6D84 /* SchoolClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoolClass.swift; sourceTree = "<group>"; };
+		A299519E1B017C6000CF6D84 /* SemesterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemesterVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,10 +128,10 @@
 		A29951851B0175EC00CF6D84 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A299519A1B017C0B00CF6D84 /* ClassStore.swift */,
 				A299518E1B0176D700CF6D84 /* Assignment.swift */,
 				A29951961B0176FE00CF6D84 /* AssignmentCateogry.swift */,
-				A299518F1B0176D700CF6D84 /* ClassStore.swift */,
-				A29951971B0176FE00CF6D84 /* SchoolClass.swift */,
+				A299519C1B017C2E00CF6D84 /* SchoolClass.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -148,7 +148,7 @@
 		A29951871B0175FA00CF6D84 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A299518A1B01768400CF6D84 /* SemesterVC.swift */,
+				A299519E1B017C6000CF6D84 /* SemesterVC.swift */,
 				A29951901B0176D700CF6D84 /* SchoolClassCell.swift */,
 			);
 			name = Controllers;
@@ -255,12 +255,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A299519B1B017C0B00CF6D84 /* ClassStore.swift in Sources */,
+				A299519F1B017C6000CF6D84 /* SemesterVC.swift in Sources */,
 				A29951981B0176FE00CF6D84 /* AssignmentCateogry.swift in Sources */,
-				A29951991B0176FE00CF6D84 /* SchoolClass.swift in Sources */,
 				A29951941B0176D700CF6D84 /* SchoolClassCell.swift in Sources */,
 				A29951921B0176D700CF6D84 /* Assignment.swift in Sources */,
-				A299518B1B01768400CF6D84 /* SemesterVC.swift in Sources */,
-				A29951931B0176D700CF6D84 /* ClassStore.swift in Sources */,
+				A299519D1B017C2E00CF6D84 /* SchoolClass.swift in Sources */,
 				A29951661B0175C200CF6D84 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
