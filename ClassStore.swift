@@ -16,7 +16,7 @@ class ClassStore: NSObject {
         }
         return Static.instance
     }
-    var classArray: [SchoolClass] = []
+    var classArray: [SchoolClass]?
     
     
     override init() {
@@ -24,8 +24,7 @@ class ClassStore: NSObject {
         NSLog("self.init()")
         let path: String = self.classArchivePath()
         NSLog(path)
-        var unarchiveObj = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as! [SchoolClass]
-        self.classArray = unarchiveObj
+        self.classArray = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as? [SchoolClass]
     }
     
     func classArchivePath() -> String {
@@ -38,20 +37,24 @@ class ClassStore: NSObject {
     func saveChanges() -> Bool {
         var path: String = self.classArchivePath()
         NSLog(path)
-        return NSKeyedArchiver.archiveRootObject(self.classArray, toFile: path)
+        return NSKeyedArchiver.archiveRootObject(self.classArray!, toFile: path)
     }
     
     func allClasses() -> [SchoolClass] {
-        return self.classArray
+        if (self.classArray == nil) {
+            self.classArray = []
+            return self.classArray!
+        }
+        return self.classArray!
     }
     
     func addClass(classToAdd: SchoolClass) {
-        self.classArray.append(classToAdd)
+        self.classArray!.append(classToAdd)
         NSLog("adding %@", classToAdd.name)
     }
     
     func removeClass(schoolClass: SchoolClass) {
-        let index = find(self.classArray, schoolClass)
-        self.classArray.removeAtIndex(index!)
+        let index = find(self.classArray!, schoolClass)
+        self.classArray!.removeAtIndex(index!)
     }
 }

@@ -148,8 +148,8 @@
 		A29951871B0175FA00CF6D84 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A299519E1B017C6000CF6D84 /* SemesterVC.swift */,
 				A29951901B0176D700CF6D84 /* SchoolClassCell.swift */,
+				A299519E1B017C6000CF6D84 /* SemesterVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
