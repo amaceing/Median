@@ -8,18 +8,64 @@
 
 import UIKit
 
-class ClassDetailsVC: UIViewController {
+class ClassDetailsVC: UIViewController, UITextFieldDelegate {
     //MARK: - Properties
     
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var sectionField: UITextField!
     @IBOutlet weak var daysField: UITextField!
     @IBOutlet weak var timeField: UITextField!
+    var schoolClass: SchoolClass?
+    
+    //MARK: - View Loading Methods
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        //Title
+        if (self.schoolClass?.name == "Click To Add") {
+            self.navigationItem.title = "New Class"
+        } else {
+            self.navigationItem.title = self.schoolClass?.name
+        }
+        
+        //textField delegates
+        self.nameField.delegate = self
+        self.sectionField.delegate = self
+        self.daysField.delegate = self
+        self.timeField.delegate = self
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if !(self.schoolClass?.name == "Click To Add") {
+            self.nameField.text = self.schoolClass!.name;
+            self.sectionField.text = self.schoolClass!.section;
+            self.daysField.text = self.schoolClass!.daysOfWeek;
+            self.timeField.text = self.schoolClass!.timeOfDay;
+        }
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        var newClass = self.schoolClass
+        
+        newClass!.name = self.nameField.text
+        newClass!.section = self.sectionField.text
+        newClass!.daysOfWeek = self.daysField.text
+        newClass!.timeOfDay = self.timeField.text
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,15 +73,9 @@ class ClassDetailsVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //MARK: - UITextFieldDelegate Methods
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
-    */
-
 }

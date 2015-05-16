@@ -53,6 +53,10 @@ class ClassStore: NSObject {
         NSLog("adding %@", classToAdd.name)
     }
     
+    func addClass(classToAdd: SchoolClass, atIndex: Int) {
+        self.classArray?.insert(classToAdd, atIndex: 0)
+    }
+    
     func removeClass(schoolClass: SchoolClass) {
         let index = find(self.classArray!, schoolClass)
         self.classArray!.removeAtIndex(index!)

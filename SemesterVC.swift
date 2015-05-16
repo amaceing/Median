@@ -88,6 +88,11 @@ class SemesterVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         self.navigationItem.rightBarButtonItem = doneButton
     }
     
+    func setUpBackButton() {
+        let backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
+        self.navigationItem.backBarButtonItem = backButton
+    }
+    
     func setNavBarProperties() {
         self.navigationItem.title = "Classes"
         //let navBarFont: UIFont = UIFont(name: "Lato-Regular", size: 24)!
@@ -104,8 +109,8 @@ class SemesterVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     func addSchoolClass(sender: UIBarButtonItem) {
         var clickToAdd: SchoolClass = SchoolClass(name: "Click to Add", section: "101", daysOfWeek: "MWF", timeOfDay: "12:00pm")
-        let store = ClassStore.instance
-        store.addClass(clickToAdd)
+        var store = ClassStore.instance
+        store.addClass(clickToAdd, atIndex: 0)
         
         //Insertion animation
         var row = 0
@@ -156,8 +161,9 @@ class SemesterVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: SchoolClassCell = tableView.dequeueReusableCellWithIdentifier("SchoolClassCell", forIndexPath: indexPath) as! SchoolClassCell
-        var schoolClassForCell = ClassStore.instance.allClasses()[indexPath.row]
+        var cell: SchoolClassCell = tableView.dequeueReusableCellWithIdentifier("SchoolClassCell", forIndexPath: indexPath) as! SchoolClassCell
+        var index = indexPath.row
+        var schoolClassForCell = ClassStore.instance.allClasses()[index]
         
         // Configure the cell...
         cell.selectionStyle = UITableViewCellSelectionStyle.None
@@ -167,6 +173,15 @@ class SemesterVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         var timeOfDay = schoolClassForCell.valueForKey("timeOfDay") as! String
         cell.schoolClassDetails.text = NSString(format: "%@  ∙  %@  ∙  %@", section, daysOfWeek, timeOfDay) as String
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        var schoolClassToPresent: SchoolClass = ClassStore.instance.allClasses()[indexPath.row]
+        if (self.editing) {
+            var classDetailsVC = ClassDetailsVC(nibName: "ClassDetailsVC", bundle: nil)
+            classDetailsVC.schoolClass = schoolClassToPresent
+            self.navigationController?.pushViewController(classDetailsVC, animated: true)
+        }
     }
     
     

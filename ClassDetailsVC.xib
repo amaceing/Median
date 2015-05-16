@@ -6,10 +6,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ClassDetailsVC" customModule="Median" customModuleProvider="target">
             <connections>
-                <outlet property="daysField" destination="eSN-cb-9Yw" id="tZo-BB-RTR"/>
-                <outlet property="nameField" destination="eVp-Dk-ebn" id="NCx-jw-qGt"/>
-                <outlet property="sectionField" destination="Eg2-bn-D3c" id="eaC-4u-Kfc"/>
-                <outlet property="timeField" destination="1JU-Vs-xyN" id="ogk-QM-ovj"/>
+                <outlet property="daysField" destination="eSN-cb-9Yw" id="cBa-rd-o3J"/>
+                <outlet property="nameField" destination="eVp-Dk-ebn" id="7pF-hh-KJi"/>
+                <outlet property="sectionField" destination="Eg2-bn-D3c" id="iET-yL-XJM"/>
+                <outlet property="timeField" destination="1JU-Vs-xyN" id="Woa-Fg-PMQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,43 +18,55 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Class Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eVp-Dk-ebn">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Class Name" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eVp-Dk-ebn">
                     <rect key="frame" x="25" y="25" width="295" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="NRZ-rd-rHi"/>
+                        <constraint firstAttribute="width" constant="295" id="Qi9-Gt-DRa"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Section" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Eg2-bn-D3c">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Section" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Eg2-bn-D3c">
                     <rect key="frame" x="25" y="63" width="160" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="160" id="fXQ-Kn-oYp"/>
+                        <constraint firstAttribute="height" constant="30" id="s3N-fc-j1i"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Days" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eSN-cb-9Yw">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Days" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eSN-cb-9Yw">
                     <rect key="frame" x="25" y="101" width="97" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="MHi-AA-ORa"/>
+                        <constraint firstAttribute="width" constant="97" id="VuC-fM-vTn"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Time" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1JU-Vs-xyN">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Time" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1JU-Vs-xyN">
                     <rect key="frame" x="25" y="139" width="97" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="DaJ-7s-kK2"/>
+                        <constraint firstAttribute="width" constant="97" id="WUv-VQ-LU4"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                 </textField>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="eVp-Dk-ebn" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="25" id="1ku-Bb-EUp"/>
-                <constraint firstAttribute="trailing" secondItem="eVp-Dk-ebn" secondAttribute="trailing" constant="280" id="4E9-vi-EUy"/>
-                <constraint firstAttribute="trailing" secondItem="eSN-cb-9Yw" secondAttribute="trailing" constant="478" id="4KJ-XI-VFr"/>
                 <constraint firstItem="eVp-Dk-ebn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="25" id="BhM-5a-0xw"/>
                 <constraint firstItem="eSN-cb-9Yw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="25" id="JNA-LT-y3d"/>
-                <constraint firstAttribute="trailing" secondItem="1JU-Vs-xyN" secondAttribute="trailing" constant="478" id="eSX-7U-LCZ"/>
                 <constraint firstItem="1JU-Vs-xyN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="25" id="kVi-8D-g0v"/>
-                <constraint firstAttribute="trailing" secondItem="Eg2-bn-D3c" secondAttribute="trailing" constant="415" id="odK-Yg-TLI"/>
                 <constraint firstItem="Eg2-bn-D3c" firstAttribute="top" secondItem="eVp-Dk-ebn" secondAttribute="bottom" constant="8" id="ppa-2Z-hEi"/>
                 <constraint firstItem="eSN-cb-9Yw" firstAttribute="top" secondItem="Eg2-bn-D3c" secondAttribute="bottom" constant="8" id="uPI-zn-EDE"/>
                 <constraint firstItem="Eg2-bn-D3c" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="25" id="vwP-LS-Khy"/>
                 <constraint firstItem="1JU-Vs-xyN" firstAttribute="top" secondItem="eSN-cb-9Yw" secondAttribute="bottom" constant="8" id="zJ3-0u-2vV"/>
             </constraints>
-            <point key="canvasLocation" x="438" y="330"/>
+            <point key="canvasLocation" x="528" y="335"/>
         </view>
     </objects>
 </document>
