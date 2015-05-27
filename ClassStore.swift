@@ -24,7 +24,9 @@ class ClassStore: NSObject {
         NSLog("self.init()")
         let path: String = self.classArchivePath()
         NSLog(path)
-        self.classArray = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as? [SchoolClass]
+        if let unArchObj = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as? [SchoolClass] {
+            self.classArray = unArchObj
+        }
     }
     
     func classArchivePath() -> String {
@@ -43,7 +45,6 @@ class ClassStore: NSObject {
     func allClasses() -> [SchoolClass] {
         if (self.classArray == nil) {
             self.classArray = []
-            return self.classArray!
         }
         return self.classArray!
     }
