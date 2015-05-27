@@ -125,12 +125,12 @@ class SemesterVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func doneEditing(sender: UIBarButtonItem) {
         var schoolClassToDelete = ClassStore.instance.allClasses()[0]
         if (schoolClassToDelete.name == "Click to Add") {
-            //ClassStore.instance.removeClass(schoolClassToDelete)
+            ClassStore.instance.removeClass(schoolClassToDelete)
             
             //Deletion Animation
-            //let row = 0
-            //let path = NSIndexPath(forRow: row, inSection: 0)
-            //self.tableView.deleteRowsAtIndexPaths([path], withRowAnimation: UITableViewRowAnimation.Fade)
+            let row = 0
+            let path = NSIndexPath(forRow: row, inSection: 0)
+            self.tableView.deleteRowsAtIndexPaths([path], withRowAnimation: UITableViewRowAnimation.Fade)
         }
         self.editing = false
         setUpEditButton()
