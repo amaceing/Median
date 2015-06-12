@@ -30,6 +30,7 @@ class SchoolClass: NSObject, NSCoding, Equatable {
             return 0.0
         }
     }
+    var testGrade = 103;
     
     init(name: String, section: String, daysOfWeek: String, timeOfDay: String) {
         self.name = name

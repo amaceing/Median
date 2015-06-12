@@ -166,13 +166,30 @@ class SemesterVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         var schoolClassForCell = ClassStore.instance.allClasses()[index]
         
         // Configure the cell...
+        var classCircle: ClassCircle = makeCircleForClassCell()
+        self.tableView.addSubview(classCircle)
+        cell.contentView.addSubview(classCircle)
         cell.selectionStyle = UITableViewCellSelectionStyle.None
-        cell.schoolClassName.text = (schoolClassForCell.valueForKey("name") as! String)
-        var section = schoolClassForCell.valueForKey("section") as! String
-        var daysOfWeek = schoolClassForCell.valueForKey("daysOfWeek") as! String
-        var timeOfDay = schoolClassForCell.valueForKey("timeOfDay") as! String
-        cell.schoolClassDetails.text = NSString(format: "%@  ∙  %@  ∙  %@", section, daysOfWeek, timeOfDay) as String
+        
+        cell.intGrade.frame = determineGradeLabelFrameWithGrade(100)
+        fillCellWithContentFromClass(cell, schoolClass: schoolClassForCell)
+
         return cell
+    }
+    
+    func fillCellWithContentFromClass(cell: SchoolClassCell, schoolClass: SchoolClass) {
+        //load strings from schoolClass
+        var section = schoolClass.valueForKey("section") as! String
+        var daysOfWeek = schoolClass.valueForKey("daysOfWeek") as! String
+        var timeOfDay = schoolClass.valueForKey("timeOfDay") as! String
+        cell.schoolClassName.text = schoolClass.name
+        cell.schoolClassDetails.text = NSString(format: "%@  ∙  %@  ∙  %@", section, daysOfWeek, timeOfDay) as String
+        cell.intGrade.text = "95"
+        if (schoolClass.testGrade >= 100) {
+            cell.decGrade.text = "";
+        } else {
+            cell.decGrade.text = ".6"
+        }
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -184,7 +201,23 @@ class SemesterVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         }
     }
     
+    // MARK: - Class Circle
+    func determineGradeLabelFrameWithGrade(grade: Double) -> CGRect {
+        let gradeRect: CGRect;
+        if (grade >= 100) {
+            gradeRect = CGRectMake(20, 35, 41, 25);
+        } else {
+            gradeRect = CGRectMake(11, 35, 41, 25);
+        }
+        return gradeRect;
+    }
     
+    func makeCircleForClassCell() -> ClassCircle {
+        var frame: CGRect = CGRectMake(5, 20, 85, 85);
+        var classCircle: ClassCircle = ClassCircle(frame: frame)
+        classCircle.grade = 78.0
+        return classCircle
+    }
     
     /*
     // MARK: - Navigation
