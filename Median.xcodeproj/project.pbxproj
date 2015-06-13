@@ -10,6 +10,7 @@
 		A239E2D01B166FB700F47996 /* ClassCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A239E2CF1B166FB700F47996 /* ClassCircle.swift */; };
 		A25A0A391B02A6B200335302 /* ClassDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25A0A371B02A6B200335302 /* ClassDetailsVC.swift */; };
 		A25A0A3A1B02A6B200335302 /* ClassDetailsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A25A0A381B02A6B200335302 /* ClassDetailsVC.xib */; };
+		A269BF1F1B2BD7F9009D2D5B /* SchoolClassCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A269BF1E1B2BD7F9009D2D5B /* SchoolClassCell.xib */; };
 		A29951661B0175C200CF6D84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29951651B0175C200CF6D84 /* AppDelegate.swift */; };
 		A299516D1B0175C200CF6D84 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A299516C1B0175C200CF6D84 /* Images.xcassets */; };
 		A29951701B0175C200CF6D84 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A299516E1B0175C200CF6D84 /* LaunchScreen.xib */; };
@@ -17,7 +18,6 @@
 		A299518D1B01768D00CF6D84 /* SemesterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A299518C1B01768D00CF6D84 /* SemesterVC.xib */; };
 		A29951921B0176D700CF6D84 /* Assignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A299518E1B0176D700CF6D84 /* Assignment.swift */; };
 		A29951941B0176D700CF6D84 /* SchoolClassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29951901B0176D700CF6D84 /* SchoolClassCell.swift */; };
-		A29951951B0176D700CF6D84 /* SchoolClassCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A29951911B0176D700CF6D84 /* SchoolClassCell.xib */; };
 		A29951981B0176FE00CF6D84 /* AssignmentCateogry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29951961B0176FE00CF6D84 /* AssignmentCateogry.swift */; };
 		A299519B1B017C0B00CF6D84 /* ClassStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A299519A1B017C0B00CF6D84 /* ClassStore.swift */; };
 		A299519D1B017C2E00CF6D84 /* SchoolClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A299519C1B017C2E00CF6D84 /* SchoolClass.swift */; };
@@ -38,6 +38,7 @@
 		A239E2CF1B166FB700F47996 /* ClassCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassCircle.swift; sourceTree = "<group>"; };
 		A25A0A371B02A6B200335302 /* ClassDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassDetailsVC.swift; sourceTree = "<group>"; };
 		A25A0A381B02A6B200335302 /* ClassDetailsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClassDetailsVC.xib; sourceTree = "<group>"; };
+		A269BF1E1B2BD7F9009D2D5B /* SchoolClassCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SchoolClassCell.xib; sourceTree = "<group>"; };
 		A29951601B0175C200CF6D84 /* Median.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Median.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A29951641B0175C200CF6D84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A29951651B0175C200CF6D84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,7 +50,6 @@
 		A299518C1B01768D00CF6D84 /* SemesterVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SemesterVC.xib; path = ../Decile/SemesterVC.xib; sourceTree = "<group>"; };
 		A299518E1B0176D700CF6D84 /* Assignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Assignment.swift; path = ../../../Desktop/Grader/Assignment.swift; sourceTree = "<group>"; };
 		A29951901B0176D700CF6D84 /* SchoolClassCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SchoolClassCell.swift; path = ../../../Desktop/Grader/SchoolClassCell.swift; sourceTree = "<group>"; };
-		A29951911B0176D700CF6D84 /* SchoolClassCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SchoolClassCell.xib; path = ../../../Desktop/Grader/SchoolClassCell.xib; sourceTree = "<group>"; };
 		A29951961B0176FE00CF6D84 /* AssignmentCateogry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AssignmentCateogry.swift; path = ../../../Desktop/Grader/Grader/AssignmentCateogry.swift; sourceTree = "<group>"; };
 		A299519A1B017C0B00CF6D84 /* ClassStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassStore.swift; sourceTree = "<group>"; };
 		A299519C1B017C2E00CF6D84 /* SchoolClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoolClass.swift; sourceTree = "<group>"; };
@@ -145,8 +145,8 @@
 		A29951861B0175F400CF6D84 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A269BF1E1B2BD7F9009D2D5B /* SchoolClassCell.xib */,
 				A299518C1B01768D00CF6D84 /* SemesterVC.xib */,
-				A29951911B0176D700CF6D84 /* SchoolClassCell.xib */,
 				A25A0A381B02A6B200335302 /* ClassDetailsVC.xib */,
 			);
 			name = Views;
@@ -243,9 +243,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A269BF1F1B2BD7F9009D2D5B /* SchoolClassCell.xib in Resources */,
 				A29951701B0175C200CF6D84 /* LaunchScreen.xib in Resources */,
 				A299518D1B01768D00CF6D84 /* SemesterVC.xib in Resources */,
-				A29951951B0176D700CF6D84 /* SchoolClassCell.xib in Resources */,
 				A299516D1B0175C200CF6D84 /* Images.xcassets in Resources */,
 				A25A0A3A1B02A6B200335302 /* ClassDetailsVC.xib in Resources */,
 			);
