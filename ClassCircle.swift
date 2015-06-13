@@ -33,7 +33,7 @@ class ClassCircle: UIView {
         var outerSolidColor = UIBezierPath()
         
         //Percentage of circle to be filled
-        var percentage = self.grade
+        var percentage = 85.0
         
         //Setting up points and radius for circle
         var outerPoint = CGPoint(x: 0, y: 28)
@@ -50,13 +50,13 @@ class ClassCircle: UIView {
         outerSolidGray.stroke()
         
         //Creating color circle
-        /*if (percentage != 0) {
+        if (percentage != 0) {
             outerSolidColor.lineWidth = 3.25
             outerSolidColor.addArcWithCenter(outerPoint, radius: outerRadius, startAngle: degreesToRadians(270), endAngle: degreesToRadians(360 * (percentage / 100) + 270), clockwise: true)
             var colorForCircle = determineUIColor(percentage)
             colorForCircle.setStroke()
             outerSolidColor.stroke()
-        }*/
+        }
     }
     
     func degreesToRadians(angle: Double) -> CGFloat {
