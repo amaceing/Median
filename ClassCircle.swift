@@ -13,8 +13,9 @@ class ClassCircle: UIView {
     var grade: Double = 0.0
     
     override init(frame: CGRect) {
-        super.init(frame: CGRect())
+        super.init(frame: frame)
         self.opaque = false
+        drawRect(frame)
     }
         
     
@@ -26,6 +27,7 @@ class ClassCircle: UIView {
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
     override func drawRect(rect: CGRect) {
+        NSLog("drawRect")
         //Paths
         var outerSolidGray = UIBezierPath()
         var outerSolidColor = UIBezierPath()
@@ -42,18 +44,19 @@ class ClassCircle: UIView {
         outerSolidGray.lineWidth = 3.25
         
         //Creating gray circle
+        //CGContextAddArc(context, center.x, center.y, outerRadius, 270, 540, 1)
         outerSolidGray.addArcWithCenter(outerPoint, radius: outerRadius, startAngle: 270, endAngle: 540, clockwise: true)
         UIColor(red: 235/255.0, green: 235/255.0, blue: 235/255.0, alpha: 1).setStroke()
         outerSolidGray.stroke()
         
         //Creating color circle
-        if (percentage != 0) {
+        /*if (percentage != 0) {
             outerSolidColor.lineWidth = 3.25
             outerSolidColor.addArcWithCenter(outerPoint, radius: outerRadius, startAngle: degreesToRadians(270), endAngle: degreesToRadians(360 * (percentage / 100) + 270), clockwise: true)
             var colorForCircle = determineUIColor(percentage)
             colorForCircle.setStroke()
             outerSolidColor.stroke()
-        }
+        }*/
     }
     
     func degreesToRadians(angle: Double) -> CGFloat {

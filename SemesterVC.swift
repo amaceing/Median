@@ -1,4 +1,4 @@
-//
+ //
 //  SemesterVC.swift
 //  Median
 //
@@ -167,11 +167,16 @@ class SemesterVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         // Configure the cell...
         var classCircle: ClassCircle = makeCircleForClassCell()
-        self.tableView.addSubview(classCircle)
+        let con = UIGraphicsGetCurrentContext()
         cell.contentView.addSubview(classCircle)
+        classCircle.setNeedsDisplay()
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         
-        cell.intGrade.frame = determineGradeLabelFrameWithGrade(100)
+        if determineGradeLabelFrameWithGrade(100) {
+            cell.intGrade.frame.inset(dx: -10, dy: 0)
+        }
+        
+        //cell.intGrade.frame.inset(dx: <#CGFloat#>, dy: <#CGFloat#>) = determineGradeLabelFrameWithGrade(100)
         fillCellWithContentFromClass(cell, schoolClass: schoolClassForCell)
 
         return cell
@@ -184,7 +189,7 @@ class SemesterVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         var timeOfDay = schoolClass.valueForKey("timeOfDay") as! String
         cell.schoolClassName.text = schoolClass.name
         cell.schoolClassDetails.text = NSString(format: "%@  ∙  %@  ∙  %@", section, daysOfWeek, timeOfDay) as String
-        cell.intGrade.text = "95"
+        cell.intGrade.text = "100"
         if (schoolClass.testGrade >= 100) {
             cell.decGrade.text = "";
         } else {
@@ -200,16 +205,15 @@ class SemesterVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             self.navigationController?.pushViewController(classDetailsVC, animated: true)
         }
     }
-    
-    // MARK: - Class Circle
-    func determineGradeLabelFrameWithGrade(grade: Double) -> CGRect {
-        let gradeRect: CGRect;
-        if (grade >= 100) {
-            gradeRect = CGRectMake(20, 35, 41, 25);
+
+    func determineGradeLabelFrameWithGrade(grade: Double) -> Bool {
+        var over100: Bool;
+        if (grade >= 110) {
+            over100 = true
         } else {
-            gradeRect = CGRectMake(11, 35, 41, 25);
+            over100 = false
         }
-        return gradeRect;
+        return over100;
     }
     
     func makeCircleForClassCell() -> ClassCircle {
