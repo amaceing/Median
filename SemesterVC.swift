@@ -95,14 +95,12 @@ class SemesterVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     func setNavBarProperties() {
         self.navigationItem.title = "Classes"
-        //let navBarFont: UIFont = UIFont(name: "Lato-Regular", size: 24)!
         var navBarBlue = UIColor(red: 30/255.0, green: 178/255.0, blue: 192/255.0, alpha: 1)
         self.navigationController?.navigationBar.barTintColor = navBarBlue
         self.navigationController?.navigationBar.translucent = false
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         self.navigationController?.navigationBar.barStyle = UIBarStyle.BlackTranslucent
-        //let titleDict: NSDictionary = [NSFontAttributeName: navBarFont]
-        //self.navigationController?.navigationBar.titleTextAttributes = titleDict as [NSObject : AnyObject]
+        self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Lato-Regular", size: 24)!]
     }
     
     // MARK: - Logic
