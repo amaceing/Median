@@ -172,11 +172,7 @@ class SemesterVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         classCircle.setNeedsDisplay()
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         
-        if determineGradeLabelFrameWithGrade(100) {
-            cell.intGrade.frame.inset(dx: -10, dy: 0)
-        }
-        
-        //cell.intGrade.frame.inset(dx: <#CGFloat#>, dy: <#CGFloat#>) = determineGradeLabelFrameWithGrade(100)
+        cell.intGrade.frame = determineGradeLabelFrameWithGrade(90.6)
         fillCellWithContentFromClass(cell, schoolClass: schoolClassForCell)
 
         return cell
@@ -189,8 +185,8 @@ class SemesterVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         var timeOfDay = schoolClass.valueForKey("timeOfDay") as! String
         cell.schoolClassName.text = schoolClass.name
         cell.schoolClassDetails.text = NSString(format: "%@  ∙  %@  ∙  %@", section, daysOfWeek, timeOfDay) as String
-        cell.intGrade.text = "100"
-        if (schoolClass.testGrade >= 100) {
+        cell.intGrade.text = "90"
+        if (schoolClass.grade >= 100) {
             cell.decGrade.text = "";
         } else {
             cell.decGrade.text = ".6"
@@ -206,14 +202,14 @@ class SemesterVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         }
     }
 
-    func determineGradeLabelFrameWithGrade(grade: Double) -> Bool {
-        var over100: Bool;
-        if (grade >= 110) {
-            over100 = true
+    func determineGradeLabelFrameWithGrade(grade: Double) -> CGRect {
+        let gradeRect: CGRect;
+        if (grade >= 100) {
+            gradeRect = CGRectMake(20, 35, 41, 25);
         } else {
-            over100 = false
+            gradeRect = CGRectMake(11, 35, 41, 25);
         }
-        return over100;
+        return gradeRect;
     }
     
     func makeCircleForClassCell() -> ClassCircle {
