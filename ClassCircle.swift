@@ -15,7 +15,6 @@ class ClassCircle: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.opaque = false
-        drawRect(frame)
     }
         
     
@@ -44,7 +43,6 @@ class ClassCircle: UIView {
         outerSolidGray.lineWidth = 3.25
         
         //Creating gray circle
-        //CGContextAddArc(context, center.x, center.y, outerRadius, 270, 540, 1)
         outerSolidGray.addArcWithCenter(outerPoint, radius: outerRadius, startAngle: 270, endAngle: 540, clockwise: true)
         UIColor(red: 235/255.0, green: 235/255.0, blue: 235/255.0, alpha: 1).setStroke()
         outerSolidGray.stroke()
