@@ -13,15 +13,15 @@
             <string>Lato-Regular</string>
             <string>Lato-Regular</string>
             <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
         </mutableArray>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ClassDetailsVC" customModule="Median" customModuleProvider="target">
             <connections>
-                <outlet property="daysField" destination="eSN-cb-9Yw" id="cBa-rd-o3J"/>
                 <outlet property="nameField" destination="eVp-Dk-ebn" id="7pF-hh-KJi"/>
                 <outlet property="sectionField" destination="Eg2-bn-D3c" id="iET-yL-XJM"/>
-                <outlet property="timeField" destination="1JU-Vs-xyN" id="Woa-Fg-PMQ"/>
+                <outlet property="timeField" destination="CNM-mJ-rlB" id="xmU-Gx-Vyw"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -48,97 +48,162 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Days" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eSN-cb-9Yw">
-                    <rect key="frame" x="25" y="101" width="97" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="clR-Vz-jGd">
+                    <rect key="frame" x="58" y="130" width="25" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="MHi-AA-ORa"/>
-                        <constraint firstAttribute="width" constant="97" id="VuC-fM-vTn"/>
+                        <constraint firstAttribute="height" constant="30" id="M6e-Sb-bVq"/>
+                        <constraint firstAttribute="width" constant="25" id="bfD-nS-yAd"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Time" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1JU-Vs-xyN">
-                    <rect key="frame" x="25" y="139" width="97" height="30"/>
+                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
+                    <state key="normal" title="M">
+                        <color key="titleColor" red="0.43137254899999999" green="0.43137254899999999" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="addClassDay:" destination="-1" eventType="touchUpInside" id="bV4-Tu-ad5"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1tx-m5-af9">
+                    <rect key="frame" x="91" y="130" width="25" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="DaJ-7s-kK2"/>
-                        <constraint firstAttribute="width" constant="97" id="WUv-VQ-LU4"/>
+                        <constraint firstAttribute="width" constant="25" id="R4I-rK-eFH"/>
+                        <constraint firstAttribute="height" constant="30" id="h7V-2g-QbN"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                </textField>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="clR-Vz-jGd">
-                    <rect key="frame" x="79" y="206" width="46" height="30"/>
                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
-                    <state key="normal" title="Mon">
+                    <state key="normal" title="T">
                         <color key="titleColor" red="0.43137254899999999" green="0.43137254899999999" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="addClassDay:" destination="-1" eventType="touchUpInside" id="5RG-FT-f82"/>
+                    </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1tx-m5-af9">
-                    <rect key="frame" x="133" y="206" width="46" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mYc-4m-YNq">
+                    <rect key="frame" x="124" y="130" width="25" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="XON-oL-b3h"/>
+                        <constraint firstAttribute="width" constant="25" id="iw9-96-MZ7"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
-                    <state key="normal" title="Tues">
+                    <state key="normal" title="W">
                         <color key="titleColor" red="0.43137254899999999" green="0.43137254899999999" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="addClassDay:" destination="-1" eventType="touchUpInside" id="b3p-TM-1IV"/>
+                    </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mYc-4m-YNq">
-                    <rect key="frame" x="187" y="206" width="46" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i9a-Kp-hPG">
+                    <rect key="frame" x="157" y="130" width="25" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="P7S-V2-gao"/>
+                        <constraint firstAttribute="width" constant="25" id="WDc-ys-jWa"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
-                    <state key="normal" title="Wed">
+                    <state key="normal" title="R">
                         <color key="titleColor" red="0.43137254899999999" green="0.43137254899999999" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="addClassDay:" destination="-1" eventType="touchUpInside" id="Amh-IS-kfc"/>
+                    </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i9a-Kp-hPG">
-                    <rect key="frame" x="241" y="206" width="46" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nm9-Kh-BCq">
+                    <rect key="frame" x="190" y="130" width="25" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="25" id="8RU-OZ-Kl0"/>
+                        <constraint firstAttribute="height" constant="30" id="9Yw-bR-34O"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
-                    <state key="normal" title="Thurs">
+                    <state key="normal" title="F">
                         <color key="titleColor" red="0.43137254899999999" green="0.43137254899999999" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="addClassDay:" destination="-1" eventType="touchUpInside" id="uPh-Ow-OOt"/>
+                    </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nm9-Kh-BCq">
-                    <rect key="frame" x="295" y="206" width="46" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mYm-Zf-duV">
+                    <rect key="frame" x="223" y="130" width="25" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="K2N-Ao-hCW"/>
+                        <constraint firstAttribute="width" constant="25" id="qt7-yz-dbr"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
-                    <state key="normal" title="Fri">
+                    <state key="normal" title="S">
                         <color key="titleColor" red="0.43137254899999999" green="0.43137254899999999" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="addClassDay:" destination="-1" eventType="touchUpInside" id="et9-9H-7tu"/>
+                    </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mYm-Zf-duV">
-                    <rect key="frame" x="349" y="206" width="46" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4A-UZ-3CE">
+                    <rect key="frame" x="25" y="130" width="25" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="25" id="16W-X2-3sm"/>
+                        <constraint firstAttribute="height" constant="30" id="C4l-PL-99O"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
-                    <state key="normal" title="Sat">
+                    <state key="normal" title="S">
                         <color key="titleColor" red="0.43137254899999999" green="0.43137254899999999" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="addClassDay:" destination="-1" eventType="touchUpInside" id="lhM-Ka-3lb"/>
+                    </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4A-UZ-3CE">
-                    <rect key="frame" x="25" y="206" width="46" height="30"/>
-                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
-                    <state key="normal" title="Sun">
-                        <color key="titleColor" red="0.43137254899999999" green="0.43137254899999999" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select Days of Week" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ubn-Db-QLS">
-                    <rect key="frame" x="25" y="177" width="160" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Days of Week" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ubn-Db-QLS">
+                    <rect key="frame" x="25" y="101" width="160" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="IXB-7Y-bbb"/>
+                        <constraint firstAttribute="width" constant="160" id="LAD-C2-gZZ"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                     <color key="textColor" red="0.43137254899999999" green="0.43137254899999999" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Time" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CNM-mJ-rlB">
+                    <rect key="frame" x="25" y="168" width="97" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="Vuf-CE-Hpl"/>
+                        <constraint firstAttribute="width" constant="97" id="veM-w5-yHU"/>
+                    </constraints>
+                    <color key="textColor" red="0.43137254899999999" green="0.43137254899999999" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="CNM-mJ-rlB" firstAttribute="top" secondItem="1tx-m5-af9" secondAttribute="bottom" constant="8" id="0mY-x6-TPN"/>
                 <constraint firstItem="eVp-Dk-ebn" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="25" id="1ku-Bb-EUp"/>
+                <constraint firstItem="CNM-mJ-rlB" firstAttribute="top" secondItem="c4A-UZ-3CE" secondAttribute="bottom" constant="8" id="6O4-Ed-ORx"/>
+                <constraint firstItem="mYm-Zf-duV" firstAttribute="leading" secondItem="Nm9-Kh-BCq" secondAttribute="trailing" constant="8" id="9Qu-68-uqn"/>
+                <constraint firstItem="c4A-UZ-3CE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="25" id="9ZT-km-rMk"/>
                 <constraint firstItem="eVp-Dk-ebn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="25" id="BhM-5a-0xw"/>
-                <constraint firstItem="eSN-cb-9Yw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="25" id="JNA-LT-y3d"/>
-                <constraint firstItem="1JU-Vs-xyN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="25" id="kVi-8D-g0v"/>
+                <constraint firstItem="mYm-Zf-duV" firstAttribute="top" secondItem="eVp-Dk-ebn" secondAttribute="bottom" constant="75" id="FMR-jF-3jE"/>
+                <constraint firstItem="i9a-Kp-hPG" firstAttribute="leading" secondItem="mYc-4m-YNq" secondAttribute="trailing" constant="8" id="L9O-Ob-8kA"/>
+                <constraint firstItem="1tx-m5-af9" firstAttribute="leading" secondItem="clR-Vz-jGd" secondAttribute="trailing" constant="8" id="Mse-8M-B7L"/>
+                <constraint firstItem="CNM-mJ-rlB" firstAttribute="top" secondItem="c4A-UZ-3CE" secondAttribute="bottom" constant="8" id="SB1-2D-KyU"/>
+                <constraint firstItem="Nm9-Kh-BCq" firstAttribute="leading" secondItem="i9a-Kp-hPG" secondAttribute="trailing" constant="8" id="TkG-dk-pZd"/>
+                <constraint firstItem="clR-Vz-jGd" firstAttribute="leading" secondItem="c4A-UZ-3CE" secondAttribute="trailing" constant="8" id="TwK-lI-Ooz"/>
+                <constraint firstItem="CNM-mJ-rlB" firstAttribute="top" secondItem="clR-Vz-jGd" secondAttribute="bottom" constant="8" id="VxC-rQ-I6d"/>
+                <constraint firstItem="Ubn-Db-QLS" firstAttribute="top" secondItem="Eg2-bn-D3c" secondAttribute="bottom" constant="8" id="XHc-rk-FMk"/>
+                <constraint firstItem="Nm9-Kh-BCq" firstAttribute="top" secondItem="eVp-Dk-ebn" secondAttribute="bottom" constant="75" id="cWM-rC-72k"/>
+                <constraint firstItem="i9a-Kp-hPG" firstAttribute="top" secondItem="Ubn-Db-QLS" secondAttribute="bottom" constant="8" id="dBJ-gf-Ysw"/>
+                <constraint firstItem="CNM-mJ-rlB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="25" id="hDV-UN-ez3"/>
+                <constraint firstItem="c4A-UZ-3CE" firstAttribute="top" secondItem="Ubn-Db-QLS" secondAttribute="bottom" constant="8" id="kvJ-Iw-dNy"/>
+                <constraint firstItem="Ubn-Db-QLS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="25" id="lab-45-e3F"/>
+                <constraint firstItem="mYc-4m-YNq" firstAttribute="leading" secondItem="1tx-m5-af9" secondAttribute="trailing" constant="8" id="oLe-C4-WRj"/>
+                <constraint firstAttribute="bottom" secondItem="mYm-Zf-duV" secondAttribute="bottom" constant="440" id="p9k-gb-u6Y"/>
                 <constraint firstItem="Eg2-bn-D3c" firstAttribute="top" secondItem="eVp-Dk-ebn" secondAttribute="bottom" constant="8" id="ppa-2Z-hEi"/>
-                <constraint firstItem="eSN-cb-9Yw" firstAttribute="top" secondItem="Eg2-bn-D3c" secondAttribute="bottom" constant="8" id="uPI-zn-EDE"/>
+                <constraint firstItem="1tx-m5-af9" firstAttribute="top" secondItem="Ubn-Db-QLS" secondAttribute="bottom" constant="8" id="pun-46-GJa"/>
+                <constraint firstItem="clR-Vz-jGd" firstAttribute="top" secondItem="Ubn-Db-QLS" secondAttribute="bottom" constant="8" id="rKV-ES-O9w"/>
+                <constraint firstAttribute="bottom" secondItem="CNM-mJ-rlB" secondAttribute="bottom" constant="402" id="uV9-gk-fz6"/>
                 <constraint firstItem="Eg2-bn-D3c" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="25" id="vwP-LS-Khy"/>
-                <constraint firstItem="1JU-Vs-xyN" firstAttribute="top" secondItem="eSN-cb-9Yw" secondAttribute="bottom" constant="8" id="zJ3-0u-2vV"/>
+                <constraint firstAttribute="trailing" secondItem="CNM-mJ-rlB" secondAttribute="trailing" constant="478" id="vz8-Fr-w6Z"/>
+                <constraint firstItem="mYc-4m-YNq" firstAttribute="top" secondItem="Ubn-Db-QLS" secondAttribute="bottom" constant="8" id="zQX-q8-ZTo"/>
             </constraints>
             <point key="canvasLocation" x="528" y="335"/>
         </view>

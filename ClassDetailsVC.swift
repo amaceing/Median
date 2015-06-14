@@ -12,9 +12,9 @@ class ClassDetailsVC: UIViewController, UITextFieldDelegate {
     //MARK: - Properties
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var sectionField: UITextField!
-    @IBOutlet weak var daysField: UITextField!
     @IBOutlet weak var timeField: UITextField!
     var schoolClass: SchoolClass?
+    var strOfDays = ""
     
     //MARK: - View Loading Methods
     
@@ -41,7 +41,6 @@ class ClassDetailsVC: UIViewController, UITextFieldDelegate {
         //textField delegates
         self.nameField.delegate = self
         self.sectionField.delegate = self
-        self.daysField.delegate = self
         self.timeField.delegate = self
     }
     
@@ -51,7 +50,6 @@ class ClassDetailsVC: UIViewController, UITextFieldDelegate {
         if !(self.schoolClass?.name == "Click To Add") {
             self.nameField.text = self.schoolClass!.name;
             self.sectionField.text = self.schoolClass!.section;
-            self.daysField.text = self.schoolClass!.daysOfWeek;
             self.timeField.text = self.schoolClass!.timeOfDay;
         }
     }
@@ -63,7 +61,7 @@ class ClassDetailsVC: UIViewController, UITextFieldDelegate {
         
         newClass!.name = self.nameField.text
         newClass!.section = self.sectionField.text
-        newClass!.daysOfWeek = self.daysField.text
+        newClass!.daysOfWeek = self.strOfDays
         newClass!.timeOfDay = self.timeField.text
     }
 
@@ -80,13 +78,9 @@ class ClassDetailsVC: UIViewController, UITextFieldDelegate {
     
     //MARK: - Button Actions
     
-    @IBAction func selectDaysAction(sender: AnyObject) {
-        var daysVC = DayPickerVC(nibName: "DayPickerVC", bundle: nil)
-        self.navigationController?.pushViewController(daysVC, animated: true)
+    @IBAction func addClassDay(sender: AnyObject) {
+        self.strOfDays += sender.currentTitle!!
+        NSLog(self.strOfDays)
     }
-    
-    @IBAction func selectTimeAction(sender: AnyObject) {
-    }
-    
     
 }
