@@ -81,7 +81,8 @@ class ClassDetailsVC: UIViewController, UITextFieldDelegate {
     //MARK: - Button Actions
     
     @IBAction func selectDaysAction(sender: AnyObject) {
-        
+        var daysVC = DayPickerVC(nibName: "DayPickerVC", bundle: nil)
+        self.navigationController?.pushViewController(daysVC, animated: true)
     }
     
     @IBAction func selectTimeAction(sender: AnyObject) {
