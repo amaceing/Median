@@ -10,7 +10,6 @@ import UIKit
 
 class ClassDetailsVC: UIViewController, UITextFieldDelegate {
     //MARK: - Properties
-    
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var sectionField: UITextField!
     @IBOutlet weak var daysField: UITextField!
@@ -78,4 +77,15 @@ class ClassDetailsVC: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+    
+    //MARK: - Button Actions
+    
+    @IBAction func selectDaysAction(sender: AnyObject) {
+        
+    }
+    
+    @IBAction func selectTimeAction(sender: AnyObject) {
+    }
+    
+    
 }
