@@ -153,11 +153,6 @@ class SemesterVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         return 88
     }
     
-    func setUpCellFonts(cell: SchoolClassCell) {
-        cell.schoolClassName.font = UIFont(name: "Lato-Regular", size: 20)
-        
-    }
-    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell: SchoolClassCell = tableView.dequeueReusableCellWithIdentifier("SchoolClassCell", forIndexPath: indexPath) as! SchoolClassCell
         var index = indexPath.row
@@ -169,7 +164,6 @@ class SemesterVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         cell.contentView.addSubview(classCircle)
         classCircle.setNeedsDisplay()
         cell.selectionStyle = UITableViewCellSelectionStyle.None
-        
         cell.intGrade.frame = determineGradeLabelFrameWithGrade(90.6)
         fillCellWithContentFromClass(cell, schoolClass: schoolClassForCell)
 
