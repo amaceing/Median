@@ -2,10 +2,11 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Lato-Regular.ttf">
-            <string>Lato-Regular</string>
             <string>Lato-Regular</string>
             <string>Lato-Regular</string>
             <string>Lato-Regular</string>
@@ -19,10 +20,17 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ClassDetailsVC" customModule="Median" customModuleProvider="target">
             <connections>
+                <outlet property="friButton" destination="Nm9-Kh-BCq" id="PyT-No-g8C"/>
+                <outlet property="monButton" destination="clR-Vz-jGd" id="MeB-zR-brA"/>
                 <outlet property="nameField" destination="eVp-Dk-ebn" id="7pF-hh-KJi"/>
+                <outlet property="satButton" destination="mYm-Zf-duV" id="Cbm-gy-Tab"/>
                 <outlet property="sectionField" destination="Eg2-bn-D3c" id="iET-yL-XJM"/>
-                <outlet property="timeField" destination="CNM-mJ-rlB" id="xmU-Gx-Vyw"/>
+                <outlet property="sunButton" destination="c4A-UZ-3CE" id="8Lv-FI-gi1"/>
+                <outlet property="thuButton" destination="i9a-Kp-hPG" id="cXb-mI-qX2"/>
+                <outlet property="timeField" destination="AZC-c9-Oba" id="Kcc-zq-Z3X"/>
+                <outlet property="tuesButton" destination="1tx-m5-af9" id="BxG-jW-oI7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="wedButton" destination="mYc-4m-YNq" id="Tg9-tv-5bd"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -33,41 +41,26 @@
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Class Name" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eVp-Dk-ebn">
                     <rect key="frame" x="25" y="25" width="295" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="NRZ-rd-rHi"/>
-                        <constraint firstAttribute="width" constant="295" id="Qi9-Gt-DRa"/>
+                        <constraint firstAttribute="width" constant="295" id="4SX-Hg-WhA"/>
+                        <constraint firstAttribute="height" constant="30" id="5Lv-JZ-Sfx"/>
                     </constraints>
+                    <color key="textColor" red="0.43137254899999999" green="0.43137254899999999" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Section" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Eg2-bn-D3c">
                     <rect key="frame" x="25" y="63" width="160" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="160" id="fXQ-Kn-oYp"/>
-                        <constraint firstAttribute="height" constant="30" id="s3N-fc-j1i"/>
+                        <constraint firstAttribute="width" constant="160" id="69O-3O-Nyw"/>
                     </constraints>
+                    <color key="textColor" red="0.43137254899999999" green="0.43137254899999999" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="clR-Vz-jGd">
-                    <rect key="frame" x="58" y="130" width="25" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="M6e-Sb-bVq"/>
-                        <constraint firstAttribute="width" constant="25" id="bfD-nS-yAd"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
-                    <state key="normal" title="M">
-                        <color key="titleColor" red="0.43137254899999999" green="0.43137254899999999" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="addClassDay:" destination="-1" eventType="touchUpInside" id="bV4-Tu-ad5"/>
-                    </connections>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1tx-m5-af9">
                     <rect key="frame" x="91" y="130" width="25" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="25" id="R4I-rK-eFH"/>
-                        <constraint firstAttribute="height" constant="30" id="h7V-2g-QbN"/>
+                        <constraint firstAttribute="width" constant="25" id="HuZ-aO-PqG"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
                     <state key="normal" title="T">
@@ -81,8 +74,7 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mYc-4m-YNq">
                     <rect key="frame" x="124" y="130" width="25" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="XON-oL-b3h"/>
-                        <constraint firstAttribute="width" constant="25" id="iw9-96-MZ7"/>
+                        <constraint firstAttribute="width" constant="25" id="GCM-eS-PwK"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
                     <state key="normal" title="W">
@@ -96,8 +88,7 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i9a-Kp-hPG">
                     <rect key="frame" x="157" y="130" width="25" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="P7S-V2-gao"/>
-                        <constraint firstAttribute="width" constant="25" id="WDc-ys-jWa"/>
+                        <constraint firstAttribute="width" constant="25" id="8LA-Q1-yVO"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
                     <state key="normal" title="R">
@@ -111,8 +102,7 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nm9-Kh-BCq">
                     <rect key="frame" x="190" y="130" width="25" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="25" id="8RU-OZ-Kl0"/>
-                        <constraint firstAttribute="height" constant="30" id="9Yw-bR-34O"/>
+                        <constraint firstAttribute="width" constant="25" id="i0q-JB-n88"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
                     <state key="normal" title="F">
@@ -126,8 +116,7 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mYm-Zf-duV">
                     <rect key="frame" x="223" y="130" width="25" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="K2N-Ao-hCW"/>
-                        <constraint firstAttribute="width" constant="25" id="qt7-yz-dbr"/>
+                        <constraint firstAttribute="width" constant="25" id="ja8-f6-St9"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
                     <state key="normal" title="S">
@@ -141,8 +130,7 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4A-UZ-3CE">
                     <rect key="frame" x="25" y="130" width="25" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="25" id="16W-X2-3sm"/>
-                        <constraint firstAttribute="height" constant="30" id="C4l-PL-99O"/>
+                        <constraint firstAttribute="width" constant="25" id="UPp-O1-AxK"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
                     <state key="normal" title="S">
@@ -156,54 +144,63 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Days of Week" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ubn-Db-QLS">
                     <rect key="frame" x="25" y="101" width="160" height="21"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="21" id="IXB-7Y-bbb"/>
-                        <constraint firstAttribute="width" constant="160" id="LAD-C2-gZZ"/>
+                        <constraint firstAttribute="height" constant="21" id="NST-uY-1Mt"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                     <color key="textColor" red="0.43137254899999999" green="0.43137254899999999" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Time" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CNM-mJ-rlB">
-                    <rect key="frame" x="25" y="168" width="97" height="30"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Time" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AZC-c9-Oba">
+                    <rect key="frame" x="25" y="168" width="124" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="Vuf-CE-Hpl"/>
-                        <constraint firstAttribute="width" constant="97" id="veM-w5-yHU"/>
+                        <constraint firstAttribute="height" constant="30" id="saN-8z-ir2"/>
                     </constraints>
                     <color key="textColor" red="0.43137254899999999" green="0.43137254899999999" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="clR-Vz-jGd">
+                    <rect key="frame" x="58" y="130" width="25" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="25" id="INc-cE-ekn"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
+                    <state key="normal" title="M">
+                        <color key="titleColor" red="0.43137254899999999" green="0.43137254899999999" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="addClassDay:" destination="-1" eventType="touchUpInside" id="bV4-Tu-ad5"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="CNM-mJ-rlB" firstAttribute="top" secondItem="1tx-m5-af9" secondAttribute="bottom" constant="8" id="0mY-x6-TPN"/>
-                <constraint firstItem="eVp-Dk-ebn" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="25" id="1ku-Bb-EUp"/>
-                <constraint firstItem="CNM-mJ-rlB" firstAttribute="top" secondItem="c4A-UZ-3CE" secondAttribute="bottom" constant="8" id="6O4-Ed-ORx"/>
-                <constraint firstItem="mYm-Zf-duV" firstAttribute="leading" secondItem="Nm9-Kh-BCq" secondAttribute="trailing" constant="8" id="9Qu-68-uqn"/>
-                <constraint firstItem="c4A-UZ-3CE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="25" id="9ZT-km-rMk"/>
-                <constraint firstItem="eVp-Dk-ebn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="25" id="BhM-5a-0xw"/>
-                <constraint firstItem="mYm-Zf-duV" firstAttribute="top" secondItem="eVp-Dk-ebn" secondAttribute="bottom" constant="75" id="FMR-jF-3jE"/>
-                <constraint firstItem="i9a-Kp-hPG" firstAttribute="leading" secondItem="mYc-4m-YNq" secondAttribute="trailing" constant="8" id="L9O-Ob-8kA"/>
-                <constraint firstItem="1tx-m5-af9" firstAttribute="leading" secondItem="clR-Vz-jGd" secondAttribute="trailing" constant="8" id="Mse-8M-B7L"/>
-                <constraint firstItem="CNM-mJ-rlB" firstAttribute="top" secondItem="c4A-UZ-3CE" secondAttribute="bottom" constant="8" id="SB1-2D-KyU"/>
-                <constraint firstItem="Nm9-Kh-BCq" firstAttribute="leading" secondItem="i9a-Kp-hPG" secondAttribute="trailing" constant="8" id="TkG-dk-pZd"/>
-                <constraint firstItem="clR-Vz-jGd" firstAttribute="leading" secondItem="c4A-UZ-3CE" secondAttribute="trailing" constant="8" id="TwK-lI-Ooz"/>
-                <constraint firstItem="CNM-mJ-rlB" firstAttribute="top" secondItem="clR-Vz-jGd" secondAttribute="bottom" constant="8" id="VxC-rQ-I6d"/>
-                <constraint firstItem="Ubn-Db-QLS" firstAttribute="top" secondItem="Eg2-bn-D3c" secondAttribute="bottom" constant="8" id="XHc-rk-FMk"/>
-                <constraint firstItem="Nm9-Kh-BCq" firstAttribute="top" secondItem="eVp-Dk-ebn" secondAttribute="bottom" constant="75" id="cWM-rC-72k"/>
-                <constraint firstItem="i9a-Kp-hPG" firstAttribute="top" secondItem="Ubn-Db-QLS" secondAttribute="bottom" constant="8" id="dBJ-gf-Ysw"/>
-                <constraint firstItem="CNM-mJ-rlB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="25" id="hDV-UN-ez3"/>
-                <constraint firstItem="c4A-UZ-3CE" firstAttribute="top" secondItem="Ubn-Db-QLS" secondAttribute="bottom" constant="8" id="kvJ-Iw-dNy"/>
-                <constraint firstItem="Ubn-Db-QLS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="25" id="lab-45-e3F"/>
-                <constraint firstItem="mYc-4m-YNq" firstAttribute="leading" secondItem="1tx-m5-af9" secondAttribute="trailing" constant="8" id="oLe-C4-WRj"/>
-                <constraint firstAttribute="bottom" secondItem="mYm-Zf-duV" secondAttribute="bottom" constant="440" id="p9k-gb-u6Y"/>
-                <constraint firstItem="Eg2-bn-D3c" firstAttribute="top" secondItem="eVp-Dk-ebn" secondAttribute="bottom" constant="8" id="ppa-2Z-hEi"/>
-                <constraint firstItem="1tx-m5-af9" firstAttribute="top" secondItem="Ubn-Db-QLS" secondAttribute="bottom" constant="8" id="pun-46-GJa"/>
-                <constraint firstItem="clR-Vz-jGd" firstAttribute="top" secondItem="Ubn-Db-QLS" secondAttribute="bottom" constant="8" id="rKV-ES-O9w"/>
-                <constraint firstAttribute="bottom" secondItem="CNM-mJ-rlB" secondAttribute="bottom" constant="402" id="uV9-gk-fz6"/>
-                <constraint firstItem="Eg2-bn-D3c" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="25" id="vwP-LS-Khy"/>
-                <constraint firstAttribute="trailing" secondItem="CNM-mJ-rlB" secondAttribute="trailing" constant="478" id="vz8-Fr-w6Z"/>
-                <constraint firstItem="mYc-4m-YNq" firstAttribute="top" secondItem="Ubn-Db-QLS" secondAttribute="bottom" constant="8" id="zQX-q8-ZTo"/>
+                <constraint firstItem="i9a-Kp-hPG" firstAttribute="baseline" secondItem="Nm9-Kh-BCq" secondAttribute="firstBaseline" id="4SY-k3-NOb"/>
+                <constraint firstItem="Ubn-Db-QLS" firstAttribute="leading" secondItem="c4A-UZ-3CE" secondAttribute="leading" id="7Xj-H5-OB0"/>
+                <constraint firstItem="Nm9-Kh-BCq" firstAttribute="top" secondItem="eVp-Dk-ebn" secondAttribute="bottom" constant="75" id="9wI-qS-zfp"/>
+                <constraint firstItem="eVp-Dk-ebn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="25" id="Ec7-Fh-Uec"/>
+                <constraint firstItem="mYc-4m-YNq" firstAttribute="trailing" secondItem="AZC-c9-Oba" secondAttribute="trailing" id="IvA-se-rTZ"/>
+                <constraint firstItem="clR-Vz-jGd" firstAttribute="leading" secondItem="c4A-UZ-3CE" secondAttribute="trailing" constant="8" symbolic="YES" id="JW5-4Y-NKB"/>
+                <constraint firstItem="Eg2-bn-D3c" firstAttribute="trailing" secondItem="Ubn-Db-QLS" secondAttribute="trailing" id="Kdd-QS-z2y"/>
+                <constraint firstItem="eVp-Dk-ebn" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="25" id="LKv-lM-ogE"/>
+                <constraint firstItem="mYc-4m-YNq" firstAttribute="leading" secondItem="1tx-m5-af9" secondAttribute="trailing" constant="8" symbolic="YES" id="NBD-mq-3NN"/>
+                <constraint firstItem="1tx-m5-af9" firstAttribute="leading" secondItem="clR-Vz-jGd" secondAttribute="trailing" constant="8" symbolic="YES" id="NnE-xW-qIP"/>
+                <constraint firstItem="1tx-m5-af9" firstAttribute="baseline" secondItem="mYc-4m-YNq" secondAttribute="baseline" id="Ohx-Y3-dDH"/>
+                <constraint firstItem="Eg2-bn-D3c" firstAttribute="leading" secondItem="eVp-Dk-ebn" secondAttribute="leading" id="SNr-dr-rKQ"/>
+                <constraint firstItem="i9a-Kp-hPG" firstAttribute="baseline" secondItem="mYc-4m-YNq" secondAttribute="baseline" id="T6o-6t-0nk"/>
+                <constraint firstItem="Nm9-Kh-BCq" firstAttribute="leading" secondItem="i9a-Kp-hPG" secondAttribute="trailing" constant="8" symbolic="YES" id="VCY-OB-v8B"/>
+                <constraint firstItem="Eg2-bn-D3c" firstAttribute="leading" secondItem="Ubn-Db-QLS" secondAttribute="leading" id="Vm5-aB-Daw"/>
+                <constraint firstItem="Ubn-Db-QLS" firstAttribute="top" secondItem="Eg2-bn-D3c" secondAttribute="bottom" constant="8" symbolic="YES" id="Yc8-da-3vT"/>
+                <constraint firstItem="c4A-UZ-3CE" firstAttribute="top" secondItem="Ubn-Db-QLS" secondAttribute="bottom" constant="8" symbolic="YES" id="akW-2u-3Nb"/>
+                <constraint firstItem="mYm-Zf-duV" firstAttribute="leading" secondItem="Nm9-Kh-BCq" secondAttribute="trailing" constant="8" symbolic="YES" id="cFa-r6-uuP"/>
+                <constraint firstItem="AZC-c9-Oba" firstAttribute="top" secondItem="c4A-UZ-3CE" secondAttribute="bottom" constant="8" symbolic="YES" id="ckk-Zy-OQm"/>
+                <constraint firstItem="mYm-Zf-duV" firstAttribute="baseline" secondItem="Nm9-Kh-BCq" secondAttribute="baseline" id="hsR-bN-tKI"/>
+                <constraint firstItem="i9a-Kp-hPG" firstAttribute="leading" secondItem="mYc-4m-YNq" secondAttribute="trailing" constant="8" symbolic="YES" id="jOZ-M0-ioX"/>
+                <constraint firstItem="clR-Vz-jGd" firstAttribute="baseline" secondItem="1tx-m5-af9" secondAttribute="baseline" id="oGk-GU-qVs"/>
+                <constraint firstItem="c4A-UZ-3CE" firstAttribute="baseline" secondItem="clR-Vz-jGd" secondAttribute="baseline" id="yN4-Gk-xS9"/>
+                <constraint firstItem="Eg2-bn-D3c" firstAttribute="top" secondItem="eVp-Dk-ebn" secondAttribute="bottom" constant="8" symbolic="YES" id="zaz-AI-9Cd"/>
+                <constraint firstItem="AZC-c9-Oba" firstAttribute="leading" secondItem="c4A-UZ-3CE" secondAttribute="leading" id="zjK-sF-wVO"/>
             </constraints>
             <point key="canvasLocation" x="528" y="335"/>
         </view>

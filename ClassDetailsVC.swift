@@ -16,6 +16,13 @@ class ClassDetailsVC: UIViewController, UITextFieldDelegate {
     var schoolClass: SchoolClass?
     var strOfDays = ""
     
+    @IBOutlet weak var satButton: UIButton!
+    @IBOutlet weak var friButton: UIButton!
+    @IBOutlet weak var thuButton: UIButton!
+    @IBOutlet weak var wedButton: UIButton!
+    @IBOutlet weak var tuesButton: UIButton!
+    @IBOutlet weak var monButton: UIButton!
+    @IBOutlet weak var sunButton: UIButton!
     //MARK: - View Loading Methods
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
@@ -30,6 +37,8 @@ class ClassDetailsVC: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.strOfDays = self.schoolClass!.daysOfWeek
+        determineButtonsState()
         
         //Title
         if (self.schoolClass?.name == "Click To Add") {
@@ -81,6 +90,34 @@ class ClassDetailsVC: UIViewController, UITextFieldDelegate {
     @IBAction func addClassDay(sender: AnyObject) {
         self.strOfDays += sender.currentTitle!!
         NSLog(self.strOfDays)
+    }
+    
+    func determineButtonsState() {
+        if contains(self.strOfDays, containee: self.sunButton.titleLabel?.text) {
+            sunButton.highlighted = true
+        }
+        if contains(self.strOfDays, containee: self.monButton.titleLabel?.text) {
+            monButton.highlighted = true
+        }
+        if contains(self.strOfDays, containee: self.tuesButton.titleLabel?.text) {
+            tuesButton.highlighted = true
+        }
+        if contains(self.strOfDays, containee: self.wedButton.titleLabel?.text) {
+            wedButton.highlighted = true
+        }
+        if contains(self.strOfDays, containee: self.thuButton.titleLabel?.text) {
+            thuButton.highlighted = true
+        }
+        if contains(self.strOfDays, containee: self.friButton.titleLabel?.text) {
+            friButton.highlighted = true
+        }
+        if contains(self.strOfDays, containee: self.satButton.titleLabel?.text) {
+            satButton.highlighted = true
+        }
+    }
+    
+    func contains(container: String, containee: String?) -> Bool {
+        return container.rangeOfString(containee!, options: nil, range: nil, locale: nil) != nil
     }
     
 }
