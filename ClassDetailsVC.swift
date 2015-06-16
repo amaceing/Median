@@ -87,9 +87,17 @@ class ClassDetailsVC: UIViewController, UITextFieldDelegate {
     
     //MARK: - Button Actions
     
-    @IBAction func addClassDay(sender: AnyObject) {
-        self.strOfDays += sender.currentTitle!!
-        NSLog(self.strOfDays)
+    @IBAction func addClassDay(sender: UIButton) {
+        if (sender.highlighted) {
+            self.strOfDays = removeDayFromString(sender.titleLabel!.text!, from: self.strOfDays)
+        } else {
+            self.strOfDays += sender.currentTitle!
+            NSLog(self.strOfDays)
+        }
+    }
+    
+    func removeDayFromString(remove: String, from: String) -> String {
+        return from.stringByReplacingOccurrencesOfString(remove, withString: "", options: nil, range: nil)
     }
     
     func determineButtonsState() {
