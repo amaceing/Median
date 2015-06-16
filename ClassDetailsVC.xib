@@ -119,7 +119,7 @@
                         <constraint firstAttribute="width" constant="25" id="ja8-f6-St9"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
-                    <state key="normal" title="S">
+                    <state key="normal" title="Sa">
                         <color key="titleColor" red="0.43137254899999999" green="0.43137254899999999" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -133,7 +133,7 @@
                         <constraint firstAttribute="width" constant="25" id="UPp-O1-AxK"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
-                    <state key="normal" title="S">
+                    <state key="normal" title="Su">
                         <color key="titleColor" red="0.43137254899999999" green="0.43137254899999999" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>

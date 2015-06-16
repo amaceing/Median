@@ -88,10 +88,12 @@ class ClassDetailsVC: UIViewController, UITextFieldDelegate {
     //MARK: - Button Actions
     
     @IBAction func addClassDay(sender: UIButton) {
-        if (sender.highlighted) {
+        if (contains(self.strOfDays, containee: sender.titleLabel?.text)) {
             self.strOfDays = removeDayFromString(sender.titleLabel!.text!, from: self.strOfDays)
         } else {
             self.strOfDays += sender.currentTitle!
+            sender.setTitleColor(UIColor(red: 30/255.0, green: 178/255.0, blue: 192/255.0, alpha: 1), forState: UIControlState.Normal)
+            sender.userInteractionEnabled = false
             NSLog(self.strOfDays)
         }
     }
@@ -102,25 +104,25 @@ class ClassDetailsVC: UIViewController, UITextFieldDelegate {
     
     func determineButtonsState() {
         if contains(self.strOfDays, containee: self.sunButton.titleLabel?.text) {
-            sunButton.highlighted = true
+            sunButton.setTitleColor(UIColor(red: 30/255.0, green: 178/255.0, blue: 192/255.0, alpha: 1), forState: UIControlState.Normal)
         }
         if contains(self.strOfDays, containee: self.monButton.titleLabel?.text) {
-            monButton.highlighted = true
+            monButton.setTitleColor(UIColor(red: 30/255.0, green: 178/255.0, blue: 192/255.0, alpha: 1), forState: UIControlState.Normal)
         }
         if contains(self.strOfDays, containee: self.tuesButton.titleLabel?.text) {
-            tuesButton.highlighted = true
+            tuesButton.setTitleColor(UIColor(red: 30/255.0, green: 178/255.0, blue: 192/255.0, alpha: 1), forState: UIControlState.Normal)
         }
         if contains(self.strOfDays, containee: self.wedButton.titleLabel?.text) {
-            wedButton.highlighted = true
+            wedButton.setTitleColor(UIColor(red: 30/255.0, green: 178/255.0, blue: 192/255.0, alpha: 1), forState: UIControlState.Normal)
         }
         if contains(self.strOfDays, containee: self.thuButton.titleLabel?.text) {
-            thuButton.highlighted = true
+            thuButton.setTitleColor(UIColor(red: 30/255.0, green: 178/255.0, blue: 192/255.0, alpha: 1), forState: UIControlState.Normal)
         }
         if contains(self.strOfDays, containee: self.friButton.titleLabel?.text) {
-            friButton.highlighted = true
+            friButton.setTitleColor(UIColor(red: 30/255.0, green: 178/255.0, blue: 192/255.0, alpha: 1), forState: UIControlState.Normal)
         }
         if contains(self.strOfDays, containee: self.satButton.titleLabel?.text) {
-            satButton.highlighted = true
+            satButton.setTitleColor(UIColor(red: 30/255.0, green: 178/255.0, blue: 192/255.0, alpha: 1), forState: UIControlState.Normal)
         }
     }
     
