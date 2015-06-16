@@ -90,10 +90,10 @@ class ClassDetailsVC: UIViewController, UITextFieldDelegate {
     @IBAction func addClassDay(sender: UIButton) {
         if (contains(self.strOfDays, containee: sender.titleLabel?.text)) {
             self.strOfDays = removeDayFromString(sender.titleLabel!.text!, from: self.strOfDays)
+            sender.setTitleColor(UIColor(red: 110/255.0, green: 110/255.0, blue: 110/255.0, alpha: 1), forState: UIControlState.Normal)
         } else {
             self.strOfDays += sender.currentTitle!
-            sender.setTitleColor(UIColor(red: 30/255.0, green: 178/255.0, blue: 192/255.0, alpha: 1), forState: UIControlState.Normal)
-            sender.userInteractionEnabled = false
+            sender.setTitleColor(UIColor(red: 30/255.0, green: 178/255.0, blue: 195/255.0, alpha: 1), forState: UIControlState.Normal)
             NSLog(self.strOfDays)
         }
     }
