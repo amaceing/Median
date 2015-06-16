@@ -106,7 +106,7 @@ class SemesterVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     // MARK: - Logic
     
     func addSchoolClass(sender: UIBarButtonItem) {
-        var clickToAdd: SchoolClass = SchoolClass(name: "Click to Add", section: "101", daysOfWeek: "MWF", timeOfDay: "12:00pm")
+        var clickToAdd: SchoolClass = SchoolClass(name: "Click to Add", section: "101", daysOfWeek: "MWF", timeOfDay: "12:00 PM")
         var store = ClassStore.instance
         store.addClass(clickToAdd, atIndex: 0)
         

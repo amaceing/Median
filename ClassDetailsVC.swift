@@ -12,10 +12,10 @@ class ClassDetailsVC: UIViewController, UITextFieldDelegate {
     //MARK: - Properties
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var sectionField: UITextField!
-    @IBOutlet weak var timeField: UITextField!
     var schoolClass: SchoolClass?
     var strOfDays = ""
     
+    @IBOutlet weak var startTime: UIDatePicker!
     @IBOutlet weak var satButton: UIButton!
     @IBOutlet weak var friButton: UIButton!
     @IBOutlet weak var thuButton: UIButton!
@@ -50,7 +50,6 @@ class ClassDetailsVC: UIViewController, UITextFieldDelegate {
         //textField delegates
         self.nameField.delegate = self
         self.sectionField.delegate = self
-        self.timeField.delegate = self
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -59,7 +58,9 @@ class ClassDetailsVC: UIViewController, UITextFieldDelegate {
         if !(self.schoolClass?.name == "Click To Add") {
             self.nameField.text = self.schoolClass!.name;
             self.sectionField.text = self.schoolClass!.section;
-            self.timeField.text = self.schoolClass!.timeOfDay;
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "hh:mm a"
+            self.startTime.date = dateFormatter.dateFromString(self.schoolClass!.timeOfDay)!
         }
     }
     
@@ -71,7 +72,10 @@ class ClassDetailsVC: UIViewController, UITextFieldDelegate {
         newClass!.name = self.nameField.text
         newClass!.section = self.sectionField.text
         newClass!.daysOfWeek = self.strOfDays
-        newClass!.timeOfDay = self.timeField.text
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "hh:mm a"
+        var time = dateFormatter.stringFromDate(self.startTime.date)
+        newClass!.timeOfDay = time
     }
 
     override func didReceiveMemoryWarning() {
