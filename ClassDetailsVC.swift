@@ -59,7 +59,7 @@ class ClassDetailsVC: UIViewController, UITextFieldDelegate {
             self.nameField.text = self.schoolClass!.name;
             self.sectionField.text = self.schoolClass!.section;
             let dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "hh:mm a"
+            dateFormatter.dateFormat = "h:mm a"
             self.startTime.date = dateFormatter.dateFromString(self.schoolClass!.timeOfDay)!
         }
     }
@@ -73,7 +73,7 @@ class ClassDetailsVC: UIViewController, UITextFieldDelegate {
         newClass!.section = self.sectionField.text
         newClass!.daysOfWeek = self.strOfDays
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "hh:mm a"
+        dateFormatter.dateFormat = "h:mm a"
         var time = dateFormatter.stringFromDate(self.startTime.date)
         newClass!.timeOfDay = time
     }
