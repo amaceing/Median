@@ -168,7 +168,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="JHM-jS-STg">
-                    <rect key="frame" x="25" y="204" width="554" height="162"/>
+                    <rect key="frame" x="25" y="204" width="550" height="162"/>
                     <date key="date" timeIntervalSinceReferenceDate="456176430.838162">
                         <!--2015-06-16 19:40:30 +0000-->
                     </date>
@@ -180,6 +180,7 @@
                 <constraint firstItem="Nm9-Kh-BCq" firstAttribute="leading" secondItem="i9a-Kp-hPG" secondAttribute="trailing" constant="8" symbolic="YES" id="7lE-Uq-ckb"/>
                 <constraint firstItem="mYc-4m-YNq" firstAttribute="leading" secondItem="1tx-m5-af9" secondAttribute="trailing" constant="8" symbolic="YES" id="9rc-hf-ybb"/>
                 <constraint firstItem="Ubn-Db-QLS" firstAttribute="top" secondItem="Eg2-bn-D3c" secondAttribute="bottom" constant="8" symbolic="YES" id="AW9-lA-ogs"/>
+                <constraint firstItem="JHM-jS-STg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="25" id="BZD-n0-lsu"/>
                 <constraint firstItem="1tx-m5-af9" firstAttribute="top" secondItem="clR-Vz-jGd" secondAttribute="top" id="C1N-E0-2az"/>
                 <constraint firstItem="eVp-Dk-ebn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="25" id="ENh-d8-KUJ"/>
                 <constraint firstItem="clR-Vz-jGd" firstAttribute="baseline" secondItem="c4A-UZ-3CE" secondAttribute="firstBaseline" id="FE5-M8-4d6"/>
@@ -203,7 +204,7 @@
                 <constraint firstItem="JHM-jS-STg" firstAttribute="top" secondItem="j0T-jw-rD5" secondAttribute="bottom" constant="6" id="lof-8e-U3e"/>
                 <constraint firstItem="clR-Vz-jGd" firstAttribute="baseline" secondItem="1tx-m5-af9" secondAttribute="baseline" id="nfK-71-pdN"/>
                 <constraint firstItem="Ubn-Db-QLS" firstAttribute="trailing" secondItem="Eg2-bn-D3c" secondAttribute="trailing" id="oe5-yY-tqx"/>
-                <constraint firstAttribute="trailing" secondItem="JHM-jS-STg" secondAttribute="trailing" constant="21" id="olq-HY-B2A"/>
+                <constraint firstAttribute="trailing" secondItem="JHM-jS-STg" secondAttribute="trailing" constant="25" id="olq-HY-B2A"/>
                 <constraint firstItem="mYm-Zf-duV" firstAttribute="leading" secondItem="Nm9-Kh-BCq" secondAttribute="trailing" constant="8" symbolic="YES" id="owx-Jv-QHl"/>
                 <constraint firstItem="j0T-jw-rD5" firstAttribute="leading" secondItem="c4A-UZ-3CE" secondAttribute="leading" id="r2o-Qa-lQe"/>
                 <constraint firstItem="Eg2-bn-D3c" firstAttribute="top" secondItem="eVp-Dk-ebn" secondAttribute="bottom" constant="8" symbolic="YES" id="uVQ-8q-Vwh"/>
