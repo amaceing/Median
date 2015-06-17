@@ -14,6 +14,7 @@ class ClassDetailsVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var sectionField: UITextField!
     var schoolClass: SchoolClass?
     var strOfDays = ""
+    let startTimeFormatter = NSDateFormatter()
     
     @IBOutlet weak var startTime: UIDatePicker!
     @IBOutlet weak var satButton: UIButton!
@@ -27,6 +28,7 @@ class ClassDetailsVC: UIViewController, UITextFieldDelegate {
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        self.startTimeFormatter.dateFormat = "h:mm a"
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -58,9 +60,7 @@ class ClassDetailsVC: UIViewController, UITextFieldDelegate {
         if !(self.schoolClass?.name == "Click To Add") {
             self.nameField.text = self.schoolClass!.name;
             self.sectionField.text = self.schoolClass!.section;
-            let dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "h:mm a"
-            self.startTime.date = dateFormatter.dateFromString(self.schoolClass!.timeOfDay)!
+            self.startTime.date = self.startTimeFormatter.dateFromString(self.schoolClass!.timeOfDay)!
         }
     }
     
@@ -72,9 +72,7 @@ class ClassDetailsVC: UIViewController, UITextFieldDelegate {
         newClass!.name = self.nameField.text
         newClass!.section = self.sectionField.text
         newClass!.daysOfWeek = self.strOfDays
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "h:mm a"
-        var time = dateFormatter.stringFromDate(self.startTime.date)
+        var time = self.startTimeFormatter.stringFromDate(self.startTime.date)
         newClass!.timeOfDay = time
     }
 
