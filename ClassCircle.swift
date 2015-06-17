@@ -26,7 +26,6 @@ class ClassCircle: UIView {
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
     override func drawRect(rect: CGRect) {
-        NSLog("drawRect")
         //Paths
         var outerSolidGray = UIBezierPath()
         var outerSolidColor = UIBezierPath()
