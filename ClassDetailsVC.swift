@@ -67,13 +67,9 @@ class ClassDetailsVC: UIViewController, UITextFieldDelegate {
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         
-        var newClass = self.schoolClass
-        
-        newClass!.name = self.nameField.text
-        newClass!.section = self.sectionField.text
-        newClass!.daysOfWeek = self.strOfDays
-        var time = self.startTimeFormatter.stringFromDate(self.startTime.date)
-        newClass!.timeOfDay = time
+        self.schoolClass!.name = self.nameField.text
+        self.schoolClass!.section = self.sectionField.text
+        self.schoolClass!.daysOfWeek = self.strOfDays
     }
 
     override func didReceiveMemoryWarning() {
@@ -88,6 +84,11 @@ class ClassDetailsVC: UIViewController, UITextFieldDelegate {
     }
     
     //MARK: - Button Actions
+    
+    @IBAction func saveStartingTime(sender: UIButton) {
+        var time = self.startTimeFormatter.stringFromDate(self.startTime.date)
+        self.schoolClass!.timeOfDay = time
+    }
     
     @IBAction func addClassDay(sender: UIButton) {
         if (contains(self.strOfDays, containee: sender.titleLabel?.text)) {
