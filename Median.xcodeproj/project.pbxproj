@@ -19,6 +19,7 @@
 		A269BF361B2CEB8D009D2D5B /* Lato-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A269BF2F1B2CEB8D009D2D5B /* Lato-Medium.ttf */; };
 		A269BF371B2CEB8D009D2D5B /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A269BF301B2CEB8D009D2D5B /* Lato-Regular.ttf */; };
 		A269BF381B2CEB8D009D2D5B /* Lato-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A269BF311B2CEB8D009D2D5B /* Lato-Thin.ttf */; };
+		A26E569D1B332ACC0030BCAB /* SchoolClassPaginationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26E569C1B332ACC0030BCAB /* SchoolClassPaginationVC.swift */; };
 		A29951661B0175C200CF6D84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29951651B0175C200CF6D84 /* AppDelegate.swift */; };
 		A299516D1B0175C200CF6D84 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A299516C1B0175C200CF6D84 /* Images.xcassets */; };
 		A29951701B0175C200CF6D84 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A299516E1B0175C200CF6D84 /* LaunchScreen.xib */; };
@@ -54,6 +55,7 @@
 		A269BF2F1B2CEB8D009D2D5B /* Lato-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Medium.ttf"; path = "../../../Downloads/lato/Lato-Medium.ttf"; sourceTree = "<group>"; };
 		A269BF301B2CEB8D009D2D5B /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Regular.ttf"; path = "../../../Downloads/lato/Lato-Regular.ttf"; sourceTree = "<group>"; };
 		A269BF311B2CEB8D009D2D5B /* Lato-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Thin.ttf"; path = "../../../Downloads/lato/Lato-Thin.ttf"; sourceTree = "<group>"; };
+		A26E569C1B332ACC0030BCAB /* SchoolClassPaginationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoolClassPaginationVC.swift; sourceTree = "<group>"; };
 		A29951601B0175C200CF6D84 /* Median.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Median.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A29951641B0175C200CF6D84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A29951651B0175C200CF6D84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 		A29951871B0175FA00CF6D84 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A26E569C1B332ACC0030BCAB /* SchoolClassPaginationVC.swift */,
 				A269BF261B2CE7DE009D2D5B /* SchoolClassCell.swift */,
 				A239E2CF1B166FB700F47996 /* ClassCircle.swift */,
 				A299519E1B017C6000CF6D84 /* SemesterVC.swift */,
@@ -308,6 +311,7 @@
 				A269BF281B2CE7DE009D2D5B /* SchoolClassCell.swift in Sources */,
 				A29951921B0176D700CF6D84 /* Assignment.swift in Sources */,
 				A239E2D01B166FB700F47996 /* ClassCircle.swift in Sources */,
+				A26E569D1B332ACC0030BCAB /* SchoolClassPaginationVC.swift in Sources */,
 				A299519D1B017C2E00CF6D84 /* SchoolClass.swift in Sources */,
 				A29951661B0175C200CF6D84 /* AppDelegate.swift in Sources */,
 			);
