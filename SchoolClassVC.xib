@@ -4,6 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <customFonts key="customFonts">
+        <mutableArray key="Lato-Light.ttf">
+            <string>Lato-Light</string>
+            <string>Lato-Light</string>
+        </mutableArray>
         <mutableArray key="Lato-Regular.ttf">
             <string>Lato-Regular</string>
         </mutableArray>
@@ -12,6 +16,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SchoolClassVC" customModule="Median" customModuleProvider="target">
             <connections>
                 <outlet property="classLabel" destination="U2u-QZ-QUJ" id="Bvx-hV-gPc"/>
+                <outlet property="detailsLabel" destination="QXp-Fw-3W5" id="gqx-f3-jhA"/>
+                <outlet property="gradeLabel" destination="N3M-lz-THx" id="mXJ-Bf-Ig1"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,22 +29,51 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2u-QZ-QUJ">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                     <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
+                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="22"/>
                     <color key="textColor" red="0.14901960784313725" green="0.67450980392156867" blue="0.77647058823529413" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dR0-yn-ZDI">
-                    <rect key="frame" x="225" y="216" width="150" height="1"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dR0-yn-ZDI">
+                    <rect key="frame" x="225" y="158" width="150" height="1"/>
                     <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="150" id="gLA-W6-e5j"/>
+                        <constraint firstAttribute="height" constant="1" id="hgh-Zf-39H"/>
+                    </constraints>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grade" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N3M-lz-THx">
+                    <rect key="frame" x="240" y="93" width="118.5" height="57"/>
+                    <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="45"/>
+                    <color key="textColor" red="1" green="0.80000001192092896" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is going to be where the details of the class live" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXp-Fw-3W5">
+                    <rect key="frame" x="0.0" y="535" width="600" height="65"/>
+                    <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="64.5" id="dTL-xr-Oe2"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="18"/>
+                    <color key="textColor" red="0.14901960780000001" green="0.67450980390000004" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="U2u-QZ-QUJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="1Ki-nT-adc"/>
+                <constraint firstAttribute="centerX" secondItem="dR0-yn-ZDI" secondAttribute="centerX" id="2IK-5G-M9w"/>
+                <constraint firstItem="N3M-lz-THx" firstAttribute="top" secondItem="U2u-QZ-QUJ" secondAttribute="bottom" constant="29" id="6nt-y7-5fj"/>
+                <constraint firstAttribute="bottom" secondItem="QXp-Fw-3W5" secondAttribute="bottom" id="CXk-O9-aMm"/>
                 <constraint firstAttribute="trailing" secondItem="U2u-QZ-QUJ" secondAttribute="trailing" id="VIX-nN-ZzY"/>
                 <constraint firstItem="U2u-QZ-QUJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="YUu-eE-1yA"/>
                 <constraint firstAttribute="bottom" secondItem="U2u-QZ-QUJ" secondAttribute="bottom" constant="536" id="hSJ-hF-xvh"/>
+                <constraint firstAttribute="centerX" secondItem="N3M-lz-THx" secondAttribute="centerX" id="qIE-zn-nu7"/>
+                <constraint firstItem="QXp-Fw-3W5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="sTb-Ov-fEt"/>
+                <constraint firstAttribute="bottom" secondItem="dR0-yn-ZDI" secondAttribute="bottom" constant="441" id="sno-3E-3Os"/>
+                <constraint firstAttribute="trailing" secondItem="QXp-Fw-3W5" secondAttribute="trailing" id="wIf-Sa-U0O"/>
+                <constraint firstItem="dR0-yn-ZDI" firstAttribute="top" secondItem="N3M-lz-THx" secondAttribute="bottom" constant="8" id="yPr-ia-gKX"/>
             </constraints>
+            <point key="canvasLocation" x="233" y="263"/>
         </view>
     </objects>
 </document>

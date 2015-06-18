@@ -117,7 +117,6 @@
 				A29951861B0175F400CF6D84 /* Views */,
 				A29951871B0175FA00CF6D84 /* Controllers */,
 				A29951781B0175C200CF6D84 /* MedianTests */,
-				A25A0A371B02A6B200335302 /* ClassDetailsVC.swift */,
 				A29951611B0175C200CF6D84 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -192,6 +191,7 @@
 		A29951871B0175FA00CF6D84 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A25A0A371B02A6B200335302 /* ClassDetailsVC.swift */,
 				A26E569E1B332E380030BCAB /* SchoolClassVC.swift */,
 				A26E569C1B332ACC0030BCAB /* SchoolClassPaginationVC.swift */,
 				A269BF261B2CE7DE009D2D5B /* SchoolClassCell.swift */,
