@@ -9,6 +9,20 @@
 import UIKit
 
 class SchoolClassPaginationVC: UIViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
+    var pageViewController: UIPageViewController
+    
+    required init() {
+        self.pageViewController = UIPageViewController(transitionStyle: UIPageViewControllerTransitionStyle.Scroll,
+            navigationOrientation: UIPageViewControllerNavigationOrientation.Horizontal,
+            options: nil)
+        super.init(nibName: nil, bundle: nil)
+        self.pageViewController.dataSource = self;
+        self.pageViewController.delegate = self;
+    }
+
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
