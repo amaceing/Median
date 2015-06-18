@@ -177,12 +177,19 @@ class SemesterVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         var timeOfDay = schoolClass.valueForKey("timeOfDay") as! String
         cell.schoolClassName.text = schoolClass.name
         cell.schoolClassDetails.text = NSString(format: "%@  ∙  %@  ∙  %@", section, daysOfWeek, timeOfDay) as String
-        cell.intGrade.text = "90"
+        let intAndDec = self.getIntAndDecFromGrade(schoolClass.grade)
+        cell.intGrade.text = String(format: "%.0f", intAndDec.0.description)
         if (schoolClass.grade >= 100) {
             cell.decGrade.text = "";
         } else {
-            cell.decGrade.text = ".6"
+            cell.decGrade.text = String(format: ".%.0f", intAndDec.1.description)
         }
+    }
+    
+    func getIntAndDecFromGrade(grade: Double) -> (Double, Double) {
+        let wholeNum = grade.getWholeNumberFromGrade()
+        let decimal = grade.getDecimalFromGrade()
+        return (wholeNum, decimal)
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

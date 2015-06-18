@@ -9,15 +9,14 @@
 import Foundation
 
 extension Double {
-    func getWholeNumberFromGrade(grade: Double) -> Double {
-        let wholeNum = grade
-        let decimal = wholeNum.getDecimalFromGrade(grade)
+    func getWholeNumberFromGrade() -> Double {
+        let wholeNum = self
+        let decimal = self.getDecimalFromGrade()
         return wholeNum - decimal
-        
     }
     
-    func getDecimalFromGrade(grade: Double) -> Double {
-        let decimal = grade - floor(grade)
+    func getDecimalFromGrade() -> Double {
+        let decimal = self - floor(self)
         if (decimal >= 0.95) {
             return 0.1
         }

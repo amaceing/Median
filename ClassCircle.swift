@@ -31,7 +31,7 @@ class ClassCircle: UIView {
         var outerSolidColor = UIBezierPath()
         
         //Percentage of circle to be filled
-        var percentage = 85.0
+        var percentage = self.grade
         
         //Setting up points and radius for circle
         var outerPoint = CGPoint(x: 0, y: 28)
