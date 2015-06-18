@@ -10,11 +10,19 @@ import UIKit
 
 class SchoolClassVC: UIViewController {
     //MARK: - Properties
-    var schoolClass: SchoolClass?
-    var index: NSInteger?
+    var schoolClass: SchoolClass
+    var index: NSInteger
     @IBOutlet weak var classLabel: UILabel!
     
+    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?, index: NSInteger, schoolClass: SchoolClass) {
+        self.schoolClass = schoolClass
+        self.index = index
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        self.schoolClass = SchoolClass()
+        self.index = 0
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
 
@@ -26,6 +34,7 @@ class SchoolClassVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.classLabel.text = self.schoolClass.name
     }
 
     override func didReceiveMemoryWarning() {

@@ -31,6 +31,14 @@ class SchoolClass: NSObject, NSCoding, Equatable {
         }
     }
     
+    override init() {
+        self.name = ""
+        self.section = ""
+        self.daysOfWeek = ""
+        self.timeOfDay = ""
+        super.init()
+    }
+    
     init(name: String, section: String, daysOfWeek: String, timeOfDay: String) {
         self.name = name
         self.section = section

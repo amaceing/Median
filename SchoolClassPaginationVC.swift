@@ -66,10 +66,8 @@ class SchoolClassPaginationVC: UIViewController, UIPageViewControllerDelegate, U
     
     //MARK: - PageVC Methods
     func viewControllerAtIndex(index: NSInteger) -> SchoolClassVC {
-        let childVC = SchoolClassVC(nibName: "SchoolClassVC", bundle: nil)
         var sc = ClassStore.instance.allClasses()[index]
-        childVC.schoolClass = sc
-        childVC.index = self.startIndex
+        var childVC = SchoolClassVC(nibName: "SchoolClassVC", bundle: nil, index: index, schoolClass: sc)
         return childVC
     }
     
