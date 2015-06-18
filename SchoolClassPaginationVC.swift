@@ -21,6 +21,19 @@ class SchoolClassPaginationVC: UIViewController, UIPageViewControllerDelegate, U
         // Dispose of any resources that can be recreated.
     }
     
+    //MARK: - PageVC Methods
+    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
+        //Implement later
+        let vc = UIViewController()
+        return vc
+    }
+    
+    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
+        //Implement later
+        let vc = UIViewController()
+        return vc
+    }
+    
 
     /*
     // MARK: - Navigation
