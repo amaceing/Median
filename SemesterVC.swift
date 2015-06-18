@@ -19,9 +19,9 @@ extension String {
         if (month >= 1 && month <= 5) {
             return String(format: "Spring %@", yearString)
         } else if (month >= 6 && month <= 8) {
-            return String(format: "Spring %@", yearString)
+            return String(format: "Summer %@", yearString)
         } else if (month >= 9 && month <= 12) {
-            return String(format: "Spring %@", yearString)
+            return String(format: "Fall %@", yearString)
         }
         return ""
     }
@@ -187,10 +187,15 @@ class SemesterVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         var schoolClassToPresent: SchoolClass = ClassStore.instance.allClasses()[indexPath.row]
+        let classIndex = indexPath.row
         if (self.editing) {
             var classDetailsVC = ClassDetailsVC(nibName: "ClassDetailsVC", bundle: nil)
             classDetailsVC.schoolClass = schoolClassToPresent
             self.navigationController?.pushViewController(classDetailsVC, animated: true)
+        } else {
+            let cpvc = SchoolClassPaginationVC()
+            cpvc.startIndex = classIndex
+            self.navigationController?.pushViewController(cpvc, animated: true)
         }
     }
 

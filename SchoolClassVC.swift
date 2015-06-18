@@ -12,6 +12,7 @@ class SchoolClassVC: UIViewController {
     //MARK: - Properties
     var schoolClass: SchoolClass?
     var index: NSInteger?
+    @IBOutlet weak var classLabel: UILabel!
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)

@@ -9,19 +9,22 @@
 import UIKit
 
 class SchoolClassPaginationVC: UIViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
-    var pageViewController: UIPageViewController
+    var pageViewController = UIPageViewController(transitionStyle: UIPageViewControllerTransitionStyle.Scroll,
+                                                                        navigationOrientation: UIPageViewControllerNavigationOrientation.Horizontal,
+                                                                        options: nil)
+    var startIndex: NSInteger?
     
     required init() {
-        self.pageViewController = UIPageViewController(transitionStyle: UIPageViewControllerTransitionStyle.Scroll,
-            navigationOrientation: UIPageViewControllerNavigationOrientation.Horizontal,
-            options: nil)
         super.init(nibName: nil, bundle: nil)
-        self.pageViewController.dataSource = self;
-        self.pageViewController.delegate = self;
+        self.view.backgroundColor = UIColor.whiteColor()
     }
 
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
     }
 
     override func viewDidLoad() {
@@ -29,6 +32,7 @@ class SchoolClassPaginationVC: UIViewController, UIPageViewControllerDelegate, U
 
         // Do any additional setup after loading the view.
         setUpNavBar()
+        //setUpPageViewController()
     }
     
     func setUpNavBar() {
@@ -41,6 +45,16 @@ class SchoolClassPaginationVC: UIViewController, UIPageViewControllerDelegate, U
         self.navigationController?.navigationBar.barStyle = UIBarStyle.BlackTranslucent
         self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Lato-Regular", size: 24)!]
     }
+    
+    func setUpPageViewController() {
+        self.pageViewController.dataSource = self;
+        self.pageViewController.delegate = self;
+        var initialViewController = self.viewControllerAtIndex(self.startIndex!)
+        var viewControllers = NSArray(object: initialViewController)
+        self.addChildViewController(self.pageViewController)
+        self.view.addSubview(self.pageViewController.view)
+        self.pageViewController.didMoveToParentViewController(self)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -48,6 +62,15 @@ class SchoolClassPaginationVC: UIViewController, UIPageViewControllerDelegate, U
     }
     
     //MARK: - PageVC Methods
+    func viewControllerAtIndex(index: NSInteger) -> SchoolClassVC {
+        let childVC = SchoolClassVC(nibName: "SchoolClassVC", bundle: nil)
+        var sc = ClassStore.instance.allClasses()[index]
+        childVC.schoolClass = sc
+        childVC.index = self.startIndex
+        return childVC
+    }
+    
+    
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
         //Implement later
         let vc = UIViewController()
