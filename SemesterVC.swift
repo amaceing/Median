@@ -193,8 +193,7 @@ class SemesterVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             classDetailsVC.schoolClass = schoolClassToPresent
             self.navigationController?.pushViewController(classDetailsVC, animated: true)
         } else {
-            let cpvc = SchoolClassPaginationVC()
-            cpvc.startIndex = classIndex
+            let cpvc = SchoolClassPaginationVC(index: classIndex)
             self.navigationController?.pushViewController(cpvc, animated: true)
         }
     }

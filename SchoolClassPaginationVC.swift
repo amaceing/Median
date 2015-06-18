@@ -14,9 +14,11 @@ class SchoolClassPaginationVC: UIViewController, UIPageViewControllerDelegate, U
                                                                         options: nil)
     var startIndex: NSInteger?
     
-    required init() {
+    init(index: Int) {
         super.init(nibName: nil, bundle: nil)
+        self.startIndex = index
         self.view.backgroundColor = UIColor.whiteColor()
+        setUpPageViewController()
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -32,7 +34,6 @@ class SchoolClassPaginationVC: UIViewController, UIPageViewControllerDelegate, U
 
         // Do any additional setup after loading the view.
         setUpNavBar()
-        //setUpPageViewController()
     }
     
     func setUpNavBar() {
@@ -49,8 +50,10 @@ class SchoolClassPaginationVC: UIViewController, UIPageViewControllerDelegate, U
     func setUpPageViewController() {
         self.pageViewController.dataSource = self;
         self.pageViewController.delegate = self;
+        
         var initialViewController = self.viewControllerAtIndex(self.startIndex!)
         var viewControllers = NSArray(object: initialViewController)
+        self.pageViewController.setViewControllers(viewControllers as [AnyObject], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
         self.addChildViewController(self.pageViewController)
         self.view.addSubview(self.pageViewController.view)
         self.pageViewController.didMoveToParentViewController(self)

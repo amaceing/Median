@@ -11,7 +11,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SchoolClassVC" customModule="Median" customModuleProvider="target">
             <connections>
-                <outlet property="classLabel" destination="U2u-QZ-QUJ" id="R91-3l-klc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,21 +23,20 @@
                     <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                     <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="64" id="yoE-Ca-KGs"/>
+                        <constraint firstAttribute="height" constant="64" id="H6b-sz-wez"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
                     <color key="textColor" red="0.14901960784313725" green="0.67450980392156867" blue="0.77647058823529413" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="U2u-QZ-QUJ" secondAttribute="bottom" constant="536" id="LaM-Tp-lV2"/>
-                <constraint firstItem="U2u-QZ-QUJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="PkW-4z-be1"/>
-                <constraint firstAttribute="trailing" secondItem="U2u-QZ-QUJ" secondAttribute="trailing" id="SMo-DU-Dua"/>
-                <constraint firstItem="U2u-QZ-QUJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Srk-1f-2R8"/>
+                <constraint firstItem="U2u-QZ-QUJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="1Ki-nT-adc"/>
+                <constraint firstAttribute="trailing" secondItem="U2u-QZ-QUJ" secondAttribute="trailing" id="VIX-nN-ZzY"/>
+                <constraint firstItem="U2u-QZ-QUJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="YUu-eE-1yA"/>
+                <constraint firstAttribute="bottom" secondItem="U2u-QZ-QUJ" secondAttribute="bottom" constant="536" id="hSJ-hF-xvh"/>
             </constraints>
-            <point key="canvasLocation" x="470" y="383"/>
         </view>
     </objects>
 </document>
