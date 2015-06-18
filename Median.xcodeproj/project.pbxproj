@@ -20,6 +20,8 @@
 		A269BF371B2CEB8D009D2D5B /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A269BF301B2CEB8D009D2D5B /* Lato-Regular.ttf */; };
 		A269BF381B2CEB8D009D2D5B /* Lato-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A269BF311B2CEB8D009D2D5B /* Lato-Thin.ttf */; };
 		A26E569D1B332ACC0030BCAB /* SchoolClassPaginationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26E569C1B332ACC0030BCAB /* SchoolClassPaginationVC.swift */; };
+		A26E56A01B332E380030BCAB /* SchoolClassVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26E569E1B332E380030BCAB /* SchoolClassVC.swift */; };
+		A26E56A11B332E380030BCAB /* SchoolClassVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A26E569F1B332E380030BCAB /* SchoolClassVC.xib */; };
 		A29951661B0175C200CF6D84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29951651B0175C200CF6D84 /* AppDelegate.swift */; };
 		A299516D1B0175C200CF6D84 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A299516C1B0175C200CF6D84 /* Images.xcassets */; };
 		A29951701B0175C200CF6D84 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A299516E1B0175C200CF6D84 /* LaunchScreen.xib */; };
@@ -56,6 +58,8 @@
 		A269BF301B2CEB8D009D2D5B /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Regular.ttf"; path = "../../../Downloads/lato/Lato-Regular.ttf"; sourceTree = "<group>"; };
 		A269BF311B2CEB8D009D2D5B /* Lato-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Thin.ttf"; path = "../../../Downloads/lato/Lato-Thin.ttf"; sourceTree = "<group>"; };
 		A26E569C1B332ACC0030BCAB /* SchoolClassPaginationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoolClassPaginationVC.swift; sourceTree = "<group>"; };
+		A26E569E1B332E380030BCAB /* SchoolClassVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoolClassVC.swift; sourceTree = "<group>"; };
+		A26E569F1B332E380030BCAB /* SchoolClassVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SchoolClassVC.xib; sourceTree = "<group>"; };
 		A29951601B0175C200CF6D84 /* Median.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Median.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A29951641B0175C200CF6D84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A29951651B0175C200CF6D84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -179,6 +183,7 @@
 				A269BF271B2CE7DE009D2D5B /* SchoolClassCell.xib */,
 				A299518C1B01768D00CF6D84 /* SemesterVC.xib */,
 				A25A0A381B02A6B200335302 /* ClassDetailsVC.xib */,
+				A26E569F1B332E380030BCAB /* SchoolClassVC.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -186,6 +191,7 @@
 		A29951871B0175FA00CF6D84 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A26E569E1B332E380030BCAB /* SchoolClassVC.swift */,
 				A26E569C1B332ACC0030BCAB /* SchoolClassPaginationVC.swift */,
 				A269BF261B2CE7DE009D2D5B /* SchoolClassCell.swift */,
 				A239E2CF1B166FB700F47996 /* ClassCircle.swift */,
@@ -282,6 +288,7 @@
 				A269BF351B2CEB8D009D2D5B /* Lato-Light.ttf in Resources */,
 				A29951701B0175C200CF6D84 /* LaunchScreen.xib in Resources */,
 				A269BF361B2CEB8D009D2D5B /* Lato-Medium.ttf in Resources */,
+				A26E56A11B332E380030BCAB /* SchoolClassVC.xib in Resources */,
 				A269BF341B2CEB8D009D2D5B /* Lato-Heavy.ttf in Resources */,
 				A299518D1B01768D00CF6D84 /* SemesterVC.xib in Resources */,
 				A299516D1B0175C200CF6D84 /* Images.xcassets in Resources */,
@@ -306,6 +313,7 @@
 			files = (
 				A299519B1B017C0B00CF6D84 /* ClassStore.swift in Sources */,
 				A299519F1B017C6000CF6D84 /* SemesterVC.swift in Sources */,
+				A26E56A01B332E380030BCAB /* SchoolClassVC.swift in Sources */,
 				A29951981B0176FE00CF6D84 /* AssignmentCateogry.swift in Sources */,
 				A25A0A391B02A6B200335302 /* ClassDetailsVC.swift in Sources */,
 				A269BF281B2CE7DE009D2D5B /* SchoolClassCell.swift in Sources */,
