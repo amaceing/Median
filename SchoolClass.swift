@@ -8,6 +8,23 @@
 
 import Foundation
 
+extension Double {
+    func getWholeNumberFromGrade(grade: Double) -> Double {
+        let wholeNum = grade
+        let decimal = wholeNum.getDecimalFromGrade(grade)
+        return wholeNum - decimal
+        
+    }
+    
+    func getDecimalFromGrade(grade: Double) -> Double {
+        let decimal = grade - floor(grade)
+        if (decimal >= 0.95) {
+            return 0.1
+        }
+        return decimal
+    }
+}
+
 class SchoolClass: NSObject, NSCoding, Equatable {
     var name: String
     var section: String
