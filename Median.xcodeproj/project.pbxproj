@@ -32,6 +32,8 @@
 		A299519B1B017C0B00CF6D84 /* ClassStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A299519A1B017C0B00CF6D84 /* ClassStore.swift */; };
 		A299519D1B017C2E00CF6D84 /* SchoolClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A299519C1B017C2E00CF6D84 /* SchoolClass.swift */; };
 		A299519F1B017C6000CF6D84 /* SemesterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A299519E1B017C6000CF6D84 /* SemesterVC.swift */; };
+		A2B48A731B347A4200A0C2E7 /* AssignmentCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B48A711B347A4200A0C2E7 /* AssignmentCategoryCell.swift */; };
+		A2B48A741B347A4200A0C2E7 /* AssignmentCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2B48A721B347A4200A0C2E7 /* AssignmentCategoryCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,8 @@
 		A299519A1B017C0B00CF6D84 /* ClassStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassStore.swift; sourceTree = "<group>"; };
 		A299519C1B017C2E00CF6D84 /* SchoolClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoolClass.swift; sourceTree = "<group>"; };
 		A299519E1B017C6000CF6D84 /* SemesterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemesterVC.swift; sourceTree = "<group>"; };
+		A2B48A711B347A4200A0C2E7 /* AssignmentCategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentCategoryCell.swift; sourceTree = "<group>"; };
+		A2B48A721B347A4200A0C2E7 /* AssignmentCategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AssignmentCategoryCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				A269BF271B2CE7DE009D2D5B /* SchoolClassCell.xib */,
+				A2B48A721B347A4200A0C2E7 /* AssignmentCategoryCell.xib */,
 				A299518C1B01768D00CF6D84 /* SemesterVC.xib */,
 				A25A0A381B02A6B200335302 /* ClassDetailsVC.xib */,
 				A26E569F1B332E380030BCAB /* SchoolClassVC.xib */,
@@ -191,6 +196,7 @@
 		A29951871B0175FA00CF6D84 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A2B48A711B347A4200A0C2E7 /* AssignmentCategoryCell.swift */,
 				A25A0A371B02A6B200335302 /* ClassDetailsVC.swift */,
 				A26E569E1B332E380030BCAB /* SchoolClassVC.swift */,
 				A26E569C1B332ACC0030BCAB /* SchoolClassPaginationVC.swift */,
@@ -283,6 +289,7 @@
 			files = (
 				A269BF291B2CE7DE009D2D5B /* SchoolClassCell.xib in Resources */,
 				A269BF381B2CEB8D009D2D5B /* Lato-Thin.ttf in Resources */,
+				A2B48A741B347A4200A0C2E7 /* AssignmentCategoryCell.xib in Resources */,
 				A269BF331B2CEB8D009D2D5B /* Lato-Hairline.ttf in Resources */,
 				A269BF321B2CEB8D009D2D5B /* Lato-Bold.ttf in Resources */,
 				A269BF351B2CEB8D009D2D5B /* Lato-Light.ttf in Resources */,
@@ -321,6 +328,7 @@
 				A239E2D01B166FB700F47996 /* ClassCircle.swift in Sources */,
 				A26E569D1B332ACC0030BCAB /* SchoolClassPaginationVC.swift in Sources */,
 				A299519D1B017C2E00CF6D84 /* SchoolClass.swift in Sources */,
+				A2B48A731B347A4200A0C2E7 /* AssignmentCategoryCell.swift in Sources */,
 				A29951661B0175C200CF6D84 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
