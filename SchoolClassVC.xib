@@ -48,10 +48,10 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is going to be where the details of the class live" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXp-Fw-3W5">
-                    <rect key="frame" x="0.0" y="535" width="600" height="65"/>
+                    <rect key="frame" x="0.0" y="536" width="600" height="64"/>
                     <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="64.5" id="dTL-xr-Oe2"/>
+                        <constraint firstAttribute="height" constant="64" id="Tws-oa-ECi"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="18"/>
                     <color key="textColor" red="0.14901960780000001" green="0.67450980390000004" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
