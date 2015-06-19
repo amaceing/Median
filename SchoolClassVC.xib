@@ -18,6 +18,7 @@
                 <outlet property="classLabel" destination="U2u-QZ-QUJ" id="Bvx-hV-gPc"/>
                 <outlet property="detailsLabel" destination="QXp-Fw-3W5" id="gqx-f3-jhA"/>
                 <outlet property="gradeLabel" destination="N3M-lz-THx" id="mXJ-Bf-Ig1"/>
+                <outlet property="tableView" destination="IjW-OP-4ug" id="hHo-kv-UMt"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -50,7 +51,7 @@
                     <color key="textColor" red="0.14901960780000001" green="0.67450980390000004" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="IjW-OP-4ug">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="IjW-OP-4ug">
                     <rect key="frame" x="8" y="164" width="584" height="364"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
@@ -82,7 +83,7 @@
                 <constraint firstItem="U2u-QZ-QUJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="y8j-1t-71L"/>
                 <constraint firstItem="QXp-Fw-3W5" firstAttribute="top" secondItem="IjW-OP-4ug" secondAttribute="bottom" constant="8" id="z88-Xf-OQZ"/>
             </constraints>
-            <point key="canvasLocation" x="50" y="258"/>
+            <point key="canvasLocation" x="-33" y="242"/>
         </view>
     </objects>
 </document>

@@ -8,13 +8,14 @@
 
 import UIKit
 
-class SchoolClassVC: UIViewController {
+class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     //MARK: - Properties
     var schoolClass: SchoolClass
     var index: NSInteger
     @IBOutlet weak var classLabel: UILabel!
     @IBOutlet weak var gradeLabel: UILabel!
     @IBOutlet weak var detailsLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
     
     
     //MARK: - View loading methods
@@ -39,8 +40,20 @@ class SchoolClassVC: UIViewController {
 
         // Do any additional setup after loading the view.
         self.classLabel.text = self.schoolClass.name
+        self.tableViewSetUp()
         self.gradeLabelSetUp()
         self.detailLabelsSetUp()
+    }
+    
+    func tableViewSetUp() {
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
+        let nib = UINib(nibName: "AssignmentCategoryCell", bundle: nil)
+        self.tableView.registerNib(nib, forCellReuseIdentifier: "AssignmentCategoryCell")
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
+        self.tableView.separatorColor = UIColor.lightGrayColor()
+        self.tableView.separatorInset = UIEdgeInsetsMake(0, 15, 0, 15)
+        //self.tableView.tableFooterView = UIView()
     }
     
     func gradeLabelSetUp() {
@@ -78,6 +91,20 @@ class SchoolClassVC: UIViewController {
             gradeLabelsRect = CGRectMake(22, 84, 280, 80);
         }
         return gradeLabelsRect
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.schoolClass.assignmentCategories.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        //Implement
+        var cell: AssignmentCategoryCell = tableView.dequeueReusableCellWithIdentifier("AssignmentCategoryCell", forIndexPath: indexPath) as! AssignmentCategoryCell
+        return cell
     }
     
 
