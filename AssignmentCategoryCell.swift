@@ -10,6 +10,13 @@ import UIKit
 
 class AssignmentCategoryCell: UITableViewCell {
 
+    @IBOutlet weak var catName: UILabel!
+    @IBOutlet weak var catGrade: UILabel!
+    @IBOutlet weak var catWeight: UILabel!
+    @IBOutlet weak var catBar: UIView!
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,6 +26,16 @@ class AssignmentCategoryCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        for view in self.catBar.subviews as! [UIView] {
+            if view.isKindOfClass(UIView) {
+                view.removeFromSuperview()
+                view.setNeedsDisplay()
+            }
+        }
     }
     
 }

@@ -176,7 +176,7 @@ class SemesterVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         var daysOfWeek = schoolClass.valueForKey("daysOfWeek") as! String
         var timeOfDay = schoolClass.valueForKey("timeOfDay") as! String
         cell.schoolClassName.text = schoolClass.name
-        cell.schoolClassDetails.text = NSString(format: "%@  ∙  %@  ∙  %@", section, daysOfWeek, timeOfDay) as String
+        cell.schoolClassDetails.text = NSString(format: "%@  ∙ %@ ∙  %@", section, daysOfWeek, timeOfDay) as String
         let intAndDec = self.getIntAndDecFromGrade(schoolClass.grade)
         cell.intGrade.text = String(format: "%.0f", intAndDec.0.description)
         if (schoolClass.grade >= 100 || schoolClass.grade == 0) {

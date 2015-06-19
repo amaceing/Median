@@ -44,6 +44,12 @@
                     </label>
                 </subviews>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="catBar" destination="S5K-u6-5rN" id="SlS-2b-BTR"/>
+                <outlet property="catGrade" destination="kTu-OT-gKa" id="Pa8-G1-EOo"/>
+                <outlet property="catName" destination="L9D-qY-XJB" id="Pwc-yt-ViY"/>
+                <outlet property="catWeight" destination="nHP-1w-0IP" id="4ZD-td-TVZ"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>

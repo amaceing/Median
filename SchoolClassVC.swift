@@ -57,7 +57,7 @@ class SchoolClassVC: UIViewController {
     }
     
     func detailLabelsSetUp() {
-        let details = String(format: "%    @     ●    %@    ●    %@    ", self.schoolClass.section, self.schoolClass.daysOfWeek, self.schoolClass.timeOfDay)
+        let details = String(format: "%@    ●  %@  ●    %@", self.schoolClass.section, self.schoolClass.daysOfWeek, self.schoolClass.timeOfDay)
         self.detailsLabel.text = details
     }
 
