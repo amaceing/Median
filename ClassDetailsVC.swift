@@ -10,12 +10,12 @@ import UIKit
 
 class ClassDetailsVC: UIViewController, UITextFieldDelegate {
     //MARK: - Properties
-    @IBOutlet weak var nameField: UITextField!
-    @IBOutlet weak var sectionField: UITextField!
     var schoolClass: SchoolClass?
     var strOfDays = ""
     let startTimeFormatter = NSDateFormatter()
     
+    @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var sectionField: UITextField!
     @IBOutlet weak var startTime: UIDatePicker!
     @IBOutlet weak var satButton: UIButton!
     @IBOutlet weak var friButton: UIButton!
