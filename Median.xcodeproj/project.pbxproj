@@ -174,9 +174,9 @@
 			isa = PBXGroup;
 			children = (
 				A299519A1B017C0B00CF6D84 /* ClassStore.swift */,
-				A299518E1B0176D700CF6D84 /* Assignment.swift */,
-				A29951961B0176FE00CF6D84 /* AssignmentCateogry.swift */,
 				A299519C1B017C2E00CF6D84 /* SchoolClass.swift */,
+				A29951961B0176FE00CF6D84 /* AssignmentCateogry.swift */,
+				A299518E1B0176D700CF6D84 /* Assignment.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -184,11 +184,11 @@
 		A29951861B0175F400CF6D84 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A269BF271B2CE7DE009D2D5B /* SchoolClassCell.xib */,
-				A2B48A721B347A4200A0C2E7 /* AssignmentCategoryCell.xib */,
 				A299518C1B01768D00CF6D84 /* SemesterVC.xib */,
 				A25A0A381B02A6B200335302 /* ClassDetailsVC.xib */,
 				A26E569F1B332E380030BCAB /* SchoolClassVC.xib */,
+				A269BF271B2CE7DE009D2D5B /* SchoolClassCell.xib */,
+				A2B48A721B347A4200A0C2E7 /* AssignmentCategoryCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -196,13 +196,13 @@
 		A29951871B0175FA00CF6D84 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A2B48A711B347A4200A0C2E7 /* AssignmentCategoryCell.swift */,
-				A25A0A371B02A6B200335302 /* ClassDetailsVC.swift */,
-				A26E569E1B332E380030BCAB /* SchoolClassVC.swift */,
-				A26E569C1B332ACC0030BCAB /* SchoolClassPaginationVC.swift */,
-				A269BF261B2CE7DE009D2D5B /* SchoolClassCell.swift */,
 				A239E2CF1B166FB700F47996 /* ClassCircle.swift */,
 				A299519E1B017C6000CF6D84 /* SemesterVC.swift */,
+				A269BF261B2CE7DE009D2D5B /* SchoolClassCell.swift */,
+				A25A0A371B02A6B200335302 /* ClassDetailsVC.swift */,
+				A26E569C1B332ACC0030BCAB /* SchoolClassPaginationVC.swift */,
+				A26E569E1B332E380030BCAB /* SchoolClassVC.swift */,
+				A2B48A711B347A4200A0C2E7 /* AssignmentCategoryCell.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
