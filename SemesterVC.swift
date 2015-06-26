@@ -33,7 +33,6 @@ class SemesterVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var _seasonTitle: UILabel!
     var seasonTitle: UILabel!{
         get {
-            NSLog("setting seasonTitle")
             var title = " "
             let textColor = UIColor(red: 30/255.0, green: 178/255.0, blue: 192/255.0, alpha: 1)
             let font = UIFont(name: "Lato-Regular", size: 18)
@@ -54,13 +53,13 @@ class SemesterVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         self.seasonTitle //setting seasonTitle text
         setNavBarProperties()
         setUpEditButton()
+        tableViewSetup()
+    }
+    
+    func tableViewSetup() {
         tableView.delegate = self
         tableView.dataSource = self
-        
-        //Empty footer view
         self.tableView.tableFooterView = UIView()
-        
-        //Table Cell Setup
         let nib = UINib(nibName: "SchoolClassCell", bundle: nil)
         self.tableView.registerNib(nib, forCellReuseIdentifier: "SchoolClassCell")
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
