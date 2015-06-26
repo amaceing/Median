@@ -46,6 +46,7 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     }
     
     func tableViewSetUp() {
+        self.tableView.tableFooterView = UIView()
         self.tableView.dataSource = self
         self.tableView.delegate = self
         let nib = UINib(nibName: "AssignmentCategoryCell", bundle: nil)
