@@ -99,7 +99,7 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.schoolClass.assignmentCategories.count
+        return 2
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

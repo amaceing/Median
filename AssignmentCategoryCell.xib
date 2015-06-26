@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Lato-Light.ttf">
@@ -20,29 +21,47 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Homework" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L9D-qY-XJB">
-                        <rect key="frame" x="24" y="5" width="160" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Homework" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L9D-qY-XJB">
+                        <rect key="frame" x="8" y="5" width="160" height="21"/>
                         <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="92.3" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTu-OT-gKa">
-                        <rect key="frame" x="231" y="5" width="56" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="92.3" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTu-OT-gKa">
+                        <rect key="frame" x="231" y="5" width="61" height="21"/>
                         <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S5K-u6-5rN">
-                        <rect key="frame" x="24" y="28" width="263" height="10"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S5K-u6-5rN">
+                        <rect key="frame" x="8" y="28" width="284" height="10"/>
                         <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="25/100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHP-1w-0IP">
-                        <rect key="frame" x="24" y="39" width="54" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25/100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHP-1w-0IP">
+                        <rect key="frame" x="8" y="39" width="98" height="21"/>
                         <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="14"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="S5K-u6-5rN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="20" id="4I2-cS-UPg"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="L9D-qY-XJB" secondAttribute="trailing" constant="124" id="5ak-q3-QZk"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="S5K-u6-5rN" secondAttribute="trailing" id="7kG-jw-MRh"/>
+                    <constraint firstItem="nHP-1w-0IP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="31" id="Amy-xM-xYv"/>
+                    <constraint firstItem="L9D-qY-XJB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="HZb-jz-1Nh"/>
+                    <constraint firstItem="kTu-OT-gKa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-3" id="MJg-ws-gM6"/>
+                    <constraint firstItem="nHP-1w-0IP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="O12-e5-ekt"/>
+                    <constraint firstItem="L9D-qY-XJB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-3" id="UGA-y8-P1V"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="nHP-1w-0IP" secondAttribute="bottom" constant="-3" id="Y4d-27-KPd"/>
+                    <constraint firstItem="kTu-OT-gKa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="223" id="dVG-OJ-hua"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="kTu-OT-gKa" secondAttribute="bottom" constant="31" id="e1k-uh-v24"/>
+                    <constraint firstItem="S5K-u6-5rN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="hxI-Am-sWU"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="kTu-OT-gKa" secondAttribute="trailing" id="inb-qP-j2g"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="L9D-qY-XJB" secondAttribute="bottom" constant="31" id="qGv-xp-6jF"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="S5K-u6-5rN" secondAttribute="bottom" constant="19" id="tcm-5K-maB"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="nHP-1w-0IP" secondAttribute="trailing" constant="186" id="yMc-4p-Rm6"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="catBar" destination="S5K-u6-5rN" id="SlS-2b-BTR"/>
