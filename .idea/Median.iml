@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="CIDR_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$USER_HOME$/Desktop/Grader/Assignment.swift">
+      <sourceFolder url="file://$USER_HOME$/Desktop/Grader/Assignment.swift" isTestSource="false" />
+    </content>
+    <content url="file://$USER_HOME$/Desktop/Grader/Grader/AssignmentCateogry.swift">
+      <sourceFolder url="file://$USER_HOME$/Desktop/Grader/Grader/AssignmentCateogry.swift" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../Decile/SemesterVC.xib">
+      <sourceFolder url="file://$MODULE_DIR$/../Decile/SemesterVC.xib" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$" />
+    <content url="file://$USER_HOME$/Downloads/lato/Lato-Bold.ttf">
+      <sourceFolder url="file://$USER_HOME$/Downloads/lato/Lato-Bold.ttf" isTestSource="false" />
+    </content>
+    <content url="file://$USER_HOME$/Downloads/lato/Lato-Hairline.ttf">
+      <sourceFolder url="file://$USER_HOME$/Downloads/lato/Lato-Hairline.ttf" isTestSource="false" />
+    </content>
+    <content url="file://$USER_HOME$/Downloads/lato/Lato-Heavy.ttf">
+      <sourceFolder url="file://$USER_HOME$/Downloads/lato/Lato-Heavy.ttf" isTestSource="false" />
+    </content>
+    <content url="file://$USER_HOME$/Downloads/lato/Lato-Light.ttf">
+      <sourceFolder url="file://$USER_HOME$/Downloads/lato/Lato-Light.ttf" isTestSource="false" />
+    </content>
+    <content url="file://$USER_HOME$/Downloads/lato/Lato-Medium.ttf">
+      <sourceFolder url="file://$USER_HOME$/Downloads/lato/Lato-Medium.ttf" isTestSource="false" />
+    </content>
+    <content url="file://$USER_HOME$/Downloads/lato/Lato-Regular.ttf">
+      <sourceFolder url="file://$USER_HOME$/Downloads/lato/Lato-Regular.ttf" isTestSource="false" />
+    </content>
+    <content url="file://$USER_HOME$/Downloads/lato/Lato-Thin.ttf">
+      <sourceFolder url="file://$USER_HOME$/Downloads/lato/Lato-Thin.ttf" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
