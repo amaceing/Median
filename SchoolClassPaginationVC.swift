@@ -71,18 +71,30 @@ class SchoolClassPaginationVC: UIViewController, UIPageViewControllerDelegate, U
         return childVC
     }
     
+    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
+        //Implement later
+        let vc = viewController as! SchoolClassVC
+        var index = vc.index
+        if (index == 0) {
+            return nil
+        }
+        index = --index
+        return self.viewControllerAtIndex(index)
+    }
+    
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
         //Implement later
-        let vc = UIViewController()
-        return vc
+        let schoolClassCount = ClassStore.instance.allClasses().count
+        let vc = viewController as! SchoolClassVC
+        var index = vc.index
+        index = ++index
+        if (index == schoolClassCount) {
+            return nil
+        }
+        return self.viewControllerAtIndex(index)
     }
     
-    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-        //Implement later
-        let vc = UIViewController()
-        return vc
-    }
     
 
     /*
