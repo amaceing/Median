@@ -40,6 +40,7 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
 
         // Do any additional setup after loading the view.
         self.classLabel.text = self.schoolClass.name
+        self.setUpAddButton()
         self.tableViewSetUp()
         self.gradeLabelSetUp()
         self.detailLabelsSetUp()
@@ -48,6 +49,16 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.tableView.reloadData()
+    }
+    
+    func setUpAddButton() {
+        let addButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
+        self.navigationItem.rightBarButtonItem = addButton
+    }
+    
+    func setUpDoneButton() {
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
+        self.navigationItem.rightBarButtonItem = doneButton
     }
     
     func tableViewSetUp() {
