@@ -45,6 +45,11 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         self.detailLabelsSetUp()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tableView.reloadData()
+    }
+    
     func tableViewSetUp() {
         self.tableView.tableFooterView = UIView()
         self.tableView.dataSource = self
