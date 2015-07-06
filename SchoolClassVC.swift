@@ -16,6 +16,7 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     @IBOutlet weak var gradeLabel: UILabel!
     @IBOutlet weak var detailsLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var addCat: UIButton!
     
     
     //MARK: - View loading methods
@@ -52,7 +53,7 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     }
     
     func setUpAddButton() {
-        self.editButtonItem().title = "Add"
+        self.addCat.addTarget(self, action: "addAssignmentCategory", forControlEvents: UIControlEvents.TouchUpInside)
     }
     
     func setUpDoneButton() {
@@ -109,12 +110,30 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         return gradeLabelsRect
     }
     
+    //MARK: - Logic
+    func addAssignmentCategory() {
+        var assignCatToAdd = AssignmentCategory(name: "Click to Add", weight: 0)
+        self.schoolClass.addAssignmentCategory(assignCatToAdd)
+        
+        //Insertion
+        let row = 0
+        let indexPath = NSIndexPath(forRow: row, inSection: 0)
+        self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+        
+        self.tableView.editing = true
+        self.tableView.allowsSelectionDuringEditing = true
+    }
+    
+    
+    
+    //MARK: - Table View Implemenation
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return self.schoolClass.assignmentCategories.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
