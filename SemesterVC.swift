@@ -51,9 +51,9 @@ class SemesterVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         // Do any additional setup after loading the view.
         self.seasonTitle //setting seasonTitle text
-        setNavBarProperties()
-        setUpEditButton()
-        tableViewSetup()
+        self.setNavBarProperties()
+        self.setUpEditButton()
+        self.tableViewSetup()
     }
     
     func tableViewSetup() {
@@ -116,7 +116,7 @@ class SemesterVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         self.editing = true
         self.tableView.allowsSelectionDuringEditing = true
-        setUpDoneButton()
+        self.setUpDoneButton()
     }
     
     func doneEditing(sender: UIBarButtonItem) {
@@ -130,7 +130,7 @@ class SemesterVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             self.tableView.deleteRowsAtIndexPaths([path], withRowAnimation: UITableViewRowAnimation.Fade)
         }
         self.editing = false
-        setUpEditButton()
+        self.setUpEditButton()
     }
     
     // MARK: - Table view data source
@@ -164,7 +164,7 @@ class SemesterVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         classCircle.setNeedsDisplay()
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         cell.intGrade.frame = determineGradeLabelFrameWithGrade(90.6)
-        fillCellWithContentFromClass(cell, schoolClass: schoolClassForCell)
+        self.fillCellWithContentFromClass(cell, schoolClass: schoolClassForCell)
 
         return cell
     }

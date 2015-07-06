@@ -18,7 +18,7 @@ class SchoolClassPaginationVC: UIViewController, UIPageViewControllerDelegate, U
         super.init(nibName: nil, bundle: nil)
         self.startIndex = index
         self.view.backgroundColor = UIColor.whiteColor()
-        setUpPageViewController()
+        self.setUpPageViewController()
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -33,7 +33,7 @@ class SchoolClassPaginationVC: UIViewController, UIPageViewControllerDelegate, U
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        setUpNavBar()
+        self.setUpNavBar()
     }
     
     func setUpNavBar() {
