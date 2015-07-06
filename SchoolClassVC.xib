@@ -7,6 +7,7 @@
         <mutableArray key="Lato-Light.ttf">
             <string>Lato-Light</string>
             <string>Lato-Light</string>
+            <string>Lato-Light</string>
         </mutableArray>
         <mutableArray key="Lato-Regular.ttf">
             <string>Lato-Regular</string>
@@ -65,17 +66,27 @@
                     <color key="textColor" red="0.14901960784313725" green="0.67450980392156867" blue="0.77647058823529413" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1hN-r1-AZZ">
+                    <rect key="frame" x="546" y="17" width="46" height="30"/>
+                    <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="15"/>
+                    <state key="normal" title="Add">
+                        <color key="titleColor" red="0.14901960780000001" green="0.67450980390000004" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="U2u-QZ-QUJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="1Ki-nT-adc"/>
                 <constraint firstAttribute="centerX" secondItem="dR0-yn-ZDI" secondAttribute="centerX" id="2IK-5G-M9w"/>
                 <constraint firstItem="IjW-OP-4ug" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="DQM-bw-OrU"/>
+                <constraint firstItem="1hN-r1-AZZ" firstAttribute="leading" secondItem="U2u-QZ-QUJ" secondAttribute="trailing" constant="-54" id="GkW-dZ-TCE"/>
                 <constraint firstAttribute="trailing" secondItem="IjW-OP-4ug" secondAttribute="trailing" constant="8" id="I3B-s8-5WF"/>
                 <constraint firstItem="IjW-OP-4ug" firstAttribute="top" secondItem="dR0-yn-ZDI" secondAttribute="bottom" constant="8" id="NnG-7t-ZHi"/>
                 <constraint firstAttribute="trailing" secondItem="U2u-QZ-QUJ" secondAttribute="trailing" id="VIX-nN-ZzY"/>
                 <constraint firstItem="N3M-lz-THx" firstAttribute="top" secondItem="U2u-QZ-QUJ" secondAttribute="bottom" constant="29" id="Vcx-W0-mNl"/>
                 <constraint firstAttribute="bottom" secondItem="QXp-Fw-3W5" secondAttribute="bottom" id="bnT-cn-F63"/>
+                <constraint firstItem="1hN-r1-AZZ" firstAttribute="top" secondItem="U2u-QZ-QUJ" secondAttribute="bottom" constant="-47" id="d09-xf-wv4"/>
                 <constraint firstAttribute="centerX" secondItem="N3M-lz-THx" secondAttribute="centerX" id="qIE-zn-nu7"/>
                 <constraint firstItem="QXp-Fw-3W5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="sTb-Ov-fEt"/>
                 <constraint firstItem="dR0-yn-ZDI" firstAttribute="top" secondItem="N3M-lz-THx" secondAttribute="bottom" constant="8" id="uxB-gM-d4p"/>

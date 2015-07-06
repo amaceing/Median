@@ -52,8 +52,7 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     }
     
     func setUpAddButton() {
-        let addButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
-        self.navigationItem.rightBarButtonItem = addButton
+        self.editButtonItem().title = "Add"
     }
     
     func setUpDoneButton() {
