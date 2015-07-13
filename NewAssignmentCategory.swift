@@ -12,6 +12,14 @@ class NewAssignmentCategory: UIViewController {
     var category: AssignmentCategory?
     @IBOutlet weak var catName: UITextField!
     @IBOutlet weak var catWeight: UITextField!
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,10 +30,12 @@ class NewAssignmentCategory: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        if (self.category?.name == "Click to add") {
+        if (self.category?.name == "Click to Add") {
             self.navigationItem.title = "New Category"
         } else {
             self.navigationItem.title = "Edit " + self.category!.name
+            self.catName.text = self.category?.name
+            self.catWeight.text = String(format: "%.0f", self.category!.weight * 100)
         }
     }
 

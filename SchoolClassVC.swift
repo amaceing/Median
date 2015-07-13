@@ -143,11 +143,26 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         //Implement
         var cell: AssignmentCategoryCell = tableView.dequeueReusableCellWithIdentifier("AssignmentCategoryCell", forIndexPath: indexPath) as! AssignmentCategoryCell
+        let cat = self.schoolClass.assignmentCategoryAtIndex(indexPath.row)
+        self.fillCellWithContentsFromCategory(cell, category: cat)
         return cell
     }
     
+    func fillCellWithContentsFromCategory(cell: AssignmentCategoryCell, category: AssignmentCategory) {
+        cell.catName.text = category.name
+        cell.catGrade.text = String(format: "%0.1f", category.average!)
+        cell.catWeight.text = String(format: "%.0f/100", category.weight * 100)
+    }
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        //
+        var cat = self.schoolClass.assignmentCategoryAtIndex(indexPath.row)
+        if (self.tableView.editing) {
+            if (cat.name == "Click to Add") {
+                let newAssignCatVC = NewAssignmentCategory(nibName: "NewAssignmentCategory", bundle: nil)
+                newAssignCatVC.category = cat
+                self.navigationController?.pushViewController(newAssignCatVC, animated: true)
+            }
+        }
     }
     
 
