@@ -18,6 +18,23 @@ class NewAssignmentCategory: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if (self.category?.name == "Click to add") {
+            self.navigationItem.title = "New Category"
+        } else {
+            self.navigationItem.title = "Edit " + self.category!.name
+        }
+    }
+
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.category!.name = self.catName.text
+        let weight: NSString = self.catWeight.text
+        self.category!.weight = weight.doubleValue
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
