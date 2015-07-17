@@ -53,12 +53,17 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     }
     
     func setUpAddButton() {
+        if (self.tableView.editing) {
+            self.addCat.setTitle("Add", forState: UIControlState.Normal)
+            self.addCat.removeTarget(self, action: "stopEditing", forControlEvents: UIControlEvents.TouchUpInside)
+        }
         self.addCat.addTarget(self, action: "addAssignmentCategory", forControlEvents: UIControlEvents.TouchUpInside)
     }
     
-    func setUpDoneButton() {
-        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
-        self.navigationItem.rightBarButtonItem = doneButton
+    func stopEditing() {
+        self.addCat.setTitle("Done", forState: UIControlState.Normal)
+        self.addCat.removeTarget(self, action: "addAssignmentCategory", forControlEvents: UIControlEvents.TouchUpInside)
+        self.tableView.editing = false
     }
     
     func tableViewSetUp() {
@@ -122,6 +127,7 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         
         self.tableView.editing = true
         self.tableView.allowsSelectionDuringEditing = true
+        self.stopEditing()
     }
     
     
