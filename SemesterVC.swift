@@ -158,7 +158,7 @@ class SemesterVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         var schoolClassForCell = ClassStore.instance.allClasses()[index]
         
         // Configure the cell...
-        var classCircle: ClassCircle = makeCircleForClassCell()
+        var classCircle: ClassCircle = makeCircleForClassCell(schoolClassForCell)
         let con = UIGraphicsGetCurrentContext()
         cell.contentView.addSubview(classCircle)
         classCircle.setNeedsDisplay()
@@ -214,10 +214,10 @@ class SemesterVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         return gradeRect;
     }
     
-    func makeCircleForClassCell() -> ClassCircle {
+    func makeCircleForClassCell(sc: SchoolClass) -> ClassCircle {
         var frame: CGRect = CGRectMake(5, 20, 85, 85);
         var classCircle: ClassCircle = ClassCircle(frame: frame)
-        classCircle.grade = 78.0
+        classCircle.grade = sc.grade
         return classCircle
     }
     
