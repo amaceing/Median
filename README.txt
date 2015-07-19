@@ -1,5 +1,4 @@
-<b>REWRITTEN IN SWIFT</b>
-
+REWRITTEN IN SWIFT
 
 This is my first iOS App. I noticed one semester that I had a Professor who hated giving his students updates on their grades. Throughout the entire semester we got two grade sheets containing our Student ID #’s followed by a summary of our grades. Not once were the grades accurate or correct. The professor mixed up students assignments and sometimes just forgot to enter grades. Shortly thereafter, an idea sprouted in my head. This led to my first real personal project outside of my Computer Science classes. 
 
