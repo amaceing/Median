@@ -133,7 +133,7 @@ class SemesterVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         self.setUpEditButton()
     }
     
-    // MARK: - Table view data source
+    // MARK: - Table Implementation
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.

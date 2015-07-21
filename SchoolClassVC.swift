@@ -19,7 +19,7 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addCat: UIButton!
     
-    //MARK: - View loading methods
+    //MARK: - View Loading Methods
     
     init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?, index: NSInteger, schoolClass: SchoolClass) {
         self.schoolClass = schoolClass

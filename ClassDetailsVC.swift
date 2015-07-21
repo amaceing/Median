@@ -80,6 +80,7 @@ class ClassDetailsVC: UIViewController, UITextFieldDelegate {
     }
     
     //MARK: - UITextFieldDelegate Methods
+    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true

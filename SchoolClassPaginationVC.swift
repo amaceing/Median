@@ -16,7 +16,7 @@ class SchoolClassPaginationVC: UIViewController, UIPageViewControllerDelegate, U
                                                                         options: nil)
     var startIndex: NSInteger?
     
-    //NARK: - View loading methods
+    //NARK: - View Loading Methods
     
     init(index: Int) {
         super.init(nibName: nil, bundle: nil)
