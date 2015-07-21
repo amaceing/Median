@@ -10,6 +10,7 @@ import UIKit
 
 class ClassDetailsVC: UIViewController, UITextFieldDelegate {
     //MARK: - Properties
+    
     var schoolClass: SchoolClass?
     var strOfDays = ""
     let startTimeFormatter = NSDateFormatter()
@@ -24,6 +25,7 @@ class ClassDetailsVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var tuesButton: UIButton!
     @IBOutlet weak var monButton: UIButton!
     @IBOutlet weak var sunButton: UIButton!
+    
     //MARK: - View Loading Methods
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {

@@ -9,10 +9,14 @@
 import UIKit
 
 class SchoolClassPaginationVC: UIViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
+    //MARK: - Properties
+    
     var pageViewController = UIPageViewController(transitionStyle: UIPageViewControllerTransitionStyle.Scroll,
                                                                         navigationOrientation: UIPageViewControllerNavigationOrientation.Horizontal,
                                                                         options: nil)
     var startIndex: NSInteger?
+    
+    //NARK: - View loading methods
     
     init(index: Int) {
         super.init(nibName: nil, bundle: nil)
@@ -65,6 +69,7 @@ class SchoolClassPaginationVC: UIViewController, UIPageViewControllerDelegate, U
     }
     
     //MARK: - PageVC Methods
+    
     func viewControllerAtIndex(index: NSInteger) -> SchoolClassVC {
         var sc = ClassStore.instance.allClasses()[index]
         var childVC = SchoolClassVC(nibName: "SchoolClassVC", bundle: nil, index: index, schoolClass: sc)
@@ -94,17 +99,5 @@ class SchoolClassPaginationVC: UIViewController, UIPageViewControllerDelegate, U
         }
         return self.viewControllerAtIndex(index)
     }
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

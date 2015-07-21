@@ -10,6 +10,7 @@ import UIKit
 
 class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     //MARK: - Properties
+    
     var schoolClass: SchoolClass
     var index: NSInteger
     @IBOutlet weak var classLabel: UILabel!
@@ -18,8 +19,8 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addCat: UIButton!
     
-    
     //MARK: - View loading methods
+    
     init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?, index: NSInteger, schoolClass: SchoolClass) {
         self.schoolClass = schoolClass
         self.index = index
@@ -116,6 +117,7 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     }
     
     //MARK: - Logic
+    
     func addAssignmentCategory() {
         var assignCatToAdd = AssignmentCategory(name: "Click to Add", weight: 0)
         self.schoolClass.addAssignmentCategory(assignCatToAdd)
@@ -129,8 +131,6 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         self.tableView.allowsSelectionDuringEditing = true
         self.stopEditing()
     }
-    
-    
     
     //MARK: - Table View Implemenation
     
