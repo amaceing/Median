@@ -168,6 +168,8 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
                 newAssignCatVC.category = cat
                 self.navigationController?.pushViewController(newAssignCatVC, animated: true)
             }
+        } else {
+            //Push AssignCatTVC 
         }
     }
     
