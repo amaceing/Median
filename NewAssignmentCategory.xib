@@ -8,7 +8,6 @@
         <mutableArray key="Lato-Regular.ttf">
             <string>Lato-Regular</string>
             <string>Lato-Regular</string>
-            <string>Lato-Regular</string>
         </mutableArray>
     </customFonts>
     <objects>
@@ -26,49 +25,37 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Jb3-nP-Ycy">
-                    <rect key="frame" x="6" y="238" width="588" height="31"/>
+                    <rect key="frame" x="6" y="186" width="588" height="31"/>
                 </slider>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Assignment Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OpU-3v-wkO">
-                    <rect key="frame" x="8" y="8" width="584" height="110"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="110" id="pT5-gr-tez"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="25"/>
-                    <color key="textColor" red="0.14901960780000001" green="0.67450980390000004" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Category Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qAI-yA-I0f">
-                    <rect key="frame" x="205" y="126" width="190" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="0fh-HS-qUx"/>
-                        <constraint firstAttribute="width" constant="190" id="OfN-5v-YeI"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
-                </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slide to choose category weight" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ly8-l3-RC4">
-                    <rect key="frame" x="205" y="283" width="190" height="21"/>
+                    <rect key="frame" x="205" y="231" width="190" height="21"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="21" id="uJu-Ke-0QT"/>
+                        <constraint firstAttribute="width" constant="190" id="fow-hC-Gxf"/>
+                        <constraint firstAttribute="height" constant="21" id="z1e-bd-f5V"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="13"/>
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Category Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qAI-yA-I0f">
+                    <rect key="frame" x="147" y="74" width="307" height="63"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="63" id="dos-zM-9Mo"/>
+                        <constraint firstAttribute="width" constant="307" id="lcP-Eb-krR"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="33"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                </textField>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="OpU-3v-wkO" firstAttribute="leading" secondItem="Jb3-nP-Ycy" secondAttribute="leading" id="1BN-So-y9j"/>
-                <constraint firstItem="Jb3-nP-Ycy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="8ft-rP-wgw"/>
-                <constraint firstItem="Jb3-nP-Ycy" firstAttribute="centerX" secondItem="ly8-l3-RC4" secondAttribute="centerX" id="ChX-ei-5LT"/>
-                <constraint firstItem="Jb3-nP-Ycy" firstAttribute="top" secondItem="qAI-yA-I0f" secondAttribute="bottom" constant="82" id="FGm-me-FIQ"/>
-                <constraint firstItem="Jb3-nP-Ycy" firstAttribute="trailing" secondItem="OpU-3v-wkO" secondAttribute="trailing" id="Nt7-bb-RLJ"/>
-                <constraint firstItem="qAI-yA-I0f" firstAttribute="top" secondItem="OpU-3v-wkO" secondAttribute="bottom" constant="8" symbolic="YES" id="Wnk-Kq-hVc"/>
-                <constraint firstItem="qAI-yA-I0f" firstAttribute="leading" secondItem="ly8-l3-RC4" secondAttribute="leading" id="bzn-OW-6lP"/>
-                <constraint firstItem="OpU-3v-wkO" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="topMargin" id="fGg-wz-LB4"/>
-                <constraint firstItem="OpU-3v-wkO" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="oxf-7H-wlM"/>
-                <constraint firstItem="qAI-yA-I0f" firstAttribute="trailing" secondItem="ly8-l3-RC4" secondAttribute="trailing" id="tbX-pr-iu1"/>
-                <constraint firstItem="ly8-l3-RC4" firstAttribute="top" secondItem="Jb3-nP-Ycy" secondAttribute="bottom" constant="15" id="zrd-Hn-uAw"/>
+                <constraint firstItem="qAI-yA-I0f" firstAttribute="centerX" secondItem="Jb3-nP-Ycy" secondAttribute="centerX" id="FuL-sS-1Eg"/>
+                <constraint firstItem="Jb3-nP-Ycy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="Y20-Ht-WeQ"/>
+                <constraint firstItem="qAI-yA-I0f" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="74" id="hM8-X2-Ma5"/>
+                <constraint firstItem="Jb3-nP-Ycy" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="iwg-rd-kEV"/>
+                <constraint firstItem="ly8-l3-RC4" firstAttribute="top" secondItem="Jb3-nP-Ycy" secondAttribute="bottom" constant="15" id="mYJ-qS-OwD"/>
+                <constraint firstItem="Jb3-nP-Ycy" firstAttribute="top" secondItem="qAI-yA-I0f" secondAttribute="bottom" constant="49" id="qAs-Fn-t3c"/>
+                <constraint firstItem="ly8-l3-RC4" firstAttribute="centerX" secondItem="Jb3-nP-Ycy" secondAttribute="centerX" id="tiw-pk-ubn"/>
             </constraints>
             <point key="canvasLocation" x="516" y="279"/>
         </view>

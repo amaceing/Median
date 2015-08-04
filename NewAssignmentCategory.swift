@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewAssignmentCategory: UIViewController {
+class NewAssignmentCategory: UIViewController, UITextFieldDelegate {
     var category: AssignmentCategory?
     @IBOutlet weak var catName: UITextField!
     @IBOutlet weak var catWeight: UISlider!
@@ -26,6 +26,7 @@ class NewAssignmentCategory: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.catName.delegate = self
         self.catWeight.continuous = true
         self.catWeight.addTarget(self, action: "showWeight", forControlEvents: UIControlEvents.ValueChanged)
     }
@@ -38,14 +39,13 @@ class NewAssignmentCategory: UIViewController {
         } else {
             self.navigationItem.title = "Edit " + self.category!.name
             self.catName.text = self.category?.name
-            //self.catWeight.text = String(format: "%.0f", self.category!.weight * 100)
         }
     }
 
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         self.category!.name = self.catName.text
-        //self.category!.weight = weight.doubleValue
+        self.category!.weight = Double(catWeight.value)
     }
 
     override func didReceiveMemoryWarning() {
