@@ -11,6 +11,7 @@ import UIKit
 class AssignmentCategoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     //MARK: - Properties
     
+    var category: AssignmentCategory
     @IBOutlet weak var gradeLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
@@ -21,6 +22,18 @@ class AssignmentCategoryVC: UIViewController, UITableViewDelegate, UITableViewDa
 
         // Do any additional setup after loading the view.
     }
+    
+    func tableViewSetUp() {
+        self.tableView.tableFooterView = UIView()
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
+        let nib = UINib(nibName: "AssignmentCell", bundle: nil)
+        self.tableView.registerNib(nib, forCellReuseIdentifier: "AssignmentCell")
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
+        self.tableView.separatorColor = UIColor.lightGrayColor()
+        self.tableView.separatorInset = UIEdgeInsetsMake(0, 15, 0, 15)
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -28,5 +41,24 @@ class AssignmentCategoryVC: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     //MARK: - Table View Implementation
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        self.category.assignmentList.count
+    }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return false
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        //Implement
+        var cell: AssignmentCell = tableView.dequeueReusableCellWithIdentifier("AssignmentCell", forIndexPath: indexPath) as! AssignmentCell
+        let cat = self.category.assignmentAtIndex(indexPath.row)
+        return cell
+    }
 
 }
