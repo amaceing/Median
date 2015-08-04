@@ -53,26 +53,6 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         self.tableView.reloadData()
     }
     
-    func setUpAddButton() {
-        self.addCat.setTitle("Add", forState: UIControlState.Normal)
-        self.addCat.addTarget(self, action: "addAssignmentCategory", forControlEvents: UIControlEvents.TouchUpInside)
-    }
-    
-    func stopEditing() {
-        let deleteCat = self.schoolClass.assignmentCategoryAtIndex(0)
-        if (deleteCat.name == "Click to Add") {
-            self.schoolClass.removeAssignmentCategory(deleteCat)
-            //Deletion
-            let row = 0
-            let path = NSIndexPath(forRow: row, inSection: 0)
-            self.tableView.deleteRowsAtIndexPaths([path], withRowAnimation: UITableViewRowAnimation.Left)
-        }
-        self.addCat.setTitle("Done", forState: UIControlState.Normal)
-        self.addCat.removeTarget(self, action: "addAssignmentCategory", forControlEvents: UIControlEvents.TouchUpInside)
-        self.tableView.editing = false
-        self.setUpAddButton()
-    }
-    
     func tableViewSetUp() {
         self.tableView.tableFooterView = UIView()
         self.tableView.dataSource = self
@@ -122,6 +102,16 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         return gradeLabelsRect
     }
     
+    func setUpAddButton() {
+        self.addCat.setTitle("Add", forState: UIControlState.Normal)
+        self.addCat.addTarget(self, action: "addAssignmentCategory", forControlEvents: UIControlEvents.TouchUpInside)
+    }
+    
+    func setUpDoneButton() {
+        self.addCat.setTitle("Done", forState: UIControlState.Normal)
+        self.addCat.addTarget(self, action: "removeDummyAssignCat", forControlEvents: UIControlEvents.TouchUpInside)
+    }
+    
     //MARK: - Logic
     
     func addAssignmentCategory() {
@@ -129,13 +119,24 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         self.schoolClass.addAssignmentCategory(assignCatToAdd)
         
         //Insertion
-        let row = 0
-        let indexPath = NSIndexPath(forRow: row, inSection: 0)
+        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
         self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
-        
-        self.tableView.editing = true
+
+        self.addCat.removeTarget(self, action: "addAssignmentCategory", forControlEvents: UIControlEvents.TouchUpInside)
         self.tableView.allowsSelectionDuringEditing = true
-        self.stopEditing()
+        self.setUpDoneButton()
+    }
+    
+    func removeDummyAssignCat() {
+        let deleteCat = self.schoolClass.assignmentCategoryAtIndex(0)
+        if (deleteCat.name == "Click to Add") {
+            self.schoolClass.removeAssignmentCategory(deleteCat)
+            //Deletion
+            let path = NSIndexPath(forRow: 0, inSection: 0)
+            self.tableView.deleteRowsAtIndexPaths([path], withRowAnimation: UITableViewRowAnimation.Left)
+        }
+        self.addCat.removeTarget(self, action: "removeDummyAssignCat", forControlEvents: UIControlEvents.TouchUpInside)
+        self.setUpAddButton()
     }
     
     //MARK: - Table View Implemenation
