@@ -32,12 +32,22 @@ class SchoolClassPaginationVC: UIViewController, UIPageViewControllerDelegate, U
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
     }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.setUpBackButton()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         self.setUpNavBar()
+    }
+    
+    func setUpBackButton() {
+        let backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
+        self.navigationItem.backBarButtonItem = backButton
     }
     
     func setUpNavBar() {

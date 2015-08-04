@@ -194,6 +194,7 @@ class SemesterVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         var schoolClassToPresent: SchoolClass = ClassStore.instance.allClasses()[indexPath.row]
         let classIndex = indexPath.row
+        self.setUpBackButton()
         if (self.editing) {
             var classDetailsVC = ClassDetailsVC(nibName: "ClassDetailsVC", bundle: nil)
             classDetailsVC.schoolClass = schoolClassToPresent
