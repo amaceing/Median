@@ -54,17 +54,23 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     }
     
     func setUpAddButton() {
-        if (self.tableView.editing) {
-            self.addCat.setTitle("Add", forState: UIControlState.Normal)
-            self.addCat.removeTarget(self, action: "stopEditing", forControlEvents: UIControlEvents.TouchUpInside)
-        }
+        self.addCat.setTitle("Add", forState: UIControlState.Normal)
         self.addCat.addTarget(self, action: "addAssignmentCategory", forControlEvents: UIControlEvents.TouchUpInside)
     }
     
     func stopEditing() {
+        let deleteCat = self.schoolClass.assignmentCategoryAtIndex(0)
+        if (deleteCat.name == "Click to Add") {
+            self.schoolClass.removeAssignmentCategory(deleteCat)
+            //Deletion
+            let row = 0
+            let path = NSIndexPath(forRow: row, inSection: 0)
+            self.tableView.deleteRowsAtIndexPaths([path], withRowAnimation: UITableViewRowAnimation.Left)
+        }
         self.addCat.setTitle("Done", forState: UIControlState.Normal)
         self.addCat.removeTarget(self, action: "addAssignmentCategory", forControlEvents: UIControlEvents.TouchUpInside)
         self.tableView.editing = false
+        self.setUpAddButton()
     }
     
     func tableViewSetUp() {
