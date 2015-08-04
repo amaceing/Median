@@ -38,14 +38,21 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Class Name" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eVp-Dk-ebn">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Class Name" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eVp-Dk-ebn">
                     <rect key="frame" x="21" y="19" width="99" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="58n-ku-WHk"/>
+                        <constraint firstAttribute="width" constant="99" id="nzn-uu-mCy"/>
+                    </constraints>
                     <color key="textColor" red="0.43137254899999999" green="0.43137254899999999" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Section" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Eg2-bn-D3c">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Section" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Eg2-bn-D3c">
                     <rect key="frame" x="21" y="57" width="99" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="68K-YC-3Hl"/>
+                    </constraints>
                     <color key="textColor" red="0.43137254899999999" green="0.43137254899999999" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
@@ -164,13 +171,11 @@
             <constraints>
                 <constraint firstItem="mYc-4m-YNq" firstAttribute="height" secondItem="c4A-UZ-3CE" secondAttribute="height" id="0T9-Gx-zQl"/>
                 <constraint firstItem="mYm-Zf-duV" firstAttribute="leading" secondItem="Nm9-Kh-BCq" secondAttribute="trailing" constant="8" id="2U3-tt-mDl"/>
-                <constraint firstItem="eVp-Dk-ebn" firstAttribute="width" secondItem="Eg2-bn-D3c" secondAttribute="width" id="3du-au-Vm4"/>
                 <constraint firstItem="mYc-4m-YNq" firstAttribute="width" secondItem="Nm9-Kh-BCq" secondAttribute="width" id="4AL-U8-oFm"/>
                 <constraint firstItem="clR-Vz-jGd" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="124" id="6CZ-MR-cF5"/>
-                <constraint firstItem="Eg2-bn-D3c" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="21" id="6Zh-vH-wNT"/>
                 <constraint firstItem="mYc-4m-YNq" firstAttribute="width" secondItem="i9a-Kp-hPG" secondAttribute="width" id="9O6-Zb-2wB"/>
-                <constraint firstItem="eVp-Dk-ebn" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="19" id="C77-VF-Vp0"/>
-                <constraint firstItem="eVp-Dk-ebn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="21" id="CTs-O4-tNt"/>
+                <constraint firstItem="Ubn-Db-QLS" firstAttribute="top" secondItem="Eg2-bn-D3c" secondAttribute="bottom" constant="8" symbolic="YES" id="9jf-QL-KE9"/>
+                <constraint firstItem="eVp-Dk-ebn" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="19" id="B0r-Bz-l6h"/>
                 <constraint firstItem="j0T-jw-rD5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="21" id="Drm-Ts-w41"/>
                 <constraint firstItem="clR-Vz-jGd" firstAttribute="leading" secondItem="c4A-UZ-3CE" secondAttribute="trailing" constant="8" id="E54-vU-hwR"/>
                 <constraint firstItem="mYc-4m-YNq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="124" id="EgM-sn-y4U"/>
@@ -186,23 +191,24 @@
                 <constraint firstItem="mYc-4m-YNq" firstAttribute="leading" secondItem="1tx-m5-af9" secondAttribute="trailing" constant="8" id="VZC-iH-YhC"/>
                 <constraint firstItem="5DE-0z-Grh" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="192" id="Wah-bb-9rx"/>
                 <constraint firstItem="1tx-m5-af9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="124" id="XPA-um-zlj"/>
+                <constraint firstItem="Eg2-bn-D3c" firstAttribute="top" secondItem="eVp-Dk-ebn" secondAttribute="bottom" constant="8" symbolic="YES" id="Z5r-q9-QCr"/>
+                <constraint firstItem="Eg2-bn-D3c" firstAttribute="leading" secondItem="Ubn-Db-QLS" secondAttribute="leading" id="ZRC-BH-ERY"/>
                 <constraint firstItem="1tx-m5-af9" firstAttribute="leading" secondItem="clR-Vz-jGd" secondAttribute="trailing" constant="8" id="Zw9-7l-YDd"/>
                 <constraint firstItem="mYc-4m-YNq" firstAttribute="height" secondItem="1tx-m5-af9" secondAttribute="height" id="aQa-sG-Ues"/>
                 <constraint firstItem="mYc-4m-YNq" firstAttribute="height" secondItem="clR-Vz-jGd" secondAttribute="height" id="c1K-76-53d"/>
+                <constraint firstItem="Eg2-bn-D3c" firstAttribute="trailing" secondItem="eVp-Dk-ebn" secondAttribute="trailing" id="dx8-Q5-KdS"/>
                 <constraint firstItem="mYc-4m-YNq" firstAttribute="height" secondItem="Nm9-Kh-BCq" secondAttribute="height" id="kVo-6y-EaR"/>
                 <constraint firstItem="mYm-Zf-duV" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="124" id="mbu-HI-97k"/>
                 <constraint firstAttribute="trailing" secondItem="5DE-0z-Grh" secondAttribute="trailing" constant="21" id="meb-1Z-g1n"/>
-                <constraint firstItem="Ubn-Db-QLS" firstAttribute="top" secondItem="Eg2-bn-D3c" secondAttribute="bottom" constant="8" id="mr6-IZ-jmK"/>
                 <constraint firstItem="mYc-4m-YNq" firstAttribute="width" secondItem="1tx-m5-af9" secondAttribute="width" id="nuH-2Z-dvz"/>
                 <constraint firstAttribute="centerX" secondItem="WfE-cz-Kf5" secondAttribute="centerX" id="oDB-LJ-xc1"/>
-                <constraint firstItem="eVp-Dk-ebn" firstAttribute="height" secondItem="Eg2-bn-D3c" secondAttribute="height" id="oDm-83-rD3"/>
                 <constraint firstItem="5DE-0z-Grh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="21" id="pGD-k0-swn"/>
                 <constraint firstItem="mYc-4m-YNq" firstAttribute="height" secondItem="mYm-Zf-duV" secondAttribute="height" id="pLi-Bg-FXb"/>
                 <constraint firstItem="c4A-UZ-3CE" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="124" id="sxV-JO-aqM"/>
                 <constraint firstItem="j0T-jw-rD5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="161" id="tg5-CH-EAW"/>
                 <constraint firstItem="c4A-UZ-3CE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="21" id="xNe-C3-IyE"/>
+                <constraint firstItem="Eg2-bn-D3c" firstAttribute="leading" secondItem="eVp-Dk-ebn" secondAttribute="leading" id="xdI-QU-MYW"/>
                 <constraint firstItem="i9a-Kp-hPG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="124" id="zbP-ZF-ME1"/>
-                <constraint firstItem="Eg2-bn-D3c" firstAttribute="top" secondItem="eVp-Dk-ebn" secondAttribute="bottom" constant="8" id="zza-3j-dsb"/>
             </constraints>
             <point key="canvasLocation" x="459" y="251"/>
         </view>

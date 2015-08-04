@@ -2,9 +2,11 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
             <string>Lato-Regular</string>
             <string>Lato-Regular</string>
         </mutableArray>
@@ -13,8 +15,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewAssignmentCategory" customModule="Median" customModuleProvider="target">
             <connections>
                 <outlet property="catName" destination="qAI-yA-I0f" id="9oP-oU-cpT"/>
-                <outlet property="catWeight" destination="cHN-FJ-gRe" id="lkg-af-6AC"/>
+                <outlet property="catWeight" destination="Jb3-nP-Ycy" id="aEH-FN-grD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="weightLabel" destination="ly8-l3-RC4" id="Ugh-tA-vAf"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -22,22 +25,52 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Category Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qAI-yA-I0f">
-                    <rect key="frame" x="8" y="8" width="190" height="30"/>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Jb3-nP-Ycy">
+                    <rect key="frame" x="6" y="238" width="588" height="31"/>
+                </slider>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Assignment Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OpU-3v-wkO">
+                    <rect key="frame" x="8" y="8" width="584" height="110"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="110" id="pT5-gr-tez"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="25"/>
+                    <color key="textColor" red="0.14901960780000001" green="0.67450980390000004" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Category Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qAI-yA-I0f">
+                    <rect key="frame" x="205" y="126" width="190" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="0fh-HS-qUx"/>
+                        <constraint firstAttribute="width" constant="190" id="OfN-5v-YeI"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Weight" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cHN-FJ-gRe">
-                    <rect key="frame" x="8" y="46" width="97" height="30"/>
-                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                </textField>
-                <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Jb3-nP-Ycy">
-                    <rect key="frame" x="6" y="84" width="588" height="31"/>
-                </slider>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slide to choose category weight" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ly8-l3-RC4">
+                    <rect key="frame" x="205" y="283" width="190" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="uJu-Ke-0QT"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="13"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <point key="canvasLocation" x="616" y="320"/>
+            <constraints>
+                <constraint firstItem="OpU-3v-wkO" firstAttribute="leading" secondItem="Jb3-nP-Ycy" secondAttribute="leading" id="1BN-So-y9j"/>
+                <constraint firstItem="Jb3-nP-Ycy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="8ft-rP-wgw"/>
+                <constraint firstItem="Jb3-nP-Ycy" firstAttribute="centerX" secondItem="ly8-l3-RC4" secondAttribute="centerX" id="ChX-ei-5LT"/>
+                <constraint firstItem="Jb3-nP-Ycy" firstAttribute="top" secondItem="qAI-yA-I0f" secondAttribute="bottom" constant="82" id="FGm-me-FIQ"/>
+                <constraint firstItem="Jb3-nP-Ycy" firstAttribute="trailing" secondItem="OpU-3v-wkO" secondAttribute="trailing" id="Nt7-bb-RLJ"/>
+                <constraint firstItem="qAI-yA-I0f" firstAttribute="top" secondItem="OpU-3v-wkO" secondAttribute="bottom" constant="8" symbolic="YES" id="Wnk-Kq-hVc"/>
+                <constraint firstItem="qAI-yA-I0f" firstAttribute="leading" secondItem="ly8-l3-RC4" secondAttribute="leading" id="bzn-OW-6lP"/>
+                <constraint firstItem="OpU-3v-wkO" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="topMargin" id="fGg-wz-LB4"/>
+                <constraint firstItem="OpU-3v-wkO" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="oxf-7H-wlM"/>
+                <constraint firstItem="qAI-yA-I0f" firstAttribute="trailing" secondItem="ly8-l3-RC4" secondAttribute="trailing" id="tbX-pr-iu1"/>
+                <constraint firstItem="ly8-l3-RC4" firstAttribute="top" secondItem="Jb3-nP-Ycy" secondAttribute="bottom" constant="15" id="zrd-Hn-uAw"/>
+            </constraints>
+            <point key="canvasLocation" x="516" y="279"/>
         </view>
     </objects>
 </document>

@@ -167,14 +167,10 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         var cat = self.schoolClass.assignmentCategoryAtIndex(indexPath.row)
-        if (self.tableView.editing) {
-            if (cat.name == "Click to Add") {
-                let newAssignCatVC = NewAssignmentCategory(nibName: "NewAssignmentCategory", bundle: nil)
-                newAssignCatVC.category = cat
-                self.navigationController?.pushViewController(newAssignCatVC, animated: true)
-            }
-        } else {
-            //Push AssignCatTVC
+        if (cat.name == "Click to Add") {
+            let newAssignCatVC = NewAssignmentCategory(nibName: "NewAssignmentCategory", bundle: nil)
+            newAssignCatVC.category = cat
+            self.navigationController?.pushViewController(newAssignCatVC, animated: true)
         }
     }
 
