@@ -95,6 +95,10 @@ class SchoolClass: NSObject, NSCoding, Equatable {
         self.assignmentCategories.append(assignCat)
     }
     
+    func addAssignmentCategory(assignCat: AssignmentCategory, atIndex: Int) {
+        self.assignmentCategories.insert(assignCat, atIndex: 0)
+    }
+    
     func removeAssignmentCategory(assignCat: AssignmentCategory) {
         let index = find(self.assignmentCategories, assignCat)
         self.assignmentCategories.removeAtIndex(index!)

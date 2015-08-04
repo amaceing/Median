@@ -116,7 +116,7 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     
     func addAssignmentCategory() {
         var assignCatToAdd = AssignmentCategory(name: "Click to Add", weight: 0)
-        self.schoolClass.addAssignmentCategory(assignCatToAdd)
+        self.schoolClass.addAssignmentCategory(assignCatToAdd, atIndex: 0)
         //Insertion
         let indexPath = NSIndexPath(forRow: 0, inSection: 0)
         self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
