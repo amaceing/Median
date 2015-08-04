@@ -45,7 +45,7 @@ class ClassDetailsVC: UIViewController, UITextFieldDelegate {
         determineButtonsState()
         
         //Title
-        if (self.schoolClass?.name == "Click To Add") {
+        if (self.schoolClass?.name == "Click to Add") {
             self.navigationItem.title = "New Class"
         } else {
             self.navigationItem.title = self.schoolClass?.name
@@ -59,10 +59,13 @@ class ClassDetailsVC: UIViewController, UITextFieldDelegate {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        if !(self.schoolClass?.name == "Click To Add") {
+        if !(self.schoolClass?.name == "Click to Add") {
             self.nameField.text = self.schoolClass!.name;
             self.sectionField.text = self.schoolClass!.section;
             self.startTime.date = self.startTimeFormatter.dateFromString(self.schoolClass!.timeOfDay)!
+        } else {
+            self.nameField.text = ""
+            self.sectionField.text = ""
         }
     }
     

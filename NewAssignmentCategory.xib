@@ -43,6 +43,7 @@
                         <constraint firstAttribute="height" constant="63" id="dos-zM-9Mo"/>
                         <constraint firstAttribute="width" constant="307" id="lcP-Eb-krR"/>
                     </constraints>
+                    <color key="textColor" red="0.14901960780000001" green="0.67450980390000004" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="33"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                 </textField>
