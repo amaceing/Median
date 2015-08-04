@@ -8,7 +8,13 @@
 
 import UIKit
 
-class AssignmentCategoryVC: UIViewController {
+class AssignmentCategoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    //MARK: - Properties
+    
+    @IBOutlet weak var gradeLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
+    
+    //MARK: - View Loading Methods
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,15 +27,6 @@ class AssignmentCategoryVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    //MARK: - Table View Implementation
 
 }
