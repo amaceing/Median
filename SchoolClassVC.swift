@@ -68,7 +68,7 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     func gradeLabelSetUp() {
         var textColor = UIColor()
         self.gradeLabel.textColor = textColor.determineUIColor(self.schoolClass.grade)
-        self.gradeLabel.text = self.schoolClass.grade.description
+        self.gradeLabel.text = String(format: "%2.1f", self.schoolClass.grade)
     }
     
     func detailLabelsSetUp() {
@@ -139,7 +139,8 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.schoolClass.assignmentCategories.count
+        let count = self.schoolClass.assignmentCategories.count
+        return count
     }
     
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

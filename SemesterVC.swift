@@ -163,7 +163,7 @@ class SemesterVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         cell.contentView.addSubview(classCircle)
         classCircle.setNeedsDisplay()
         cell.selectionStyle = UITableViewCellSelectionStyle.None
-        cell.intGrade.frame = determineGradeLabelFrameWithGrade(90.6)
+        cell.intGrade.frame = determineGradeLabelFrameWithGrade(schoolClassForCell.grade)
         self.fillCellWithContentFromClass(cell, schoolClass: schoolClassForCell)
 
         return cell
@@ -177,11 +177,12 @@ class SemesterVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         cell.schoolClassName.text = schoolClass.name
         cell.schoolClassDetails.text = NSString(format: "%@  ∙ %@ ∙  %@", section, daysOfWeek, timeOfDay) as String
         let intAndDec = self.getIntAndDecFromGrade(schoolClass.grade)
-        cell.intGrade.text = String(format: "%.0f", intAndDec.0.description)
+        cell.intGrade.text = String(format: "%.0f", intAndDec.0)
         if (schoolClass.grade >= 100 || schoolClass.grade == 0) {
             cell.decGrade.text = "";
         } else {
-            cell.decGrade.text = String(format: ".%.0f", intAndDec.1.description)
+            let dec = formatDecimalFromGrade(intAndDec.1)
+            cell.decGrade.text = dec
         }
     }
     
@@ -189,6 +190,15 @@ class SemesterVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         let wholeNum = grade.getWholeNumberFromGrade()
         let decimal = grade.getDecimalFromGrade()
         return (wholeNum, decimal)
+    }
+    
+    func formatDecimalFromGrade(dec: Double) -> String {
+        var numFormatter = NSNumberFormatter()
+        numFormatter.maximumFractionDigits = 0
+        numFormatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
+        var roundedIntFromDec = dec * 10
+        let roundedIntFromDecString = String(format: ".%@", numFormatter.stringFromNumber(roundedIntFromDec)!)
+        return roundedIntFromDecString
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

@@ -42,7 +42,7 @@ class AssignmentCategoryVC: UIViewController, UITableViewDelegate, UITableViewDa
     func gradeLabelSetUp() {
         var textColor = UIColor()
         self.gradeLabel.textColor = textColor.determineUIColor(self.category.average!)
-        self.gradeLabel.text = self.category.average!.description
+        self.gradeLabel.text = String(format: "%2.1f", self.category.average!)
     }
     
     func tableViewSetUp() {

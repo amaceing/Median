@@ -29,17 +29,16 @@ class SchoolClass: NSObject, NSCoding, Equatable {
     var section: String
     var daysOfWeek: String
     var timeOfDay: String
-    var assignmentCategories: [AssignmentCategory] = []
+    var assignmentCategories: [AssignmentCategory]
     var grade: Double {
         get {
             var classWorths: Double = 0
             var assignCatWeights: Double = 0
+            let categoryList = self.assignmentCategories
             let count = self.assignmentCategories.count
-            for assignCat in self.assignmentCategories {
-                if (assignCat.getCount() > 0) {
-                    classWorths += assignCat.calcClassWorth()
-                    assignCatWeights += assignCat.weight
-                }
+            for assignCat in categoryList {
+                classWorths += assignCat.calcClassWorth()
+                assignCatWeights += assignCat.weight
             }
             if (assignCatWeights != 0) {
                 return (classWorths / assignCatWeights) * 100.0;
@@ -53,6 +52,7 @@ class SchoolClass: NSObject, NSCoding, Equatable {
         self.section = ""
         self.daysOfWeek = ""
         self.timeOfDay = ""
+        self.assignmentCategories = []
         super.init()
     }
     
@@ -61,6 +61,7 @@ class SchoolClass: NSObject, NSCoding, Equatable {
         self.section = section
         self.daysOfWeek = daysOfWeek
         self.timeOfDay = timeOfDay
+        self.assignmentCategories = []
     }
     
     @objc required init(coder aDecoder: NSCoder) {
