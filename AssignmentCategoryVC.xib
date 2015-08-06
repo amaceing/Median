@@ -5,8 +5,8 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="Lato-Regular.ttf">
-            <string>Lato-Regular</string>
+        <mutableArray key="Lato-Light.ttf">
+            <string>Lato-Light</string>
         </mutableArray>
     </customFonts>
     <objects>
@@ -32,7 +32,7 @@
                         <constraint firstAttribute="width" constant="184" id="Fl3-58-Z2U"/>
                         <constraint firstAttribute="height" constant="96" id="iIg-35-ncf"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="45"/>
+                    <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="45"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
