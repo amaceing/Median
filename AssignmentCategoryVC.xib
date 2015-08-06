@@ -31,7 +31,7 @@
                         <constraint firstAttribute="width" constant="184" id="Fl3-58-Z2U"/>
                         <constraint firstAttribute="height" constant="96" id="iIg-35-ncf"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="45"/>
+                    <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="50"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>

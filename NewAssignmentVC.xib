@@ -2,10 +2,23 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewAssignmentVC" customModule="Median" customModuleProvider="target">
             <connections>
+                <outlet property="earnedField" destination="j9y-5v-gUm" id="CPh-dR-7U5"/>
+                <outlet property="nameField" destination="VMx-Aa-yv1" id="yOu-fE-V0z"/>
+                <outlet property="possibleField" destination="cui-MK-OO1" id="eDq-OY-LDP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -13,7 +26,63 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Assignment Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VMx-Aa-yv1">
+                    <rect key="frame" x="93" y="43" width="414" height="63"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="63" id="2sa-d5-gqi"/>
+                    </constraints>
+                    <color key="textColor" red="0.14901960780000001" green="0.67450980390000004" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="30"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Points Earned" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j9y-5v-gUm">
+                    <rect key="frame" x="147" y="122" width="120" height="38"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="120" id="CN0-ZL-gh2"/>
+                        <constraint firstAttribute="height" constant="38" id="SX8-bk-RRH"/>
+                    </constraints>
+                    <color key="textColor" red="0.14901960780000001" green="0.67450980390000004" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="35"/>
+                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="out of " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4bG-cL-2aY">
+                    <rect key="frame" x="275" y="122" width="51" height="38"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="51" id="7fY-Vp-InB"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
+                    <color key="textColor" red="0.14901960780000001" green="0.67450980390000004" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Points Possible" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cui-MK-OO1">
+                    <rect key="frame" x="334" y="122" width="133" height="38"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="38" id="Eto-z8-oEG"/>
+                        <constraint firstAttribute="width" constant="133" id="hZr-3k-Xjm"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="133" id="mkM-oV-Pl0"/>
+                    </constraints>
+                    <color key="textColor" red="0.14901960780000001" green="0.67450980390000004" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="35"/>
+                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                </textField>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="4bG-cL-2aY" firstAttribute="centerX" secondItem="VMx-Aa-yv1" secondAttribute="centerX" id="1cM-vd-4S1"/>
+                <constraint firstItem="cui-MK-OO1" firstAttribute="baseline" secondItem="j9y-5v-gUm" secondAttribute="firstBaseline" id="8bW-fF-HIe"/>
+                <constraint firstItem="j9y-5v-gUm" firstAttribute="bottom" secondItem="4bG-cL-2aY" secondAttribute="bottom" id="C6f-DV-zdc"/>
+                <constraint firstItem="VMx-Aa-yv1" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="43" id="CRE-64-xdG"/>
+                <constraint firstItem="4bG-cL-2aY" firstAttribute="top" secondItem="j9y-5v-gUm" secondAttribute="top" id="F8T-iF-Qlo"/>
+                <constraint firstItem="4bG-cL-2aY" firstAttribute="bottom" secondItem="cui-MK-OO1" secondAttribute="bottom" id="Gcj-gQ-jGE"/>
+                <constraint firstItem="j9y-5v-gUm" firstAttribute="baseline" secondItem="cui-MK-OO1" secondAttribute="firstBaseline" id="Md7-M3-ENK"/>
+                <constraint firstItem="4bG-cL-2aY" firstAttribute="leading" secondItem="j9y-5v-gUm" secondAttribute="trailing" constant="8" symbolic="YES" id="biA-Et-Qfp"/>
+                <constraint firstItem="VMx-Aa-yv1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="93" id="jT1-3C-47E"/>
+                <constraint firstItem="cui-MK-OO1" firstAttribute="leading" secondItem="4bG-cL-2aY" secondAttribute="trailing" constant="8" symbolic="YES" id="kXE-bS-Jjp"/>
+                <constraint firstItem="j9y-5v-gUm" firstAttribute="top" secondItem="VMx-Aa-yv1" secondAttribute="bottom" constant="16" id="kal-LV-ozd"/>
+                <constraint firstItem="4bG-cL-2aY" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="yEO-eo-XQ0"/>
+            </constraints>
+            <point key="canvasLocation" x="481" y="421"/>
         </view>
     </objects>
 </document>

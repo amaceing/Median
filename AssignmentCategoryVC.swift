@@ -32,6 +32,7 @@ class AssignmentCategoryVC: UIViewController, UITableViewDelegate, UITableViewDa
         // Do any additional setup after loading the view.
         self.gradeLabelSetUp()
         self.tableViewSetUp()
+        self.tableView.reloadData()
     }
     
     func gradeLabelSetUp() {
@@ -63,6 +64,10 @@ class AssignmentCategoryVC: UIViewController, UITableViewDelegate, UITableViewDa
         self.tableView.editing = true
         var assignmentToAdd = Assignment()
         self.category.addAssignment(assignmentToAdd)
+        //Push NewAssignmentVC
+        let assignVC = NewAssignmentVC(nibName: "NewAssignmentVC", bundle: nil)
+        assignVC.assignment = assignmentToAdd
+        self.navigationController?.pushViewController(assignVC, animated: true)
         //Insertion
         let indexPath = NSIndexPath(forRow: 0, inSection: 0)
         self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
@@ -87,7 +92,10 @@ class AssignmentCategoryVC: UIViewController, UITableViewDelegate, UITableViewDa
         var cell: AssignmentCell = tableView.dequeueReusableCellWithIdentifier("AssignmentCell", forIndexPath: indexPath) as! AssignmentCell
         let assignment = self.category.assignmentAtIndex(indexPath.row)
         cell.assignmentName.text = assignment.name
-        cell.gradeLabel.text = assignment.gradeEarned?.description
+        if let gradeText = assignment.gradeEarned?.description {
+            cell.gradeLabel.text = gradeText
+        }
+        
         return cell
     }
 
