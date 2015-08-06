@@ -92,10 +92,6 @@ class SchoolClass: NSObject, NSCoding, Equatable {
     }
     
     func addAssignmentCategory(assignCat: AssignmentCategory) {
-        self.assignmentCategories.append(assignCat)
-    }
-    
-    func addAssignmentCategory(assignCat: AssignmentCategory, atIndex: Int) {
         self.assignmentCategories.insert(assignCat, atIndex: 0)
     }
     

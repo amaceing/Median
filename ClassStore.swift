@@ -50,12 +50,8 @@ class ClassStore: NSObject {
     }
     
     func addClass(classToAdd: SchoolClass) {
-        self.classArray!.append(classToAdd)
+        self.classArray!.insert(classToAdd, atIndex: 0)
         NSLog("adding %@", classToAdd.name)
-    }
-    
-    func addClass(classToAdd: SchoolClass, atIndex: Int) {
-        self.classArray?.insert(classToAdd, atIndex: 0)
     }
     
     func removeClass(schoolClass: SchoolClass) {

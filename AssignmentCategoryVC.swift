@@ -57,6 +57,14 @@ class AssignmentCategoryVC: UIViewController, UITableViewDelegate, UITableViewDa
         // Dispose of any resources that can be recreated.
     }
     
+    //MARK: - Logic
+    
+    @IBAction func addAssignment(sender: UIButton) {
+        self.tableView.editing = true
+        var assignmentToAdd = Assignment()
+        self.category.addAssignment(assignmentToAdd)
+    }
+    
     //MARK: - Table View Implementation
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {

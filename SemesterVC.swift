@@ -107,7 +107,7 @@ class SemesterVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func addSchoolClass(sender: UIBarButtonItem) {
         var clickToAdd: SchoolClass = SchoolClass(name: "Click to Add", section: "101", daysOfWeek: "MWF", timeOfDay: "12:00 PM")
         var store = ClassStore.instance
-        store.addClass(clickToAdd, atIndex: 0)
+        store.addClass(clickToAdd)
         
         //Insertion animation
         var row = 0
