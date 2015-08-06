@@ -36,10 +36,10 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YNn-j0-3XR">
-                    <rect key="frame" x="0.0" y="533" width="600" height="64"/>
+                    <rect key="frame" x="0.0" y="536" width="600" height="64"/>
                     <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="64" id="9Mu-Dm-oSL"/>
+                        <constraint firstAttribute="height" constant="64" id="mNl-lE-gyW"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="28"/>
                     <state key="normal" title="Add Assignment">
@@ -54,13 +54,13 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="YNn-j0-3XR" secondAttribute="bottom" constant="3" id="Ehe-tL-Ey4"/>
+                <constraint firstItem="YNn-j0-3XR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="2pk-9S-G5n"/>
                 <constraint firstItem="2O3-Lz-gno" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="topMargin" id="Ha2-es-6jL"/>
-                <constraint firstItem="YNn-j0-3XR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="JDM-dk-H1q"/>
+                <constraint firstAttribute="bottom" secondItem="YNn-j0-3XR" secondAttribute="bottom" id="IPd-tk-dV4"/>
                 <constraint firstItem="2Dp-Ta-bLN" firstAttribute="top" secondItem="2O3-Lz-gno" secondAttribute="bottom" constant="8" symbolic="YES" id="QRX-a9-pT2"/>
-                <constraint firstItem="YNn-j0-3XR" firstAttribute="centerX" secondItem="2Dp-Ta-bLN" secondAttribute="centerX" id="X3X-tw-UjJ"/>
-                <constraint firstItem="YNn-j0-3XR" firstAttribute="centerX" secondItem="2O3-Lz-gno" secondAttribute="centerX" id="deu-9G-rO2"/>
-                <constraint firstItem="YNn-j0-3XR" firstAttribute="top" secondItem="2Dp-Ta-bLN" secondAttribute="bottom" constant="15" id="fWH-2A-GfT"/>
+                <constraint firstItem="YNn-j0-3XR" firstAttribute="centerX" secondItem="2Dp-Ta-bLN" secondAttribute="centerX" id="Rcq-Dd-dvf"/>
+                <constraint firstItem="YNn-j0-3XR" firstAttribute="top" secondItem="2Dp-Ta-bLN" secondAttribute="bottom" constant="18" id="fCm-se-hU9"/>
+                <constraint firstItem="YNn-j0-3XR" firstAttribute="centerX" secondItem="2O3-Lz-gno" secondAttribute="centerX" id="rnP-h2-lgA"/>
                 <constraint firstItem="2O3-Lz-gno" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="vKZ-pf-7qf"/>
                 <constraint firstItem="2Dp-Ta-bLN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="4" id="vxk-9A-bC9"/>
             </constraints>
