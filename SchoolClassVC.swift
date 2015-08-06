@@ -108,6 +108,7 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     //MARK: - Logic
     
     func addAssignmentCategory() {
+        self.tableView.editing = true
         var assignCatToAdd = AssignmentCategory(name: "Click to Add", weight: 0)
         self.schoolClass.addAssignmentCategory(assignCatToAdd, atIndex: 0)
         //Insertion
@@ -119,12 +120,13 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     }
     
     func removeDummyAssignCat() {
+        self.tableView.editing = false
         let deleteCat = self.schoolClass.assignmentCategoryAtIndex(0)
         if (deleteCat.name == "Click to Add") {
             self.schoolClass.removeAssignmentCategory(deleteCat)
             //Deletion
             let path = NSIndexPath(forRow: 0, inSection: 0)
-            self.tableView.deleteRowsAtIndexPaths([path], withRowAnimation: UITableViewRowAnimation.Left)
+            self.tableView.deleteRowsAtIndexPaths([path], withRowAnimation: UITableViewRowAnimation.Fade)
         }
         self.addCat.removeTarget(self, action: "removeDummyAssignCat", forControlEvents: UIControlEvents.TouchUpInside)
         self.setUpAddButton()
@@ -161,7 +163,7 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         var cat = self.schoolClass.assignmentCategoryAtIndex(indexPath.row)
-        if (cat.name == "Click to Add") {
+        if (cat.name == "Click to Add" || self.tableView.editing) {
             let newAssignCatVC = NewAssignmentCategory(nibName: "NewAssignmentCategory", bundle: nil)
             newAssignCatVC.category = cat
             self.navigationController?.pushViewController(newAssignCatVC, animated: true)
