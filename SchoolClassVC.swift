@@ -44,12 +44,12 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         self.classLabel.text = self.schoolClass.name
         self.setUpAddButton()
         self.tableViewSetUp()
-        self.gradeLabelSetUp()
         self.detailLabelsSetUp()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        self.gradeLabelSetUp()
         self.tableView.reloadData()
     }
     
@@ -62,7 +62,7 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
         self.tableView.separatorColor = UIColor.lightGrayColor()
         self.tableView.separatorInset = UIEdgeInsetsMake(0, 15, 0, 15)
-        //self.tableView.tableFooterView = UIView()
+        self.tableView.tableFooterView = UIView()
     }
     
     func gradeLabelSetUp() {

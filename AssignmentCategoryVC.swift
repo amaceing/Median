@@ -30,9 +30,13 @@ class AssignmentCategoryVC: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.gradeLabelSetUp()
         self.tableViewSetUp()
         self.tableView.reloadData()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.gradeLabelSetUp()
     }
     
     func gradeLabelSetUp() {

@@ -34,6 +34,7 @@ class SchoolClass: NSObject, NSCoding, Equatable {
         get {
             var classWorths: Double = 0
             var assignCatWeights: Double = 0
+            let count = self.assignmentCategories.count
             for assignCat in self.assignmentCategories {
                 if (assignCat.getCount() > 0) {
                     classWorths += assignCat.calcClassWorth()

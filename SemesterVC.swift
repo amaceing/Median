@@ -222,4 +222,13 @@ class SemesterVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         return classCircle
     }
     
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.Delete) {
+            //Delete row
+            let schoolClass = ClassStore.instance.allClasses()[indexPath.row]
+            ClassStore.instance.removeClass(schoolClass)
+            self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+        }
+    }
+    
 }
