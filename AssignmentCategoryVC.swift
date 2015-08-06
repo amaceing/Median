@@ -30,6 +30,14 @@ class AssignmentCategoryVC: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.gradeLabelSetUp()
+        self.tableViewSetUp()
+    }
+    
+    func gradeLabelSetUp() {
+        var textColor = UIColor()
+        self.gradeLabel.textColor = textColor.determineUIColor(self.category.average!)
+        self.gradeLabel.text = self.category.average!.description
     }
     
     func tableViewSetUp() {

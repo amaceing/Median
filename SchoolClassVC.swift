@@ -66,15 +66,8 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     }
     
     func gradeLabelSetUp() {
-        let textColor: UIColor
-        if (self.schoolClass.grade >= 85) {
-            textColor = UIColor(red:124/255.0, green:209/255.0, blue:30/255.0 ,alpha:1)
-        } else if (self.schoolClass.grade >= 70) {
-            textColor = UIColor(red:243/255.0, green:172/255.0, blue:54/255.0 ,alpha:1)
-        } else {
-            textColor = UIColor(red:233/255.0, green:69/255.0, blue:89/255.0 ,alpha:1)
-        }
-        self.gradeLabel.textColor = textColor
+        var textColor = UIColor()
+        self.gradeLabel.textColor = textColor.determineUIColor(self.schoolClass.grade)
         self.gradeLabel.text = self.schoolClass.grade.description
     }
     
@@ -160,6 +153,7 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     }
     
     func fillCellWithContentsFromCategory(cell: AssignmentCategoryCell, category: AssignmentCategory) {
+        println(category.weight)
         cell.catName.text = category.name
         cell.catGrade.text = String(format: "%0.1f", category.average!)
         cell.catWeight.text = String(format: "%.0f/100", category.weight * 100)
@@ -171,6 +165,10 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
             let newAssignCatVC = NewAssignmentCategory(nibName: "NewAssignmentCategory", bundle: nil)
             newAssignCatVC.category = cat
             self.navigationController?.pushViewController(newAssignCatVC, animated: true)
+        } else {
+            let assignCatVC = AssignmentCategoryVC(nibName: "AssignmentCategoryVC", bundle: nil)
+            assignCatVC.category = cat
+            self.navigationController?.pushViewController(assignCatVC, animated: true)
         }
     }
 

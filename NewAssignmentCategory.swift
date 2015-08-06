@@ -33,7 +33,6 @@ class NewAssignmentCategory: UIViewController, UITextFieldDelegate {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
         if (self.category?.name == "Click to Add") {
             self.navigationItem.title = "New Category"
         } else {

@@ -9,6 +9,20 @@
 import UIKit
 import Darwin
 
+extension UIColor {
+    func determineUIColor(percentage: Double) -> UIColor {
+        var color: UIColor
+        if (percentage >= 85) {
+            color = UIColor(red: 124/255.0, green: 209/255.0, blue: 30/255.0, alpha: 1)
+        } else if (percentage >= 70) {
+            color = UIColor(red: 243/255.0, green: 172/255.0, blue: 54/255.0, alpha: 1)
+        } else {
+            color = UIColor(red: 233/255.0, green: 69/255.0, blue: 89/255.0, alpha: 1)
+        }
+        return color
+    }
+}
+
 class ClassCircle: UIView {
     var grade: Double = 0.0
     
@@ -48,9 +62,10 @@ class ClassCircle: UIView {
         
         //Creating color circle
         if (percentage != 0) {
+            var color = UIColor()
             outerSolidColor.lineWidth = 3.25
             outerSolidColor.addArcWithCenter(outerPoint, radius: outerRadius, startAngle: degreesToRadians(270), endAngle: degreesToRadians(360 * (percentage / 100) + 270), clockwise: true)
-            var colorForCircle = determineUIColor(percentage)
+            var colorForCircle = color.determineUIColor(percentage)
             colorForCircle.setStroke()
             outerSolidColor.stroke()
         }
@@ -59,16 +74,16 @@ class ClassCircle: UIView {
     func degreesToRadians(angle: Double) -> CGFloat {
         return CGFloat(angle / 180.0 * M_PI)
     }
-    
-    func determineUIColor(percentage: Double) -> UIColor {
-        var color: UIColor
-        if (percentage >= 85) {
-            color = UIColor(red: 124/255.0, green: 209/255.0, blue: 30/255.0, alpha: 1)
-        } else if (percentage >= 70) {
-            color = UIColor(red: 243/255.0, green: 172/255.0, blue: 54/255.0, alpha: 1)
-        } else {
-            color = UIColor(red: 233/255.0, green: 69/255.0, blue: 89/255.0, alpha: 1)
-        }
-        return color
-    }
+//    
+//    func determineUIColor(percentage: Double) -> UIColor {
+//        var color: UIColor
+//        if (percentage >= 85) {
+//            color = UIColor(red: 124/255.0, green: 209/255.0, blue: 30/255.0, alpha: 1)
+//        } else if (percentage >= 70) {
+//            color = UIColor(red: 243/255.0, green: 172/255.0, blue: 54/255.0, alpha: 1)
+//        } else {
+//            color = UIColor(red: 233/255.0, green: 69/255.0, blue: 89/255.0, alpha: 1)
+//        }
+//        return color
+//    }
 }

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Lato-Regular.ttf">
@@ -21,18 +22,31 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="2Dp-Ta-bLN">
-                    <rect key="frame" x="8" y="78" width="584" height="514"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="2Dp-Ta-bLN">
+                    <rect key="frame" x="8" y="124" width="592" height="468"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="98.6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2O3-Lz-gno">
-                    <rect key="frame" x="226" y="13" width="148" height="57"/>
-                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="33"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="98.6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2O3-Lz-gno">
+                    <rect key="frame" x="208" y="8" width="184" height="96"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="184" id="Fl3-58-Z2U"/>
+                        <constraint firstAttribute="height" constant="96" id="iIg-35-ncf"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="45"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="2O3-Lz-gno" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="topMargin" id="Ha2-es-6jL"/>
+                <constraint firstItem="2Dp-Ta-bLN" firstAttribute="top" secondItem="2O3-Lz-gno" secondAttribute="bottom" constant="20" id="LD1-zY-z9i"/>
+                <constraint firstItem="2Dp-Ta-bLN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="eWp-Ds-0GV"/>
+                <constraint firstItem="2Dp-Ta-bLN" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottomMargin" id="h1U-3i-p4B"/>
+                <constraint firstAttribute="trailing" secondItem="2Dp-Ta-bLN" secondAttribute="trailing" id="jdL-ke-qkK"/>
+                <constraint firstItem="2O3-Lz-gno" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="vKZ-pf-7qf"/>
+            </constraints>
+            <point key="canvasLocation" x="403" y="288"/>
         </view>
     </objects>
 </document>
