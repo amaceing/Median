@@ -150,6 +150,7 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         //Implement
         var cell: AssignmentCategoryCell = tableView.dequeueReusableCellWithIdentifier("AssignmentCategoryCell", forIndexPath: indexPath) as! AssignmentCategoryCell
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
         let cat = self.schoolClass.assignmentCategoryAtIndex(indexPath.row)
         self.fillCellWithContentsFromCategory(cell, category: cat)
         return cell

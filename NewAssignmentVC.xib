@@ -34,9 +34,9 @@
                     </constraints>
                     <color key="textColor" red="0.14901960780000001" green="0.67450980390000004" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="30"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Points Earned" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j9y-5v-gUm">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" placeholder="Points Earned" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j9y-5v-gUm">
                     <rect key="frame" x="147" y="122" width="120" height="38"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="120" id="CN0-ZL-gh2"/>
@@ -55,7 +55,7 @@
                     <color key="textColor" red="0.14901960780000001" green="0.67450980390000004" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Points Possible" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cui-MK-OO1">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Points Possible" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cui-MK-OO1">
                     <rect key="frame" x="334" y="122" width="133" height="38"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="38" id="Eto-z8-oEG"/>

@@ -136,14 +136,10 @@ class SemesterVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     // MARK: - Table Implementation
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
         return 1
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows term in the section.
         var count = ClassStore.instance.allClasses().count
         return count
     }

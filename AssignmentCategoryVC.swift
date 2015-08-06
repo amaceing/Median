@@ -31,12 +31,12 @@ class AssignmentCategoryVC: UIViewController, UITableViewDelegate, UITableViewDa
 
         // Do any additional setup after loading the view.
         self.tableViewSetUp()
-        self.tableView.reloadData()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.gradeLabelSetUp()
+        self.tableView.reloadData()
     }
     
     func gradeLabelSetUp() {
@@ -84,7 +84,8 @@ class AssignmentCategoryVC: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.category.assignmentList.count
+        let count = self.category.assignmentList.count
+        return count
     }
     
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -94,12 +95,15 @@ class AssignmentCategoryVC: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         //Implement
         var cell: AssignmentCell = tableView.dequeueReusableCellWithIdentifier("AssignmentCell", forIndexPath: indexPath) as! AssignmentCell
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
         let assignment = self.category.assignmentAtIndex(indexPath.row)
         cell.assignmentName.text = assignment.name
-        if let gradeText = assignment.gradeEarned?.description {
+        if var gradeText = assignment.gradeEarned?.description {
+            var textColor = UIColor()
+            cell.gradeLabel.textColor = textColor.determineUIColor(assignment.gradeEarned!)
+            gradeText = String(format: "%.1f", assignment.gradeEarned!)
             cell.gradeLabel.text = gradeText
         }
-        
         return cell
     }
 
