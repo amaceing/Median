@@ -9,7 +9,12 @@
 import UIKit
 
 class AssignmentCell: UITableViewCell {
+    //MARK: - Properties
 
+    @IBOutlet weak var gradeLabel: UILabel!
+    @IBOutlet weak var assignmentName: UILabel!
+    
+    //MARK: - View Loading Methods
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -63,6 +63,9 @@ class AssignmentCategoryVC: UIViewController, UITableViewDelegate, UITableViewDa
         self.tableView.editing = true
         var assignmentToAdd = Assignment()
         self.category.addAssignment(assignmentToAdd)
+        //Insertion
+        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
+        self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
     }
     
     //MARK: - Table View Implementation
@@ -82,7 +85,9 @@ class AssignmentCategoryVC: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         //Implement
         var cell: AssignmentCell = tableView.dequeueReusableCellWithIdentifier("AssignmentCell", forIndexPath: indexPath) as! AssignmentCell
-        let cat = self.category.assignmentAtIndex(indexPath.row)
+        let assignment = self.category.assignmentAtIndex(indexPath.row)
+        cell.assignmentName.text = assignment.name
+        cell.gradeLabel.text = assignment.gradeEarned?.description
         return cell
     }
 

@@ -33,7 +33,11 @@
                     </label>
                 </subviews>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="397" y="299"/>
+            <connections>
+                <outlet property="assignmentName" destination="nFa-JU-f83" id="J2m-iD-5bm"/>
+                <outlet property="gradeLabel" destination="SiQ-Nf-yCd" id="1Td-6p-tku"/>
+            </connections>
+            <point key="canvasLocation" x="162" y="230"/>
         </tableViewCell>
     </objects>
 </document>
