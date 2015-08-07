@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Lato-Light.ttf">
@@ -53,10 +54,6 @@
                     <color key="textColor" red="0.14901960780000001" green="0.67450980390000004" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="IjW-OP-4ug">
-                    <rect key="frame" x="8" y="164" width="584" height="364"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </tableView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2u-QZ-QUJ">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                     <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -78,25 +75,29 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="IjW-OP-4ug">
+                    <rect key="frame" x="20" y="164" width="560" height="364"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="U2u-QZ-QUJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="1Ki-nT-adc"/>
                 <constraint firstAttribute="centerX" secondItem="dR0-yn-ZDI" secondAttribute="centerX" id="2IK-5G-M9w"/>
                 <constraint firstItem="1hN-r1-AZZ" firstAttribute="centerY" secondItem="U2u-QZ-QUJ" secondAttribute="centerY" id="7E0-jL-Yzi"/>
-                <constraint firstItem="IjW-OP-4ug" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="DQM-bw-OrU"/>
-                <constraint firstAttribute="trailing" secondItem="IjW-OP-4ug" secondAttribute="trailing" constant="8" id="I3B-s8-5WF"/>
-                <constraint firstItem="IjW-OP-4ug" firstAttribute="top" secondItem="dR0-yn-ZDI" secondAttribute="bottom" constant="8" id="NnG-7t-ZHi"/>
+                <constraint firstItem="IjW-OP-4ug" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="9xF-3b-c79"/>
+                <constraint firstItem="IjW-OP-4ug" firstAttribute="centerX" secondItem="dR0-yn-ZDI" secondAttribute="centerX" id="QF2-l0-C6i"/>
                 <constraint firstAttribute="trailing" secondItem="U2u-QZ-QUJ" secondAttribute="trailing" id="VIX-nN-ZzY"/>
                 <constraint firstItem="N3M-lz-THx" firstAttribute="top" secondItem="U2u-QZ-QUJ" secondAttribute="bottom" constant="29" id="Vcx-W0-mNl"/>
                 <constraint firstAttribute="bottom" secondItem="QXp-Fw-3W5" secondAttribute="bottom" id="bnT-cn-F63"/>
-                <constraint firstItem="1hN-r1-AZZ" firstAttribute="trailing" secondItem="IjW-OP-4ug" secondAttribute="trailing" id="bsn-nZ-9ta"/>
+                <constraint firstItem="1hN-r1-AZZ" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="cFa-Xw-qZ3"/>
                 <constraint firstAttribute="centerX" secondItem="N3M-lz-THx" secondAttribute="centerX" id="qIE-zn-nu7"/>
+                <constraint firstItem="QXp-Fw-3W5" firstAttribute="top" secondItem="IjW-OP-4ug" secondAttribute="bottom" constant="8" symbolic="YES" id="sE3-HT-kvc"/>
                 <constraint firstItem="QXp-Fw-3W5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="sTb-Ov-fEt"/>
                 <constraint firstItem="dR0-yn-ZDI" firstAttribute="top" secondItem="N3M-lz-THx" secondAttribute="bottom" constant="8" id="uxB-gM-d4p"/>
+                <constraint firstItem="IjW-OP-4ug" firstAttribute="top" secondItem="dR0-yn-ZDI" secondAttribute="bottom" constant="8" symbolic="YES" id="vMP-YC-OB6"/>
                 <constraint firstAttribute="trailing" secondItem="QXp-Fw-3W5" secondAttribute="trailing" id="wIf-Sa-U0O"/>
                 <constraint firstItem="U2u-QZ-QUJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="y8j-1t-71L"/>
-                <constraint firstItem="QXp-Fw-3W5" firstAttribute="top" secondItem="IjW-OP-4ug" secondAttribute="bottom" constant="8" id="z88-Xf-OQZ"/>
             </constraints>
             <point key="canvasLocation" x="-33" y="242"/>
         </view>

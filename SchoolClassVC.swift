@@ -53,6 +53,11 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         self.tableView.reloadData()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        println("laid out")
+    }
+    
     func tableViewSetUp() {
         self.tableView.tableFooterView = UIView()
         self.tableView.dataSource = self
@@ -166,16 +171,12 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     
     func addGradeBarToCell(cell: AssignmentCategoryCell, grade: Double) {
         cell.catBar.setNeedsDisplay()
-        var length = (cell.catBar.bounds.size.width / 100) * CGFloat(grade)
-        if (length >= 300) {
-            length = cell.catBar.bounds.size.width
-        }
-        let rect = CGRectMake(0, 0, length, cell.catBar.bounds.size.height)
-        var coloredBar = UIView(frame: rect)
+        cell.catBar.layoutIfNeeded()
+        var rect = CGRect(x: 0, y: 0, width: cell.catBar.bounds.size.width * (CGFloat(grade) / 100), height: 10)
+        var bar = UIView(frame: rect)
         var backGroundColor = UIColor()
-        coloredBar.backgroundColor = backGroundColor.determineUIColor(grade)
-        cell.catBar.addSubview(coloredBar)
-        
+        bar.backgroundColor = backGroundColor.determineUIColor(grade)
+        cell.catBar.addSubview(bar)
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
