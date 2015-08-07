@@ -173,10 +173,10 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         cell.catBar.setNeedsDisplay()
         cell.catBar.layoutIfNeeded()
         var rect = CGRect(x: 0, y: 0, width: cell.catBar.bounds.size.width * (CGFloat(grade) / 100), height: 10)
-        var bar = UIView(frame: rect)
+        var coloredBar = UIView(frame: rect)
         var backGroundColor = UIColor()
-        bar.backgroundColor = backGroundColor.determineUIColor(grade)
-        cell.catBar.addSubview(bar)
+        coloredBar.backgroundColor = backGroundColor.determineUIColor(grade)
+        cell.catBar.addSubview(coloredBar)
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
