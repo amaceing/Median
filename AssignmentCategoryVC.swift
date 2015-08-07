@@ -30,6 +30,7 @@ class AssignmentCategoryVC: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.navigationItem.title = self.category.name
         self.tableViewSetUp()
     }
     
