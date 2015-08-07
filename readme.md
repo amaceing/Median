@@ -8,7 +8,7 @@ This is an ongoing project and my biggest personal project to date.
 <br>
 
 ![alt tag](http://i.imgur.com/j9afSd4.png)
-![alt tag](http://i.imgur.com/2XAB1cc.png)
+![alt tag](http://i.imgur.com/KUCQXn0.png)
 ![alt tag](http://i.imgur.com/UmFiFyv.png)
 ![alt tag](http://i.imgur.com/P4oGM8V.png)
 ![alt tag](http://i.imgur.com/tB7O428.png)

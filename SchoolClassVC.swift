@@ -153,6 +153,7 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         let cat = self.schoolClass.assignmentCategoryAtIndex(indexPath.row)
         self.fillCellWithContentsFromCategory(cell, category: cat)
+        self.addGradeBarToCell(cell, grade: cat.average!)
         return cell
     }
     
@@ -161,6 +162,20 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         cell.catName.text = category.name
         cell.catGrade.text = String(format: "%0.1f", category.average!)
         cell.catWeight.text = String(format: "%.0f/100", category.weight * 100)
+    }
+    
+    func addGradeBarToCell(cell: AssignmentCategoryCell, grade: Double) {
+        cell.catBar.setNeedsDisplay()
+        var length = (cell.catBar.bounds.size.width / 100) * CGFloat(grade)
+        if (length >= 300) {
+            length = cell.catBar.bounds.size.width
+        }
+        let rect = CGRectMake(0, 0, length, cell.catBar.bounds.size.height)
+        var coloredBar = UIView(frame: rect)
+        var backGroundColor = UIColor()
+        coloredBar.backgroundColor = backGroundColor.determineUIColor(grade)
+        cell.catBar.addSubview(coloredBar)
+        
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
