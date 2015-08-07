@@ -169,10 +169,7 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
             if (cat.name == "Click to Add") {
                 self.pushNewAssignmentCategoryVCWithCat(cat)
             } else {
-                var editDeleteController = UIAlertController(title: "Edit or Delete", message: "Deleting categories cannot be undone", preferredStyle: UIAlertControllerStyle.ActionSheet)
-                self.addActionsToController(editDeleteController)
-                self.presentViewController(editDeleteController, animated: true, completion: nil)
-                self.tableView.reloadData()
+                self.setUpAndPresentAlertController()
             }
         }
         else {
@@ -184,6 +181,13 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         let newAssignCatVC = NewAssignmentCategory(nibName: "NewAssignmentCategory", bundle: nil)
         newAssignCatVC.category = category
         self.navigationController?.pushViewController(newAssignCatVC, animated: true)
+    }
+    
+    func setUpAndPresentAlertController() {
+        var editDeleteController = UIAlertController(title: "Edit or Delete", message: "Deleting categories cannot be undone", preferredStyle: UIAlertControllerStyle.ActionSheet)
+        self.addActionsToController(editDeleteController)
+        self.presentViewController(editDeleteController, animated: true, completion: nil)
+        self.tableView.reloadData()
     }
     
     func pushAssignCatVCWithCat(category: AssignmentCategory) {
