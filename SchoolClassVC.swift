@@ -57,6 +57,7 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         self.tableView.tableFooterView = UIView()
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        self.tableView.allowsSelectionDuringEditing = true
         let nib = UINib(nibName: "AssignmentCategoryCell", bundle: nil)
         self.tableView.registerNib(nib, forCellReuseIdentifier: "AssignmentCategoryCell")
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
@@ -96,7 +97,7 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     }
     
     func setUpAddButton() {
-        self.addCat.setTitle("Add", forState: UIControlState.Normal)
+        self.addCat.setTitle("Edit", forState: UIControlState.Normal)
         self.addCat.addTarget(self, action: "addAssignmentCategory", forControlEvents: UIControlEvents.TouchUpInside)
     }
     
@@ -115,7 +116,6 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         let indexPath = NSIndexPath(forRow: 0, inSection: 0)
         self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
         self.addCat.removeTarget(self, action: "addAssignmentCategory", forControlEvents: UIControlEvents.TouchUpInside)
-        self.tableView.allowsSelectionDuringEditing = true
         self.setUpDoneButton()
     }
     
@@ -165,15 +165,57 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         var cat = self.schoolClass.assignmentCategoryAtIndex(indexPath.row)
-        if (cat.name == "Click to Add" || self.tableView.editing) {
-            let newAssignCatVC = NewAssignmentCategory(nibName: "NewAssignmentCategory", bundle: nil)
-            newAssignCatVC.category = cat
-            self.navigationController?.pushViewController(newAssignCatVC, animated: true)
-        } else {
-            let assignCatVC = AssignmentCategoryVC(nibName: "AssignmentCategoryVC", bundle: nil)
-            assignCatVC.category = cat
-            self.navigationController?.pushViewController(assignCatVC, animated: true)
+        if (self.tableView.editing) {
+            if (cat.name == "Click to Add") {
+                self.pushNewAssignmentCategoryVCWithCat(cat)
+            } else {
+                var editDeleteController = UIAlertController(title: "Edit or Delete", message: "Deleting categories cannot be undone", preferredStyle: UIAlertControllerStyle.ActionSheet)
+                self.addActionsToController(editDeleteController)
+                self.presentViewController(editDeleteController, animated: true, completion: nil)
+                self.tableView.reloadData()
+            }
         }
+        else {
+            self.pushAssignCatVCWithCat(cat)
+        }
+    }
+    
+    func pushNewAssignmentCategoryVCWithCat(category: AssignmentCategory) {
+        let newAssignCatVC = NewAssignmentCategory(nibName: "NewAssignmentCategory", bundle: nil)
+        newAssignCatVC.category = category
+        self.navigationController?.pushViewController(newAssignCatVC, animated: true)
+    }
+    
+    func pushAssignCatVCWithCat(category: AssignmentCategory) {
+        let assignCatVC = AssignmentCategoryVC(nibName: "AssignmentCategoryVC", bundle: nil)
+        assignCatVC.category = category
+        self.navigationController?.pushViewController(assignCatVC, animated: true)
+    }
+    
+    func addActionsToController(controller: UIAlertController) {
+        let indexPath = self.tableView.indexPathForSelectedRow()!
+        var assignCat = self.schoolClass.assignmentCategories[indexPath.row]
+        //Actions
+        let delete = UIAlertAction(title: "Delete",
+                                    style: UIAlertActionStyle.Destructive,
+                                    handler: {(alert: UIAlertAction!) in
+                                                self.schoolClass.removeAssignmentCategory(assignCat)
+                                                self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+                                                self.gradeLabelSetUp()
+                                             })
+        let edit = UIAlertAction(title: "Edit",
+                                    style: UIAlertActionStyle.Default,
+                                    handler: {(alert: UIAlertAction!) in
+                                                self.pushNewAssignmentCategoryVCWithCat(assignCat)
+                                             })
+        let cancel = UIAlertAction(title: "Cancel",
+                                    style: UIAlertActionStyle.Destructive,
+                                    handler: {(alert: UIAlertAction!) in
+                                                controller.dismissViewControllerAnimated(true, completion: nil)
+                                             })
+        controller.addAction(delete)
+        controller.addAction(edit)
+        controller.addAction(cancel)
     }
 
 }
