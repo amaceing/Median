@@ -165,7 +165,8 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     func fillCellWithContentsFromCategory(cell: AssignmentCategoryCell, category: AssignmentCategory) {
         println(category.weight)
         cell.catName.text = category.name
-        cell.catGrade.text = String(format: "%0.1f", category.average!)
+        let string = String(format: "%0.1f", category.average!)
+        cell.catGrade.text = string
         cell.catWeight.text = String(format: "%.0f/100", category.weight * 100)
     }
     
