@@ -32,6 +32,16 @@ class NewAssignmentVC: UIViewController, UITextFieldDelegate {
         self.earnedField.delegate = self
         self.possibleField.delegate = self
         self.nameField.delegate = self
+        if (self.assignment?.name != "") {
+            self.navigationItem.title = self.assignment?.name
+        } else {
+            self.navigationItem.title = "New Assignment"
+        }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.nameField.text = self.assignment?.name
     }
     
     override func viewWillDisappear(animated: Bool) {

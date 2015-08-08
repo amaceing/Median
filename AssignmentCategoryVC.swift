@@ -40,6 +40,11 @@ class AssignmentCategoryVC: UIViewController, UITableViewDelegate, UITableViewDa
         self.tableView.reloadData()
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.setUpBackButton()
+    }
+    
     func gradeLabelSetUp() {
         var textColor = UIColor()
         self.gradeLabel.textColor = textColor.determineUIColor(self.category.average!)
@@ -56,7 +61,11 @@ class AssignmentCategoryVC: UIViewController, UITableViewDelegate, UITableViewDa
         self.tableView.separatorColor = UIColor.lightGrayColor()
         self.tableView.separatorInset = UIEdgeInsetsMake(0, 15, 0, 15)
     }
-
+    
+    func setUpBackButton() {
+        let backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
+        self.navigationItem.backBarButtonItem = backButton
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -100,12 +109,54 @@ class AssignmentCategoryVC: UIViewController, UITableViewDelegate, UITableViewDa
         let assignment = self.category.assignmentAtIndex(indexPath.row)
         cell.assignmentName.text = assignment.name
         if var gradeText = assignment.gradeEarned?.description {
-            var textColor = UIColor()
-            cell.gradeLabel.textColor = textColor.determineUIColor(assignment.gradeEarned!)
-            gradeText = String(format: "%.1f", assignment.gradeEarned!)
-            cell.gradeLabel.text = gradeText
+            self.formatGradeTextForCellWithAssignment(cell, assignment: assignment)
         }
         return cell
     }
+    
+    func formatGradeTextForCellWithAssignment(cell: AssignmentCell, assignment: Assignment) {
+        var textColor = UIColor()
+        cell.gradeLabel.textColor = textColor.determineUIColor(assignment.gradeEarned!)
+        let gradeText = String(format: "%.1f", assignment.gradeEarned!)
+        cell.gradeLabel.text = gradeText
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        var editAndDeleteController = UIAlertController(title: "Edit or Delete", message: "Deleting Assignments cannot be undone", preferredStyle: UIAlertControllerStyle.ActionSheet)
+        self.addActionsToController(editAndDeleteController)
+        self.navigationController?.presentViewController(editAndDeleteController, animated: true, completion: nil)
+    }
 
+    func addActionsToController(controller: UIAlertController) {
+        let indexPath = self.tableView.indexPathForSelectedRow()!
+        var assignment = self.category.assignmentList[indexPath.row]
+        //Actions
+        let delete = UIAlertAction(title: "Delete",
+            style: UIAlertActionStyle.Destructive,
+            handler: {(alert: UIAlertAction!) in
+                self.category.removeAssignment(assignment)
+                self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+                self.gradeLabelSetUp()
+        })
+        let edit = UIAlertAction(title: "Edit",
+            style: UIAlertActionStyle.Default,
+            handler: {(alert: UIAlertAction!) in
+                self.pushNewAssignmentVC(assignment)
+        })
+        let cancel = UIAlertAction(title: "Cancel",
+            style: UIAlertActionStyle.Destructive,
+            handler: {(alert: UIAlertAction!) in
+                controller.dismissViewControllerAnimated(true, completion: nil)
+        })
+        controller.addAction(delete)
+        controller.addAction(edit)
+        controller.addAction(cancel)
+    }
+    
+    func pushNewAssignmentVC(assignment: Assignment) {
+        let newAssignmentVc = NewAssignmentVC(nibName: "NewAssignmentVC", bundle: nil)
+        newAssignmentVc.assignment = assignment
+        self.navigationController?.pushViewController(newAssignmentVc, animated: true)
+    }
+    
 }

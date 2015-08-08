@@ -78,7 +78,7 @@ class SemesterVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     func setUpEditButton() {
-        let addButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: self, action: "addSchoolClass:")
+        let addButton = UIBarButtonItem(title: "Edit", style: UIBarButtonItemStyle.Plain, target: self, action: "addSchoolClass:")
         self.navigationItem.rightBarButtonItem = addButton
     }
     
