@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Lato-Regular.ttf">
@@ -19,19 +20,53 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Assignment" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nFa-JU-f83">
-                        <rect key="frame" x="8" y="22" width="157" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="98.6%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SiQ-Nf-yCd">
+                        <rect key="frame" x="192" y="22" width="120" height="21"/>
+                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="20"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="|" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KXZ-Pv-8Wq">
+                        <rect key="frame" x="149" y="21" width="22" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="22" id="3hH-J8-9Z2"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Assignment" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nFa-JU-f83">
+                        <rect key="frame" x="8" y="22" width="120" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="120" id="4dh-Ie-4r1"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="20"/>
                         <color key="textColor" red="0.43137254899999999" green="0.43137254899999999" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="98.6%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SiQ-Nf-yCd">
-                        <rect key="frame" x="202" y="22" width="93" height="21"/>
-                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="19"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="nFa-JU-f83" firstAttribute="bottom" secondItem="SiQ-Nf-yCd" secondAttribute="bottom" id="3on-M0-0Im"/>
+                    <constraint firstItem="KXZ-Pv-8Wq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="13" id="AGh-db-K6J"/>
+                    <constraint firstItem="nFa-JU-f83" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="G5d-ZK-L4j"/>
+                    <constraint firstItem="nFa-JU-f83" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="14" id="Xei-Lw-53A"/>
+                    <constraint firstItem="SiQ-Nf-yCd" firstAttribute="leading" secondItem="KXZ-Pv-8Wq" secondAttribute="trailing" constant="30" id="aF1-KD-Rck"/>
+                    <constraint firstItem="SiQ-Nf-yCd" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="bgm-bD-5Zr"/>
+                    <constraint firstItem="SiQ-Nf-yCd" firstAttribute="leading" secondItem="KXZ-Pv-8Wq" secondAttribute="trailing" constant="21" id="hGZ-RR-Yz1"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="KXZ-Pv-8Wq" secondAttribute="bottom" constant="15.5" id="ijq-Xl-y79"/>
+                    <constraint firstItem="nFa-JU-f83" firstAttribute="top" secondItem="SiQ-Nf-yCd" secondAttribute="top" id="mJM-VG-Hcd"/>
+                    <constraint firstItem="KXZ-Pv-8Wq" firstAttribute="leading" secondItem="nFa-JU-f83" secondAttribute="trailing" constant="21" id="q7N-Cu-Y5S"/>
+                    <constraint firstItem="KXZ-Pv-8Wq" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="qmg-3K-VKp"/>
+                    <constraint firstItem="nFa-JU-f83" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-7" id="s29-f2-uZ5"/>
+                    <constraint firstItem="SiQ-Nf-yCd" firstAttribute="leading" secondItem="KXZ-Pv-8Wq" secondAttribute="trailing" constant="30" id="zsL-Z1-Y2l"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="s29-f2-uZ5"/>
+                        <exclude reference="aF1-KD-Rck"/>
+                        <exclude reference="zsL-Z1-Y2l"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <connections>
                 <outlet property="assignmentName" destination="nFa-JU-f83" id="J2m-iD-5bm"/>

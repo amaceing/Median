@@ -59,7 +59,7 @@ class AssignmentCategoryVC: UIViewController, UITableViewDelegate, UITableViewDa
         self.tableView.registerNib(nib, forCellReuseIdentifier: "AssignmentCell")
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
         self.tableView.separatorColor = UIColor.lightGrayColor()
-        self.tableView.separatorInset = UIEdgeInsetsMake(0, 15, 0, 15)
+        self.tableView.separatorInset = UIEdgeInsetsMake(0, 35, 0, 35)
     }
     
     func setUpBackButton() {
