@@ -56,15 +56,20 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Points Possible" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cui-MK-OO1">
-                    <rect key="frame" x="334" y="122" width="133" height="38"/>
+                    <rect key="frame" x="334" y="122" width="120" height="38"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="38" id="Eto-z8-oEG"/>
-                        <constraint firstAttribute="width" constant="133" id="hZr-3k-Xjm"/>
-                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="133" id="mkM-oV-Pl0"/>
+                        <constraint firstAttribute="width" constant="120" id="hZr-3k-Xjm"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="mkM-oV-Pl0"/>
                     </constraints>
                     <color key="textColor" red="0.14901960780000001" green="0.67450980390000004" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="35"/>
                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="mkM-oV-Pl0"/>
+                        </mask>
+                    </variation>
                 </textField>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
