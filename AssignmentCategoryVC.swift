@@ -36,6 +36,9 @@ class AssignmentCategoryVC: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        if let selectedCell = self.tableView.indexPathForSelectedRow() {
+            self.tableView.deselectRowAtIndexPath(selectedCell, animated: false)
+        }
         self.gradeLabelSetUp()
         self.tableView.reloadData()
     }
@@ -82,9 +85,6 @@ class AssignmentCategoryVC: UIViewController, UITableViewDelegate, UITableViewDa
         let assignVC = NewAssignmentVC(nibName: "NewAssignmentVC", bundle: nil)
         assignVC.assignment = assignmentToAdd
         self.navigationController?.pushViewController(assignVC, animated: true)
-        //Insertion
-        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
-        self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
     }
     
     //MARK: - Table View Implementation
@@ -125,6 +125,10 @@ class AssignmentCategoryVC: UIViewController, UITableViewDelegate, UITableViewDa
         var editAndDeleteController = UIAlertController(title: "Edit or Delete", message: "Deleting Assignments cannot be undone", preferredStyle: UIAlertControllerStyle.ActionSheet)
         self.addActionsToController(editAndDeleteController)
         self.navigationController?.presentViewController(editAndDeleteController, animated: true, completion: nil)
+    }
+    
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        println("test")
     }
 
     func addActionsToController(controller: UIAlertController) {
