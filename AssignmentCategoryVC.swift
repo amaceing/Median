@@ -12,6 +12,7 @@ class AssignmentCategoryVC: UIViewController, UITableViewDelegate, UITableViewDa
     //MARK: - Properties
     
     var category: AssignmentCategory
+    var alertController: UIAlertController
     @IBOutlet weak var gradeLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
@@ -19,7 +20,9 @@ class AssignmentCategoryVC: UIViewController, UITableViewDelegate, UITableViewDa
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         self.category = AssignmentCategory()
+        self.alertController = UIAlertController(title: "Edit or Delete Assignment", message: "Deleting Assignments cannot be undone", preferredStyle: UIAlertControllerStyle.ActionSheet)
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        self.addActionsToControllerForAssignment(self.alertController)
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -118,25 +121,26 @@ class AssignmentCategoryVC: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var editAndDeleteController = UIAlertController(title: "Edit or Delete", message: "Deleting Assignments cannot be undone", preferredStyle: UIAlertControllerStyle.ActionSheet)
-        self.addActionsToController(editAndDeleteController)
-        self.navigationController?.presentViewController(editAndDeleteController, animated: true, completion: nil)
+        self.navigationController?.presentViewController(self.alertController, animated: true, completion: nil)
     }
 
-    func addActionsToController(controller: UIAlertController) {
-        let indexPath = self.tableView.indexPathForSelectedRow()!
-        var assignment = self.category.assignmentList[indexPath.row]
+    func addActionsToControllerForAssignment(controller: UIAlertController) {
         //Actions
         let delete = UIAlertAction(title: "Delete",
             style: UIAlertActionStyle.Destructive,
             handler: {(alert: UIAlertAction!) in
+                let pathAndAssignment = self.chooseAssignmentForAlertControllerAndIndexPath()
+                let path = pathAndAssignment.0
+                let assignment = pathAndAssignment.1
                 self.category.removeAssignment(assignment)
-                self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+                self.tableView.deleteRowsAtIndexPaths([path], withRowAnimation: UITableViewRowAnimation.Fade)
                 self.gradeLabelSetUp()
         })
         let edit = UIAlertAction(title: "Edit",
             style: UIAlertActionStyle.Default,
             handler: {(alert: UIAlertAction!) in
+                let pathAndAssignment = self.chooseAssignmentForAlertControllerAndIndexPath()
+                let assignment = pathAndAssignment.1
                 self.pushNewAssignmentVC(assignment)
         })
         let cancel = UIAlertAction(title: "Cancel",
@@ -153,6 +157,12 @@ class AssignmentCategoryVC: UIViewController, UITableViewDelegate, UITableViewDa
         let newAssignmentVc = NewAssignmentVC(nibName: "NewAssignmentVC", bundle: nil)
         newAssignmentVc.assignment = assignment
         self.navigationController?.pushViewController(newAssignmentVc, animated: true)
+    }
+    
+    func chooseAssignmentForAlertControllerAndIndexPath() -> (NSIndexPath, Assignment) {
+        let indexPath = self.tableView.indexPathForSelectedRow()!
+        var assignment = self.category.assignmentList[indexPath.row]
+        return (indexPath, assignment)
     }
     
 }
