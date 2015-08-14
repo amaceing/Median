@@ -53,7 +53,6 @@ class NewAssignmentVC: UIViewController, UITextFieldDelegate {
         }
         self.assignment?.pointsEarned = NSString(string: self.earnedField.text).doubleValue
         self.assignment?.pointsPossible = NSString(string: self.possibleField.text).doubleValue
-        //self.assignment?.gradeEarned = NSString(string: self.gradeField.text).doubleValue
     }
 
     override func didReceiveMemoryWarning() {

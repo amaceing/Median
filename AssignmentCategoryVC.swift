@@ -36,9 +36,6 @@ class AssignmentCategoryVC: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        if let selectedCell = self.tableView.indexPathForSelectedRow() {
-            self.tableView.deselectRowAtIndexPath(selectedCell, animated: false)
-        }
         self.gradeLabelSetUp()
         self.tableView.reloadData()
     }
@@ -78,7 +75,6 @@ class AssignmentCategoryVC: UIViewController, UITableViewDelegate, UITableViewDa
     //MARK: - Logic
     
     @IBAction func addAssignment(sender: UIButton) {
-        self.tableView.editing = true
         var assignmentToAdd = Assignment()
         self.category.addAssignment(assignmentToAdd)
         //Push NewAssignmentVC
@@ -125,10 +121,6 @@ class AssignmentCategoryVC: UIViewController, UITableViewDelegate, UITableViewDa
         var editAndDeleteController = UIAlertController(title: "Edit or Delete", message: "Deleting Assignments cannot be undone", preferredStyle: UIAlertControllerStyle.ActionSheet)
         self.addActionsToController(editAndDeleteController)
         self.navigationController?.presentViewController(editAndDeleteController, animated: true, completion: nil)
-    }
-    
-    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        println("test")
     }
 
     func addActionsToController(controller: UIAlertController) {
