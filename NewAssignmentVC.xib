@@ -2,8 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Lato-Regular.ttf">
@@ -36,34 +34,33 @@
                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="33"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" placeholder="Points Earned" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j9y-5v-gUm">
-                    <rect key="frame" x="147" y="122" width="120" height="38"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" placeholder="Earned" textAlignment="right" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j9y-5v-gUm">
+                    <rect key="frame" x="149" y="122" width="120" height="38"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="120" id="CN0-ZL-gh2"/>
-                        <constraint firstAttribute="height" constant="38" id="SX8-bk-RRH"/>
+                        <constraint firstAttribute="height" constant="38" id="Kqo-5Z-zdz"/>
+                        <constraint firstAttribute="width" constant="120" id="TLM-p8-RjE"/>
                     </constraints>
                     <color key="textColor" red="0.14901960780000001" green="0.67450980390000004" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="35"/>
+                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="38"/>
                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="out of " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4bG-cL-2aY">
                     <rect key="frame" x="275" y="122" width="51" height="38"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="51" id="7fY-Vp-InB"/>
+                        <constraint firstAttribute="width" constant="51" id="ogl-Me-Apm"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                     <color key="textColor" red="0.14901960780000001" green="0.67450980390000004" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Points Possible" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cui-MK-OO1">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Possible" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cui-MK-OO1">
                     <rect key="frame" x="334" y="122" width="120" height="38"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="38" id="Eto-z8-oEG"/>
-                        <constraint firstAttribute="width" constant="120" id="hZr-3k-Xjm"/>
+                        <constraint firstAttribute="width" constant="120" id="bna-RY-qTZ"/>
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="mkM-oV-Pl0"/>
                     </constraints>
                     <color key="textColor" red="0.14901960780000001" green="0.67450980390000004" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="35"/>
+                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="33"/>
                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                     <variation key="default">
                         <mask key="constraints">
@@ -74,18 +71,17 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="4bG-cL-2aY" firstAttribute="centerX" secondItem="VMx-Aa-yv1" secondAttribute="centerX" id="1cM-vd-4S1"/>
-                <constraint firstItem="cui-MK-OO1" firstAttribute="baseline" secondItem="j9y-5v-gUm" secondAttribute="firstBaseline" id="8bW-fF-HIe"/>
-                <constraint firstItem="j9y-5v-gUm" firstAttribute="bottom" secondItem="4bG-cL-2aY" secondAttribute="bottom" id="C6f-DV-zdc"/>
+                <constraint firstItem="4bG-cL-2aY" firstAttribute="bottom" secondItem="j9y-5v-gUm" secondAttribute="bottom" id="02O-ZB-Sfn"/>
+                <constraint firstItem="cui-MK-OO1" firstAttribute="top" secondItem="4bG-cL-2aY" secondAttribute="top" id="75q-eU-s8U"/>
+                <constraint firstItem="cui-MK-OO1" firstAttribute="leading" secondItem="4bG-cL-2aY" secondAttribute="trailing" constant="8" symbolic="YES" id="8JY-zG-6mz"/>
                 <constraint firstItem="VMx-Aa-yv1" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="43" id="CRE-64-xdG"/>
-                <constraint firstItem="4bG-cL-2aY" firstAttribute="top" secondItem="j9y-5v-gUm" secondAttribute="top" id="F8T-iF-Qlo"/>
-                <constraint firstItem="4bG-cL-2aY" firstAttribute="bottom" secondItem="cui-MK-OO1" secondAttribute="bottom" id="Gcj-gQ-jGE"/>
-                <constraint firstItem="j9y-5v-gUm" firstAttribute="baseline" secondItem="cui-MK-OO1" secondAttribute="firstBaseline" id="Md7-M3-ENK"/>
-                <constraint firstItem="4bG-cL-2aY" firstAttribute="leading" secondItem="j9y-5v-gUm" secondAttribute="trailing" constant="8" symbolic="YES" id="biA-Et-Qfp"/>
+                <constraint firstItem="4bG-cL-2aY" firstAttribute="centerX" secondItem="VMx-Aa-yv1" secondAttribute="centerX" id="O2K-9B-ffk"/>
+                <constraint firstItem="4bG-cL-2aY" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="RIi-mY-1Jx"/>
+                <constraint firstItem="j9y-5v-gUm" firstAttribute="top" secondItem="4bG-cL-2aY" secondAttribute="top" id="X9l-Um-mYA"/>
+                <constraint firstItem="j9y-5v-gUm" firstAttribute="top" secondItem="VMx-Aa-yv1" secondAttribute="bottom" constant="16" id="e98-f7-FYz"/>
                 <constraint firstItem="VMx-Aa-yv1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="93" id="jT1-3C-47E"/>
-                <constraint firstItem="cui-MK-OO1" firstAttribute="leading" secondItem="4bG-cL-2aY" secondAttribute="trailing" constant="8" symbolic="YES" id="kXE-bS-Jjp"/>
-                <constraint firstItem="j9y-5v-gUm" firstAttribute="top" secondItem="VMx-Aa-yv1" secondAttribute="bottom" constant="16" id="kal-LV-ozd"/>
-                <constraint firstItem="4bG-cL-2aY" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="yEO-eo-XQ0"/>
+                <constraint firstItem="4bG-cL-2aY" firstAttribute="bottom" secondItem="cui-MK-OO1" secondAttribute="bottom" id="n3l-gn-ioJ"/>
+                <constraint firstItem="4bG-cL-2aY" firstAttribute="leading" secondItem="j9y-5v-gUm" secondAttribute="trailing" constant="6" id="xeM-vb-I0k"/>
             </constraints>
             <point key="canvasLocation" x="481" y="421"/>
         </view>

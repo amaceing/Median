@@ -41,7 +41,11 @@ class NewAssignmentVC: UIViewController, UITextFieldDelegate {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.nameField.text = self.assignment?.name
+        if (self.assignment!.name != "") {
+            self.nameField.text = self.assignment?.name
+            self.earnedField.text = NSString(format: "%.0f", self.assignment!.pointsEarned!) as String
+            self.possibleField.text = NSString(format: "%.0f", self.assignment!.pointsPossible!) as String
+        }
     }
     
     override func viewWillDisappear(animated: Bool) {
