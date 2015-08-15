@@ -12,5 +12,6 @@ This is an ongoing project and my biggest personal project to date.
 ![alt tag](http://i.imgur.com/nNGxVFM.png)
 ![alt tag](http://i.imgur.com/wbvaxho.png)
 ![alt tag](http://i.imgur.com/tB7O428.png)
-![alt tag](http://i.imgur.com/j9afSd4.png)
-![alt tag](http://i.imgur.com/jDmSwnx.png)
+![alt tag](http://i.imgur.com/2dVmeIy.png)
+![alt tag](http://i.imgur.com/3cy52Bs.png)
+![alt tag](http://i.imgur.com/HsunIrd.png)

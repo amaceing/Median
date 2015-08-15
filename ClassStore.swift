@@ -22,7 +22,6 @@ class ClassStore: NSObject {
     override init() {
         super.init()
         let path: String = self.classArchivePath()
-        NSLog(path)
         if let unArchObj = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as? [SchoolClass] {
             self.classArray = unArchObj
         }
