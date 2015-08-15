@@ -54,7 +54,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Possible" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cui-MK-OO1">
-                    <rect key="frame" x="334" y="122" width="120" height="38"/>
+                    <rect key="frame" x="332" y="122" width="120" height="38"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="120" id="bna-RY-qTZ"/>
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="mkM-oV-Pl0"/>
@@ -73,7 +73,7 @@
             <constraints>
                 <constraint firstItem="4bG-cL-2aY" firstAttribute="bottom" secondItem="j9y-5v-gUm" secondAttribute="bottom" id="02O-ZB-Sfn"/>
                 <constraint firstItem="cui-MK-OO1" firstAttribute="top" secondItem="4bG-cL-2aY" secondAttribute="top" id="75q-eU-s8U"/>
-                <constraint firstItem="cui-MK-OO1" firstAttribute="leading" secondItem="4bG-cL-2aY" secondAttribute="trailing" constant="8" symbolic="YES" id="8JY-zG-6mz"/>
+                <constraint firstItem="cui-MK-OO1" firstAttribute="leading" secondItem="4bG-cL-2aY" secondAttribute="trailing" constant="6" id="8JY-zG-6mz"/>
                 <constraint firstItem="VMx-Aa-yv1" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="43" id="CRE-64-xdG"/>
                 <constraint firstItem="4bG-cL-2aY" firstAttribute="centerX" secondItem="VMx-Aa-yv1" secondAttribute="centerX" id="O2K-9B-ffk"/>
                 <constraint firstItem="4bG-cL-2aY" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="RIi-mY-1Jx"/>
@@ -83,7 +83,7 @@
                 <constraint firstItem="4bG-cL-2aY" firstAttribute="bottom" secondItem="cui-MK-OO1" secondAttribute="bottom" id="n3l-gn-ioJ"/>
                 <constraint firstItem="4bG-cL-2aY" firstAttribute="leading" secondItem="j9y-5v-gUm" secondAttribute="trailing" constant="6" id="xeM-vb-I0k"/>
             </constraints>
-            <point key="canvasLocation" x="481" y="421"/>
+            <point key="canvasLocation" x="526" y="404"/>
         </view>
     </objects>
 </document>

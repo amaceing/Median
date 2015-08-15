@@ -55,7 +55,6 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        println("laid out")
     }
     
     func tableViewSetUp() {
@@ -163,7 +162,6 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     }
     
     func fillCellWithContentsFromCategory(cell: AssignmentCategoryCell, category: AssignmentCategory) {
-        println(category.weight)
         cell.catName.text = category.name
         let string = String(format: "%0.1f", category.average!)
         cell.catGrade.text = string

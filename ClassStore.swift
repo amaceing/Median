@@ -21,7 +21,6 @@ class ClassStore: NSObject {
     
     override init() {
         super.init()
-        NSLog("self.init()")
         let path: String = self.classArchivePath()
         NSLog(path)
         if let unArchObj = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as? [SchoolClass] {
@@ -51,7 +50,6 @@ class ClassStore: NSObject {
     
     func addClass(classToAdd: SchoolClass) {
         self.classArray!.insert(classToAdd, atIndex: 0)
-        NSLog("adding %@", classToAdd.name)
     }
     
     func removeClass(schoolClass: SchoolClass) {
