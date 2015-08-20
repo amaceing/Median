@@ -41,10 +41,17 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.determineClassLabelFontSize()
         self.classLabel.text = self.schoolClass.name
         self.setUpAddButton()
         self.tableViewSetUp()
         self.detailLabelsSetUp()
+    }
+    
+    func determineClassLabelFontSize() {
+        if (count(self.schoolClass.name) >= 25) {
+            self.classLabel.font = UIFont(name: "Lato-Regular.ttf", size: 15)
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
