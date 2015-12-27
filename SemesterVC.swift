@@ -28,9 +28,6 @@ extension String {
     
     func insert(string: String, atIndex: Int) -> String {
         return self.insert(string, atIndex: atIndex)
-        let newString = String(self.characters.prefix(atIndex)) + string + String(self.characters.suffix(self.characters.count - atIndex))
-        NSLog(newString)
-        return newString
     }
 }
 

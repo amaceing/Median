@@ -100,16 +100,28 @@ class ClassDetailsVC: UIViewController, UITextFieldDelegate {
             sender.setTitleColor(UIColor(red: 110/255.0, green: 110/255.0, blue: 110/255.0, alpha: 1), forState: UIControlState.Normal)
         } else {
             addDayInPlace(sender.currentTitle!)
-            sender.setTitleColor(UIColor(red: 30/255.0, green: 178/255.0, blue: 195/255.0, alpha: 1), forState: UIControlState.Normal)
-            NSLog(self.strOfDays)
-        }
+            sender.setTitleColor(UIColor(red: 30/255.0, green: 178/255.0, blue: 195/255.0, alpha: 1), forState: UIControlState.Normal)        }
     }
     
     func addDayInPlace(dayToAdd: String) {
-        NSLog(self.strOfDays + " add: " + dayToAdd)
         self.strOfDays += dayToAdd
-        var days = Array(self.strOfDays.characters)
-        
+        var newStrOfDays = ""
+        if contains(self.strOfDays, containee: "M") {
+            newStrOfDays += "M"
+        }
+        if contains(self.strOfDays, containee: "T") {
+            newStrOfDays += "T"
+        }
+        if contains(self.strOfDays, containee: "W") {
+            newStrOfDays += "W"
+        }
+        if contains(self.strOfDays, containee: "R") {
+            newStrOfDays += "R"
+        }
+        if contains(self.strOfDays, containee: "F") {
+            newStrOfDays += "F"
+        }
+        self.strOfDays = newStrOfDays
     }
     
     func removeDayFromString(remove: String, from: String) -> String {
