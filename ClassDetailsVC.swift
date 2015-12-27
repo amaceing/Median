@@ -108,26 +108,28 @@ class ClassDetailsVC: UIViewController, UITextFieldDelegate {
     }
     
     func addDayInPlace(dayToAdd: String) {
-        var newStrOfDays = ""
+        let index = self.strOfDays.startIndex
         switch dayToAdd {
             case "Su":
-                newStrOfDays = self.strOfDays.insert("Su", atIndex: 1)
+                self.strOfDays.insert("S", atIndex: index)
+                self.strOfDays.insert("u", atIndex: index.advancedBy(1))
             case "M":
-                newStrOfDays = self.strOfDays.insert("M", atIndex: 2)
+                self.strOfDays.insert("M", atIndex: index.advancedBy(1))
             case "T":
-                newStrOfDays = self.strOfDays.insert("T", atIndex: 3)
+                self.strOfDays.insert("T", atIndex: index.advancedBy(1))
             case "W":
-                newStrOfDays = self.strOfDays.insert("W", atIndex: 4)
+                self.strOfDays.insert("W", atIndex: index.advancedBy(2))
             case "R":
-                newStrOfDays = self.strOfDays.insert("R", atIndex: 5)
+                self.strOfDays.insert("R", atIndex: index.advancedBy(3))
             case "F":
-                newStrOfDays = self.strOfDays.insert("F", atIndex: 6)
+                self.strOfDays.insert("F", atIndex: index.advancedBy(4))
             case "Sa":
-                newStrOfDays = self.strOfDays.insert("Sa", atIndex: 7)
+                self.strOfDays.insert("S", atIndex: index.advancedBy(5))
+                self.strOfDays += "a"
             default:
                 break
         }
-        self.strOfDays = newStrOfDays
+        NSLog(self.strOfDays)
     }
     
     func removeDayFromString(remove: String, from: String) -> String {
