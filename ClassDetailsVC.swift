@@ -18,13 +18,11 @@ class ClassDetailsVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var sectionField: UITextField!
     @IBOutlet weak var startTime: UIDatePicker!
-    @IBOutlet weak var satButton: UIButton!
     @IBOutlet weak var friButton: UIButton!
     @IBOutlet weak var thuButton: UIButton!
     @IBOutlet weak var wedButton: UIButton!
     @IBOutlet weak var tuesButton: UIButton!
     @IBOutlet weak var monButton: UIButton!
-    @IBOutlet weak var sunButton: UIButton!
     
     //MARK: - View Loading Methods
     
@@ -108,28 +106,10 @@ class ClassDetailsVC: UIViewController, UITextFieldDelegate {
     }
     
     func addDayInPlace(dayToAdd: String) {
-        let index = self.strOfDays.startIndex
-        switch dayToAdd {
-            case "Su":
-                self.strOfDays.insert("S", atIndex: index)
-                self.strOfDays.insert("u", atIndex: index.advancedBy(1))
-            case "M":
-                self.strOfDays.insert("M", atIndex: index.advancedBy(1))
-            case "T":
-                self.strOfDays.insert("T", atIndex: index.advancedBy(1))
-            case "W":
-                self.strOfDays.insert("W", atIndex: index.advancedBy(2))
-            case "R":
-                self.strOfDays.insert("R", atIndex: index.advancedBy(3))
-            case "F":
-                self.strOfDays.insert("F", atIndex: index.advancedBy(4))
-            case "Sa":
-                self.strOfDays.insert("S", atIndex: index.advancedBy(5))
-                self.strOfDays += "a"
-            default:
-                break
-        }
-        NSLog(self.strOfDays)
+        NSLog(self.strOfDays + " add: " + dayToAdd)
+        self.strOfDays += dayToAdd
+        var days = Array(self.strOfDays.characters)
+        
     }
     
     func removeDayFromString(remove: String, from: String) -> String {
@@ -137,9 +117,6 @@ class ClassDetailsVC: UIViewController, UITextFieldDelegate {
     }
     
     func determineButtonsState() {
-        if contains(self.strOfDays, containee: self.sunButton.titleLabel?.text) {
-            sunButton.setTitleColor(UIColor(red: 30/255.0, green: 178/255.0, blue: 192/255.0, alpha: 1), forState: UIControlState.Normal)
-        }
         if contains(self.strOfDays, containee: self.monButton.titleLabel?.text) {
             monButton.setTitleColor(UIColor(red: 30/255.0, green: 178/255.0, blue: 192/255.0, alpha: 1), forState: UIControlState.Normal)
         }
@@ -154,9 +131,6 @@ class ClassDetailsVC: UIViewController, UITextFieldDelegate {
         }
         if contains(self.strOfDays, containee: self.friButton.titleLabel?.text) {
             friButton.setTitleColor(UIColor(red: 30/255.0, green: 178/255.0, blue: 192/255.0, alpha: 1), forState: UIControlState.Normal)
-        }
-        if contains(self.strOfDays, containee: self.satButton.titleLabel?.text) {
-            satButton.setTitleColor(UIColor(red: 30/255.0, green: 178/255.0, blue: 192/255.0, alpha: 1), forState: UIControlState.Normal)
         }
     }
     
