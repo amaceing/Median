@@ -25,7 +25,7 @@ class SchoolClassPaginationVC: UIViewController, UIPageViewControllerDelegate, U
         self.setUpPageViewController()
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -51,7 +51,7 @@ class SchoolClassPaginationVC: UIViewController, UIPageViewControllerDelegate, U
     }
     
     func setUpNavBar() {
-        var title = " "
+        let title = " "
         let navBarBlue = UIColor(red: 30/255.0, green: 178/255.0, blue: 192/255.0, alpha: 1)
         self.navigationItem.title = title.determineSeasonAndYear()
         self.navigationController?.navigationBar.barTintColor = navBarBlue
@@ -65,9 +65,9 @@ class SchoolClassPaginationVC: UIViewController, UIPageViewControllerDelegate, U
         self.pageViewController.dataSource = self;
         self.pageViewController.delegate = self;
         
-        var initialViewController = self.viewControllerAtIndex(self.startIndex!)
-        var viewControllers = NSArray(object: initialViewController)
-        self.pageViewController.setViewControllers(viewControllers as [AnyObject], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
+        let initialViewController = self.viewControllerAtIndex(self.startIndex!)
+        let viewControllers = NSArray(object: initialViewController)
+        self.pageViewController.setViewControllers(viewControllers as? [UIViewController], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
         self.addChildViewController(self.pageViewController)
         self.view.addSubview(self.pageViewController.view)
         self.pageViewController.didMoveToParentViewController(self)
@@ -81,8 +81,8 @@ class SchoolClassPaginationVC: UIViewController, UIPageViewControllerDelegate, U
     //MARK: - PageVC Methods
     
     func viewControllerAtIndex(index: NSInteger) -> SchoolClassVC {
-        var sc = ClassStore.instance.allClasses()[index]
-        var childVC = SchoolClassVC(nibName: "SchoolClassVC", bundle: nil, index: index, schoolClass: sc)
+        let sc = ClassStore.instance.allClasses()[index]
+        let childVC = SchoolClassVC(nibName: "SchoolClassVC", bundle: nil, index: index, schoolClass: sc)
         return childVC
     }
     

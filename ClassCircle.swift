@@ -32,7 +32,7 @@ class ClassCircle: UIView {
     }
         
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -41,11 +41,11 @@ class ClassCircle: UIView {
     // An empty implementation adversely affects performance during animation.
     override func drawRect(rect: CGRect) {
         //Paths
-        var outerSolidGray = UIBezierPath()
-        var outerSolidColor = UIBezierPath()
+        let outerSolidGray = UIBezierPath()
+        let outerSolidColor = UIBezierPath()
         
         //Percentage of circle to be filled
-        var percentage = self.grade
+        let percentage = self.grade
         
         //Setting up points and radius for circle
         var outerPoint = CGPoint(x: 0, y: 28)
@@ -62,10 +62,10 @@ class ClassCircle: UIView {
         
         //Creating color circle
         if (percentage != 0) {
-            var color = UIColor()
+            let color = UIColor()
             outerSolidColor.lineWidth = 3.25
             outerSolidColor.addArcWithCenter(outerPoint, radius: outerRadius, startAngle: degreesToRadians(270), endAngle: degreesToRadians(360 * (percentage / 100) + 270), clockwise: true)
-            var colorForCircle = color.determineUIColor(percentage)
+            let colorForCircle = color.determineUIColor(percentage)
             colorForCircle.setStroke()
             outerSolidColor.stroke()
         }

@@ -17,8 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        var stvc: SemesterVC = SemesterVC(nibName: "SemesterVC", bundle: nil)
-        var navVC: UINavigationController = UINavigationController(rootViewController: stvc)
+        let stvc: SemesterVC = SemesterVC(nibName: "SemesterVC", bundle: nil)
+        let navVC: UINavigationController = UINavigationController(rootViewController: stvc)
         self.window!.rootViewController = navVC
         self.window!.backgroundColor = UIColor.whiteColor()
         self.window!.makeKeyAndVisible()
@@ -34,6 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
         let success = ClassStore.instance.saveChanges()
+        print(success)
     }
 
     func applicationWillEnterForeground(application: UIApplication) {

@@ -11,11 +11,11 @@ import UIKit
 extension String {
     func determineSeasonAndYear() -> String {
         let calendar = NSCalendar.currentCalendar()
-        let components = calendar.components(.CalendarUnitMonth | .CalendarUnitYear, fromDate:  NSDate())
+        let components = calendar.components([.Month, .Year], fromDate:  NSDate())
         let month = components.month
         let formatter = NSDateFormatter()
         formatter.dateFormat = "yyyy"
-        var yearString = formatter.stringFromDate(NSDate())
+        let yearString = formatter.stringFromDate(NSDate())
         if (month >= 1 && month <= 5) {
             return String(format: "Spring %@", yearString)
         } else if (month >= 6 && month <= 8) {
@@ -33,7 +33,7 @@ class SemesterVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var _seasonTitle: UILabel!
     var seasonTitle: UILabel!{
         get {
-            var title = " "
+            let title = " "
             let textColor = UIColor(red: 30/255.0, green: 178/255.0, blue: 192/255.0, alpha: 1)
             let font = UIFont(name: "Lato-Regular", size: 18)
             self._seasonTitle.text = title.determineSeasonAndYear()
@@ -94,7 +94,7 @@ class SemesterVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     func setNavBarProperties() {
         self.navigationItem.title = "Classes"
-        var navBarBlue = UIColor(red: 30/255.0, green: 178/255.0, blue: 192/255.0, alpha: 1)
+        let navBarBlue = UIColor(red: 30/255.0, green: 178/255.0, blue: 192/255.0, alpha: 1)
         self.navigationController?.navigationBar.barTintColor = navBarBlue
         self.navigationController?.navigationBar.translucent = false
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
@@ -105,13 +105,13 @@ class SemesterVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     // MARK: - Logic
     
     func addSchoolClass(sender: UIBarButtonItem) {
-        var clickToAdd: SchoolClass = SchoolClass(name: "Click to Add", section: "101", daysOfWeek: "MWF", timeOfDay: "12:00 PM")
-        var store = ClassStore.instance
+        let clickToAdd: SchoolClass = SchoolClass(name: "Click to Add", section: "101", daysOfWeek: "MWF", timeOfDay: "12:00 PM")
+        let store = ClassStore.instance
         store.addClass(clickToAdd)
         
         //Insertion animation
-        var row = 0
-        var path: NSIndexPath = NSIndexPath(forRow: row, inSection: 0)
+        let row = 0
+        let path: NSIndexPath = NSIndexPath(forRow: row, inSection: 0)
         self.tableView.insertRowsAtIndexPaths([path], withRowAnimation: UITableViewRowAnimation.Fade)
         
         self.editing = true
@@ -120,7 +120,7 @@ class SemesterVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     func doneEditing(sender: UIBarButtonItem) {
-        var schoolClassToDelete = ClassStore.instance.allClasses()[0]
+        let schoolClassToDelete = ClassStore.instance.allClasses()[0]
         if (schoolClassToDelete.name == "Click to Add") {
             ClassStore.instance.removeClass(schoolClassToDelete)
             
@@ -140,7 +140,7 @@ class SemesterVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var count = ClassStore.instance.allClasses().count
+        let count = ClassStore.instance.allClasses().count
         return count
     }
     
@@ -149,13 +149,12 @@ class SemesterVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell: SchoolClassCell = tableView.dequeueReusableCellWithIdentifier("SchoolClassCell", forIndexPath: indexPath) as! SchoolClassCell
-        var index = indexPath.row
-        var schoolClassForCell = ClassStore.instance.allClasses()[index]
+        let cell: SchoolClassCell = tableView.dequeueReusableCellWithIdentifier("SchoolClassCell", forIndexPath: indexPath) as! SchoolClassCell
+        let index = indexPath.row
+        let schoolClassForCell = ClassStore.instance.allClasses()[index]
         
         // Configure the cell...
-        var classCircle: ClassCircle = makeCircleForClassCell(schoolClassForCell)
-        let con = UIGraphicsGetCurrentContext()
+        let classCircle: ClassCircle = makeCircleForClassCell(schoolClassForCell)
         cell.contentView.addSubview(classCircle)
         classCircle.setNeedsDisplay()
         cell.selectionStyle = UITableViewCellSelectionStyle.None
@@ -167,9 +166,9 @@ class SemesterVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     func fillCellWithContentFromClass(cell: SchoolClassCell, schoolClass: SchoolClass) {
         //load strings from schoolClass
-        var section = schoolClass.valueForKey("section") as! String
-        var daysOfWeek = schoolClass.valueForKey("daysOfWeek") as! String
-        var timeOfDay = schoolClass.valueForKey("timeOfDay") as! String
+        let section = schoolClass.valueForKey("section") as! String
+        let daysOfWeek = schoolClass.valueForKey("daysOfWeek") as! String
+        let timeOfDay = schoolClass.valueForKey("timeOfDay") as! String
         cell.schoolClassName.text = schoolClass.name
         cell.schoolClassDetails.text = NSString(format: "%@  ∙ %@ ∙  %@", section, daysOfWeek, timeOfDay) as String
         let intAndDec = self.getIntAndDecFromGrade(schoolClass.grade)
@@ -189,20 +188,20 @@ class SemesterVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     func formatDecimalFromGrade(dec: Double) -> String {
-        var numFormatter = NSNumberFormatter()
+        let numFormatter = NSNumberFormatter()
         numFormatter.maximumFractionDigits = 0
         numFormatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
-        var roundedIntFromDec = dec * 10
+        let roundedIntFromDec = dec * 10
         let roundedIntFromDecString = String(format: ".%@", numFormatter.stringFromNumber(roundedIntFromDec)!)
         return roundedIntFromDecString
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var schoolClassToPresent: SchoolClass = ClassStore.instance.allClasses()[indexPath.row]
+        let schoolClassToPresent: SchoolClass = ClassStore.instance.allClasses()[indexPath.row]
         let classIndex = indexPath.row
         self.setUpBackButton()
         if (self.editing) {
-            var classDetailsVC = ClassDetailsVC(nibName: "ClassDetailsVC", bundle: nil)
+            let classDetailsVC = ClassDetailsVC(nibName: "ClassDetailsVC", bundle: nil)
             classDetailsVC.schoolClass = schoolClassToPresent
             self.navigationController?.pushViewController(classDetailsVC, animated: true)
         } else {
@@ -222,8 +221,8 @@ class SemesterVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     func makeCircleForClassCell(sc: SchoolClass) -> ClassCircle {
-        var frame: CGRect = CGRectMake(5, 20, 85, 85);
-        var classCircle: ClassCircle = ClassCircle(frame: frame)
+        let frame: CGRect = CGRectMake(5, 20, 85, 85);
+        let classCircle: ClassCircle = ClassCircle(frame: frame)
         classCircle.grade = sc.grade
         return classCircle
     }

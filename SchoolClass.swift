@@ -24,7 +24,7 @@ extension Double {
     }
 }
 
-class SchoolClass: NSObject, NSCoding, Equatable {
+class SchoolClass: NSObject, NSCoding {
     var name: String
     var section: String
     var daysOfWeek: String
@@ -64,7 +64,7 @@ class SchoolClass: NSObject, NSCoding, Equatable {
         self.assignmentCategories = []
     }
     
-    @objc required init(coder aDecoder: NSCoder) {
+    @objc required init?(coder aDecoder: NSCoder) {
         self.name = aDecoder.decodeObjectForKey("name") as! String
         self.section = aDecoder.decodeObjectForKey("section") as! String
         self.daysOfWeek = aDecoder.decodeObjectForKey("daysOfWeek") as! String
@@ -85,7 +85,7 @@ class SchoolClass: NSObject, NSCoding, Equatable {
     }
     
     func assignCategoryNameAtIndex(index: Int) -> String {
-        var assignCat = self.assignmentCategories[index]
+        let assignCat = self.assignmentCategories[index]
         return assignCat.name
     }
     
@@ -98,7 +98,7 @@ class SchoolClass: NSObject, NSCoding, Equatable {
     }
     
     func removeAssignmentCategory(assignCat: AssignmentCategory) {
-        let index = find(self.assignmentCategories, assignCat)
+        let index = self.assignmentCategories.indexOf(assignCat)
         self.assignmentCategories.removeAtIndex(index!)
     }
 }

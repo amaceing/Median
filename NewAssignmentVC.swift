@@ -17,7 +17,7 @@ class NewAssignmentVC: UIViewController, UITextFieldDelegate {
     
     //MARK: - View Loading Methods
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
@@ -53,10 +53,10 @@ class NewAssignmentVC: UIViewController, UITextFieldDelegate {
         if (self.nameField.text == "") {
             self.assignment?.name = "Assignment"
         } else {
-            self.assignment?.name = self.nameField.text
+            self.assignment?.name = self.nameField.text!
         }
-        self.assignment?.pointsEarned = NSString(string: self.earnedField.text).doubleValue
-        self.assignment?.pointsPossible = NSString(string: self.possibleField.text).doubleValue
+        self.assignment?.pointsEarned = NSString(string: self.earnedField.text!).doubleValue
+        self.assignment?.pointsPossible = NSString(string: self.possibleField.text!).doubleValue
     }
 
     override func didReceiveMemoryWarning() {

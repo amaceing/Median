@@ -1,0 +1,37 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "C58519EF25F747F63AA71D603E50C1245D5C5F02",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "F2428C4608AE125E46385E9F3AB2CFDBA85343F7" : 0,
+    "C58519EF25F747F63AA71D603E50C1245D5C5F02" : 0,
+    "81E8A9BD2828251DA14605D5DED3D1CCBCD37B93" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "ECE1F9B6-2F53-4F05-A8F0-4B49CC122F38",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "F2428C4608AE125E46385E9F3AB2CFDBA85343F7" : "Desktop\/Grader",
+    "C58519EF25F747F63AA71D603E50C1245D5C5F02" : "Median",
+    "81E8A9BD2828251DA14605D5DED3D1CCBCD37B93" : "Decile"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Median",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Median.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/amaceing\/Decile.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "81E8A9BD2828251DA14605D5DED3D1CCBCD37B93"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/amaceing\/Median.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C58519EF25F747F63AA71D603E50C1245D5C5F02"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/amaceing\/Grader.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F2428C4608AE125E46385E9F3AB2CFDBA85343F7"
+    }
+  ]
+}

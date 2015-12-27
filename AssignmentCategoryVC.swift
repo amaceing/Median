@@ -25,7 +25,7 @@ class AssignmentCategoryVC: UIViewController, UITableViewDelegate, UITableViewDa
         self.addActionsToControllerForAssignment(self.alertController)
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -49,7 +49,7 @@ class AssignmentCategoryVC: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func gradeLabelSetUp() {
-        var textColor = UIColor()
+        let textColor = UIColor()
         self.gradeLabel.textColor = textColor.determineUIColor(self.category.average!)
         self.gradeLabel.text = String(format: "%2.1f", self.category.average!)
     }
@@ -78,7 +78,7 @@ class AssignmentCategoryVC: UIViewController, UITableViewDelegate, UITableViewDa
     //MARK: - Logic
     
     @IBAction func addAssignment(sender: UIButton) {
-        var assignmentToAdd = Assignment()
+        let assignmentToAdd = Assignment()
         self.category.addAssignment(assignmentToAdd)
         //Push NewAssignmentVC
         let assignVC = NewAssignmentVC(nibName: "NewAssignmentVC", bundle: nil)
@@ -103,7 +103,7 @@ class AssignmentCategoryVC: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         //Implement
-        var cell: AssignmentCell = tableView.dequeueReusableCellWithIdentifier("AssignmentCell", forIndexPath: indexPath) as! AssignmentCell
+        let cell: AssignmentCell = tableView.dequeueReusableCellWithIdentifier("AssignmentCell", forIndexPath: indexPath) as! AssignmentCell
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         let assignment = self.category.assignmentAtIndex(indexPath.row)
         cell.assignmentName.text = assignment.name
@@ -114,7 +114,7 @@ class AssignmentCategoryVC: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func formatGradeTextForCellWithAssignment(cell: AssignmentCell, assignment: Assignment) {
-        var textColor = UIColor()
+        let textColor = UIColor()
         cell.gradeLabel.textColor = textColor.determineUIColor(assignment.gradeEarned!)
         let gradeText = String(format: "%.1f", assignment.gradeEarned!)
         cell.gradeLabel.text = gradeText
@@ -128,7 +128,7 @@ class AssignmentCategoryVC: UIViewController, UITableViewDelegate, UITableViewDa
         //Actions
         let delete = UIAlertAction(title: "Delete",
             style: UIAlertActionStyle.Destructive,
-            handler: {(alert: UIAlertAction!) in
+            handler: {(alert: UIAlertAction) in
                 let pathAndAssignment = self.chooseAssignmentForAlertControllerAndIndexPath()
                 let path = pathAndAssignment.0
                 let assignment = pathAndAssignment.1
@@ -138,14 +138,14 @@ class AssignmentCategoryVC: UIViewController, UITableViewDelegate, UITableViewDa
         })
         let edit = UIAlertAction(title: "Edit",
             style: UIAlertActionStyle.Default,
-            handler: {(alert: UIAlertAction!) in
+            handler: {(alert: UIAlertAction) in
                 let pathAndAssignment = self.chooseAssignmentForAlertControllerAndIndexPath()
                 let assignment = pathAndAssignment.1
                 self.pushNewAssignmentVC(assignment)
         })
         let cancel = UIAlertAction(title: "Cancel",
             style: UIAlertActionStyle.Destructive,
-            handler: {(alert: UIAlertAction!) in
+            handler: {(alert: UIAlertAction) in
                 controller.dismissViewControllerAnimated(true, completion: nil)
         })
         controller.addAction(delete)
@@ -160,8 +160,8 @@ class AssignmentCategoryVC: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func chooseAssignmentForAlertControllerAndIndexPath() -> (NSIndexPath, Assignment) {
-        let indexPath = self.tableView.indexPathForSelectedRow()!
-        var assignment = self.category.assignmentList[indexPath.row]
+        let indexPath = self.tableView.indexPathForSelectedRow!
+        let assignment = self.category.assignmentList[indexPath.row]
         return (indexPath, assignment)
     }
     

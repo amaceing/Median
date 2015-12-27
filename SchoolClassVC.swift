@@ -33,7 +33,7 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -49,7 +49,7 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     }
     
     func determineClassLabelFontSize() {
-        if (count(self.schoolClass.name) >= 25) {
+        if (self.schoolClass.name.characters.count >= 25) {
             self.classLabel.font = UIFont(name: "Lato-Regular.ttf", size: 15)
         }
     }
@@ -78,7 +78,7 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     }
     
     func gradeLabelSetUp() {
-        var textColor = UIColor()
+        let textColor = UIColor()
         self.gradeLabel.textColor = textColor.determineUIColor(self.schoolClass.grade)
         self.gradeLabel.text = String(format: "%2.1f", self.schoolClass.grade)
     }
@@ -121,7 +121,7 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     
     func addAssignmentCategory() {
         self.tableView.editing = true
-        var assignCatToAdd = AssignmentCategory(name: "Click to Add", weight: 0)
+        let assignCatToAdd = AssignmentCategory(name: "Click to Add", weight: 0)
         self.schoolClass.addAssignmentCategory(assignCatToAdd)
         //Insertion
         let indexPath = NSIndexPath(forRow: 0, inSection: 0)
@@ -160,7 +160,7 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         //Implement
-        var cell: AssignmentCategoryCell = tableView.dequeueReusableCellWithIdentifier("AssignmentCategoryCell", forIndexPath: indexPath) as! AssignmentCategoryCell
+        let cell: AssignmentCategoryCell = tableView.dequeueReusableCellWithIdentifier("AssignmentCategoryCell", forIndexPath: indexPath) as! AssignmentCategoryCell
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         let cat = self.schoolClass.assignmentCategoryAtIndex(indexPath.row)
         self.fillCellWithContentsFromCategory(cell, category: cat)
@@ -178,15 +178,15 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     func addGradeBarToCell(cell: AssignmentCategoryCell, grade: Double) {
         cell.catBar.setNeedsDisplay()
         cell.catBar.layoutIfNeeded()
-        var rect = CGRect(x: 0, y: 0, width: cell.catBar.bounds.size.width * (CGFloat(grade) / 100), height: 10)
-        var coloredBar = UIView(frame: rect)
-        var backGroundColor = UIColor()
+        let rect = CGRect(x: 0, y: 0, width: cell.catBar.bounds.size.width * (CGFloat(grade) / 100), height: 10)
+        let coloredBar = UIView(frame: rect)
+        let backGroundColor = UIColor()
         coloredBar.backgroundColor = backGroundColor.determineUIColor(grade)
         cell.catBar.addSubview(coloredBar)
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var cat = self.schoolClass.assignmentCategoryAtIndex(indexPath.row)
+        let cat = self.schoolClass.assignmentCategoryAtIndex(indexPath.row)
         if (self.tableView.editing) {
             if (cat.name == "Click to Add") {
                 self.pushNewAssignmentCategoryVCWithCat(cat)
@@ -206,7 +206,7 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     }
     
     func setUpAndPresentAlertController() {
-        var editDeleteController = UIAlertController(title: "Edit or Delete", message: "Deleting categories cannot be undone", preferredStyle: UIAlertControllerStyle.ActionSheet)
+        let editDeleteController = UIAlertController(title: "Edit or Delete", message: "Deleting categories cannot be undone", preferredStyle: UIAlertControllerStyle.ActionSheet)
         self.addActionsToController(editDeleteController)
         self.presentViewController(editDeleteController, animated: true, completion: nil)
         self.tableView.reloadData()
@@ -219,24 +219,24 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     }
     
     func addActionsToController(controller: UIAlertController) {
-        let indexPath = self.tableView.indexPathForSelectedRow()!
-        var assignCat = self.schoolClass.assignmentCategories[indexPath.row]
+        let indexPath = self.tableView.indexPathForSelectedRow!
+        let assignCat = self.schoolClass.assignmentCategories[indexPath.row]
         //Actions
         let delete = UIAlertAction(title: "Delete",
                                     style: UIAlertActionStyle.Destructive,
-                                    handler: {(alert: UIAlertAction!) in
+                                    handler: {(alert: UIAlertAction) in
                                                 self.schoolClass.removeAssignmentCategory(assignCat)
                                                 self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
                                                 self.gradeLabelSetUp()
                                              })
         let edit = UIAlertAction(title: "Edit",
                                     style: UIAlertActionStyle.Default,
-                                    handler: {(alert: UIAlertAction!) in
+                                    handler: {(alert: UIAlertAction) in
                                                 self.pushNewAssignmentCategoryVCWithCat(assignCat)
                                              })
         let cancel = UIAlertAction(title: "Cancel",
                                     style: UIAlertActionStyle.Destructive,
-                                    handler: {(alert: UIAlertAction!) in
+                                    handler: {(alert: UIAlertAction) in
                                                 controller.dismissViewControllerAnimated(true, completion: nil)
                                              })
         controller.addAction(delete)

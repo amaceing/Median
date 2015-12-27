@@ -14,7 +14,7 @@ class NewAssignmentCategory: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var catWeight: UISlider!
     @IBOutlet weak var weightLabel: UILabel!
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
@@ -43,7 +43,7 @@ class NewAssignmentCategory: UIViewController, UITextFieldDelegate {
 
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        self.category!.name = self.catName.text
+        self.category!.name = self.catName.text!
         self.category!.weight = Double(catWeight.value)
     }
 
@@ -62,7 +62,7 @@ class NewAssignmentCategory: UIViewController, UITextFieldDelegate {
     //MARK: - Logic
     
     func showWeight() {
-        var weight = String(format: "Weight: %0.f", catWeight.value)
+        let weight = String(format: "Weight: %0.f", catWeight.value)
         self.weightLabel.text = weight
     }
 }

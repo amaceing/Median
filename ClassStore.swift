@@ -28,14 +28,14 @@ class ClassStore: NSObject {
     }
     
     func classArchivePath() -> String {
-        var documentDirectories =
+        let documentDirectories =
         NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        var documentDirectory: String = documentDirectories.first! as! String
-        return documentDirectory.stringByAppendingPathComponent("data.archive")
+        let documentDirectory: String = documentDirectories.first! 
+        return (documentDirectory as NSString).stringByAppendingPathComponent("data.archive")
     }
     
     func saveChanges() -> Bool {
-        var path: String = self.classArchivePath()
+        let path: String = self.classArchivePath()
         NSLog(path)
         return NSKeyedArchiver.archiveRootObject(self.classArray!, toFile: path)
     }
@@ -52,7 +52,7 @@ class ClassStore: NSObject {
     }
     
     func removeClass(schoolClass: SchoolClass) {
-        let index = find(self.classArray!, schoolClass)
+        let index = (self.classArray!).indexOf(schoolClass)
         self.classArray!.removeAtIndex(index!)
     }
 }

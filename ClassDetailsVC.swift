@@ -33,7 +33,7 @@ class ClassDetailsVC: UIViewController, UITextFieldDelegate {
         self.startTimeFormatter.dateFormat = "h:mm a"
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
 
@@ -72,8 +72,8 @@ class ClassDetailsVC: UIViewController, UITextFieldDelegate {
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         
-        self.schoolClass!.name = self.nameField.text
-        self.schoolClass!.section = self.sectionField.text
+        self.schoolClass!.name = self.nameField.text!
+        self.schoolClass!.section = self.sectionField.text!
         self.schoolClass!.daysOfWeek = self.strOfDays
     }
 
@@ -92,7 +92,7 @@ class ClassDetailsVC: UIViewController, UITextFieldDelegate {
     //MARK: - Button Actions
     
     @IBAction func saveStartingTime(sender: UIButton) {
-        var time = self.startTimeFormatter.stringFromDate(self.startTime.date)
+        let time = self.startTimeFormatter.stringFromDate(self.startTime.date)
         self.schoolClass!.timeOfDay = time
     }
     
@@ -108,7 +108,7 @@ class ClassDetailsVC: UIViewController, UITextFieldDelegate {
     }
     
     func removeDayFromString(remove: String, from: String) -> String {
-        return from.stringByReplacingOccurrencesOfString(remove, withString: "", options: nil, range: nil)
+        return from.stringByReplacingOccurrencesOfString(remove, withString: "", options: [], range: nil)
     }
     
     func determineButtonsState() {
@@ -136,7 +136,7 @@ class ClassDetailsVC: UIViewController, UITextFieldDelegate {
     }
     
     func contains(container: String, containee: String?) -> Bool {
-        return container.rangeOfString(containee!, options: nil, range: nil, locale: nil) != nil
+        return container.rangeOfString(containee!, options: [], range: nil, locale: nil) != nil
     }
     
 }

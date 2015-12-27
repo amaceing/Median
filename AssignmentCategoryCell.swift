@@ -30,7 +30,7 @@ class AssignmentCategoryCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        for view in self.catBar.subviews as! [UIView] {
+        for view in self.catBar.subviews {
             if view.isKindOfClass(UIView) {
                 view.removeFromSuperview()
                 view.setNeedsDisplay()
