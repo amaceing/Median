@@ -101,10 +101,33 @@ class ClassDetailsVC: UIViewController, UITextFieldDelegate {
             self.strOfDays = removeDayFromString(sender.titleLabel!.text!, from: self.strOfDays)
             sender.setTitleColor(UIColor(red: 110/255.0, green: 110/255.0, blue: 110/255.0, alpha: 1), forState: UIControlState.Normal)
         } else {
-            self.strOfDays += sender.currentTitle!
+            addDayInPlace(sender.currentTitle!)
             sender.setTitleColor(UIColor(red: 30/255.0, green: 178/255.0, blue: 195/255.0, alpha: 1), forState: UIControlState.Normal)
             NSLog(self.strOfDays)
         }
+    }
+    
+    func addDayInPlace(dayToAdd: String) {
+        var newStrOfDays = ""
+        switch dayToAdd {
+            case "Su":
+                newStrOfDays = self.strOfDays.insert("Su", atIndex: 1)
+            case "M":
+                newStrOfDays = self.strOfDays.insert("M", atIndex: 2)
+            case "T":
+                newStrOfDays = self.strOfDays.insert("T", atIndex: 3)
+            case "W":
+                newStrOfDays = self.strOfDays.insert("W", atIndex: 4)
+            case "R":
+                newStrOfDays = self.strOfDays.insert("R", atIndex: 5)
+            case "F":
+                newStrOfDays = self.strOfDays.insert("F", atIndex: 6)
+            case "Sa":
+                newStrOfDays = self.strOfDays.insert("Sa", atIndex: 7)
+            default:
+                break
+        }
+        self.strOfDays = newStrOfDays
     }
     
     func removeDayFromString(remove: String, from: String) -> String {

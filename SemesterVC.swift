@@ -25,6 +25,12 @@ extension String {
         }
         return ""
     }
+    
+    func insert(string:String, atIndex:Int) -> String {
+        let newString = String(self.characters.prefix(atIndex)) + string + String(self.characters.suffix(self.characters.count - atIndex))
+        NSLog(newString)
+        return newString
+    }
 }
 
 class SemesterVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
