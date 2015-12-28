@@ -35,7 +35,6 @@ class SchoolClass: NSObject, NSCoding {
             var classWorths: Double = 0
             var assignCatWeights: Double = 0
             let categoryList = self.assignmentCategories
-            let count = self.assignmentCategories.count
             for assignCat in categoryList {
                 classWorths += assignCat.calcClassWorth()
                 assignCatWeights += assignCat.weight

@@ -107,7 +107,7 @@ class AssignmentCategoryVC: UIViewController, UITableViewDelegate, UITableViewDa
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         let assignment = self.category.assignmentAtIndex(indexPath.row)
         cell.assignmentName.text = assignment.name
-        if var gradeText = assignment.gradeEarned?.description {
+        if var _ = assignment.gradeEarned?.description {
             self.formatGradeTextForCellWithAssignment(cell, assignment: assignment)
         }
         return cell

@@ -93,9 +93,9 @@ class SchoolClassVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         // Dispose of any resources that can be recreated.
     }
     
-    func gradeTextSetUp() {
-        var gradeLabelsRect = self.determineGradeLabelsFrame()
-    }
+//    func gradeTextSetUp() {
+//        var gradeLabelsRect = self.determineGradeLabelsFrame()
+//    }
     
     func determineGradeLabelsFrame() -> CGRect {
         var gradeLabelsRect: CGRect
